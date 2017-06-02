@@ -38,30 +38,30 @@ class User < ApplicationRecord
   end
 
   #activates an account
-  def activate
-    update_columns(activated: true, activated_at: Time.zone.now)
-  end
+  # def activate
+  #   update_columns(activated: true, activated_at: Time.zone.now)
+  # end
 
   #send the user an activation email
-  def send_activation_email
-    UserMailer.account_activation(self).deliver_now  
-  end
+  # def send_activation_email
+  #   UserMailer.account_activation(self).deliver_now  
+  # end
 
   #sets the password reset attributes
-  def create_reset_digest
-    self.reset_token = User.new_token
-    update_columns(reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now)
-  end
+  # def create_reset_digest
+  #   self.reset_token = User.new_token
+  #   update_columns(reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now)
+  # end
 
   # sends Password reset email
-  def send_password_reset_email
-    UserMailer.password_reset(self).deliver_now
-  end
+  # def send_password_reset_email
+  #   UserMailer.password_reset(self).deliver_now
+  # end
 
   #returns back true if the password reset has expired
-  def password_reset_expired?
-    reset_sent_at < 2.hours.ago
-  end
+  # def password_reset_expired?
+  #   reset_sent_at < 2.hours.ago
+  # end
 
 private
 
