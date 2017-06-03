@@ -1,0 +1,21 @@
+<header class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-header">
+		<%= link_to "MLS PINGA PINGA", root_path, class: 'navbar-brand' %>
+		<ul class="nav navbar-nav pull-right visible-xs-block">
+		 <% if current_user %>
+			<li><%= link_to "Home", root_path, :class => "icon-tree5", :data => {:toggle => "collapse", :target =>"#navbar-mobile"} %></li>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Help", static_pages_Help_path %></li>
+      <li><%= link_to "My Account", user_path(current_user) %></li>
+      <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+      <li><%= link_to "Log Out", logout_path %></li>
+    <% else %>
+			<li><%= link_to "Home", root_path, :class => "icon-tree5", :data => {:toggle => "collapse", :target =>"#navbar-mobile"} %></li>
+      <li><%= link_to "Help", static_pages_Help_path %></li>
+      <li><%= link_to "Log in", login_path %></li>
+    <% end %>
+		</ul>
+	</div>
+	<div class="navbar-collapse collapse" id="navbar-mobile">
+	</div>
+</header>
