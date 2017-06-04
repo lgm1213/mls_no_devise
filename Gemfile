@@ -55,3 +55,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'hirb'
+
+# gem for Less.js, must include therubyracer gem
+gem "therubyracer"
+gem 'less', '~> 2.6'
