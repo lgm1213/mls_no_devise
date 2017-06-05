@@ -3,13 +3,55 @@
   <head>
     <title>Mls2</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <body class="nabar-bottom pace-done">
 
-  <body>
-   <%= render "layouts/navbar" %>
-    <%= yield %>
+    <!-- Main navbar -->
+    <div class="navbar navbar-inverse">
+      Navbar
+    </div>
+    <!-- /main navbar -->
+
+
+    <!-- Page header -->
+    <div class="page-header">
+      Header
+    </div>
+    <!-- /page header -->
+
+
+    <!-- Page container -->
+    <div class="page-container">
+      <!-- Page content -->
+      <div class="page-content">
+
+        <%= render 'layouts/sidebar' %>
+        <!-- Main content -->
+        <div class="content-wrapper">
+          Content Wrapper
+        </div>
+        <!-- /main content -->
+
+
+        <!-- Opposite sidebar -->
+        <div class="sidebar sidebar-opposite">
+          Opposite Sidebar
+        </div>
+        <!-- /opposite sidebar -->
+
+      </div>
+      <!-- /page content -->
+
+
+      <!-- Footer -->
+      <%= render 'layouts/footer' %>
+      <!-- /footer -->
+
+    </div>
+    <!-- /page container -->
+
   </body>
 </html>
+

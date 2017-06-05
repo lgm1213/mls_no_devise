@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'static_pages/About'
   get 'static_pages/Contact'
   get 'static_pages/Help'
+  get 'static_pages/Terms'
 
   # user routes
   resources :users
