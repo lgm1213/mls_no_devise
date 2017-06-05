@@ -24,13 +24,14 @@
     <div class="page-container">
       <!-- Page content -->
       <div class="page-content">
-
+        <% if current_user %>
         <%= render 'layouts/sidebar' %>
+        <% else %>
         <!-- Main content -->
         <div class="content-wrapper">
-          Content Wrapper
           <%= yield %>
         </div>
+        <% end %>
         <!-- /main content -->
 
       </div>
