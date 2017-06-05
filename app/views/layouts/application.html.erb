@@ -9,9 +9,7 @@
   <body class="nabar-bottom pace-done">
 
     <!-- Main navbar -->
-    <div class="navbar navbar-inverse">
-      Navbar
-    </div>
+    <%= render 'layouts/navbar' %>
     <!-- /main navbar -->
 
 
@@ -31,15 +29,9 @@
         <!-- Main content -->
         <div class="content-wrapper">
           Content Wrapper
+          <%= yield %>
         </div>
         <!-- /main content -->
-
-
-        <!-- Opposite sidebar -->
-        <div class="sidebar sidebar-opposite">
-          Opposite Sidebar
-        </div>
-        <!-- /opposite sidebar -->
 
       </div>
       <!-- /page content -->

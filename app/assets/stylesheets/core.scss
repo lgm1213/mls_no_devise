@@ -268,9 +268,6 @@ svg {
   width: 100%;
   z-index: -1;
 }
-.content-divider-muted > span:before {
-  background-color: #e5e5e5;
-}
 .icon-object {
   border-radius: 50%;
   text-align: center;
@@ -2811,10 +2808,6 @@ li + .dropdown-header.highlight,
     margin-bottom: 0;
     margin-top: 20px;
   }
-  .nav-tabs.nav-tabs-toolbar {
-    border-width: 0 0 1px 0;
-    border-radius: 0;
-  }
 }
 @media (min-width: 769px) {
   .nav-tabs-vertical {
@@ -3245,7 +3238,7 @@ li + .dropdown-header.highlight,
   }
 }
 .navbar-header {
-  min-width: 260px;
+  min-width: 265px;
 }
 .navbar-collapse > .navbar-header {
   margin-left: 0;
@@ -3689,7 +3682,7 @@ li + .dropdown-header.highlight,
   border-top-color: transparent;
 }
 .navbar-default.navbar-default-secondary {
-  background-color: #fcfcfc;
+  background-color: #fbfbfb;
 }
 .page-header-content + .navbar-default {
   border-top-color: #ddd;

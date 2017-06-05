@@ -1,16 +1,51 @@
 <!-- Main sidebar -->
-<div class="sidebar sidebar-main">
-
-	<!-- Sidebar content -->
+<div class="sidebar sidebar-main sidebar-default">
 	<div class="sidebar-content">
+	  <!-- Main Navigation -->
+	  <div class="sidebar-category sidebar-category-visible">
+	    <div class="category-title h6">
+	    	<span>Main Navigation</span>
+	    	<ul class="icon-list">
+	    		<li><a href="#" data-action="collapse"></a></li>
+	    	</ul>
+	    </div>
 
-		<!-- User menu -->
-		<div class="sidebar-user">
-			<div class="category-content">
-				Sidebar Content
-			</div>
-		</div>
-		<!-- /user menu -->
+	    <div class="category-content sidebar-user">
+	    	<div class="media">
+	    	<% if current_user %>
+	    	  <%= link_to image_tag("placeholder.jpg"), user_path(current_user) %>
+	    	  <div class="media-body">
+	    	  	<span class="media-heading text-semibold">
+	    	  		<%= current_user.username %>
+	    	  	</span>
+	    	  	<div class="text-size-mini text-muted">
+	    	  	  <i class="icon-pin text-size-small"></i>
+	    	  	  	<%= current_user.city %>, <%= current_user.state %>
+	    	  	</div>
+	    	  </div>
+	    	<% else %>
+	    	 <div class="media-body">
+	    	 	<span class="media-hearing text-semibold"></span>
+	    	 	<div class="text-size-mini text-muted"></div>
+	    	 </div>
+	    	 <% end %>
+	    	</div>
+	    </div>
+	    <div class="category-content no-padding">
+	    	<ul class="navigation navigation-main navigation-accordion">
+	    		<!-- Main -->
+	    		<li class="navigation-header"><span>Main</span><i class="icon-menu" title="Main Pages"></i></li>
+	    		<li class="active"><a href="#"><i class="icon-home4"></i><span>Dashboard</span></a></li>
+	    		<li>Stuff</li>
+	    		<li>More Stuff</li>
+	    		<li>Even More Stuff</li>
+	    		<li>Too Much Stuff</li>
+	    		<li>So Much Stuff</li>
+	    	</ul>
+	    </div>	
+	  </div>
+
+
 
 
 		<!-- Main navigation -->
