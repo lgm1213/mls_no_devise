@@ -11,147 +11,167 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :County %>
-    <%= f.text_field :County %>
+  <div class="form-group">
+      <%= f.label :County %>
+      <%= f.select :County, options_for_select(sofl_counties), {}, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :Area %>
+      <%= f.text_field :Area, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :City %>
+      <%= f.select :City, options_for_select(sofl_cities), {}, class: 'form-control' %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :Folio %>
+      <%= f.text_field :Folio, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :Street %>
+      <%= f.text_field :Street, class: 'form-control' %>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :Compass_Point %>
+      <%= f.text_field :CompassPoint, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">    
+    <div class="field">
+      <%= f.label :Street_Name %>
+      <%= f.text_field :StreetName, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :State %>
+      <%= f.select :State, options_for_select(us_states),{}, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :Zip %>
+      <%= f.text_field :Zip, class: 'form-control' %>
+    </div>
   </div>
 
   <div class="field">
-    <%= f.label :Area %>
-    <%= f.text_field :Area %>
-  </div>
-
-  <div class="field">
-    <%= f.label :City %>
-    <%= f.text_field :City %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Folio %>
-    <%= f.text_field :Folio %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Street %>
-    <%= f.text_field :Street %>
-  </div>
-
-  <div class="field">
-    <%= f.label :CompassPoint %>
-    <%= f.text_field :CompassPoint %>
-  </div>
-
-  <div class="field">
-    <%= f.label :StreetName %>
-    <%= f.text_field :StreetName %>
-  </div>
-
-  <div class="field">
-    <%= f.label :State %>
-    <%= f.text_field :State %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Zip %>
-    <%= f.text_field :Zip %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Zip4 %>
-    <%= f.text_field :Zip4 %>
+    <%= f.label :Zip4, "Zip+4" %>
+    <%= f.text_field :Zip4, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Unit %>
-    <%= f.text_field :Unit %>
+    <%= f.text_field :Unit, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Legal %>
-    <%= f.text_field :Legal %>
+    <%= f.text_field :Legal, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Zoning %>
-    <%= f.text_field :Zoning %>
+    <%= f.text_field :Zoning, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Geographical %>
-    <%= f.text_field :Geographical %>
+    <%= f.text_field :Geographical, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Area %>
-    <%= f.text_field :Area %>
+    <%= f.text_field :Area, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :MunicipCode %>
-    <%= f.text_field :MunicipCode %>
+    <%= f.label :Municipal_Code %>
+    <%= f.text_field :MunicipCode, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Township %>
-    <%= f.text_field :Township %>
+    <%= f.text_field :Township, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Section %>
-    <%= f.text_field :Section %>
+    <%= f.text_field :Section, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Subdivision %>
-    <%= f.text_field :Subdivision %>
+    <%= f.text_field :Subdivision, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Parcel %>
-    <%= f.text_field :Parcel %>
+    <%= f.text_field :Parcel, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :MapCoordinates %>
-    <%= f.text_field :MapCoordinates %>
+    <%= f.label :Map_Coordinates %>
+    <%= f.text_field :MapCoordinates, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :ElementarySchool %>
-    <%= f.text_field :ElementarySchool %>
+    <%= f.label :Elementary_School %>
+    <%= f.text_field :ElementarySchool, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :MiddleSchool %>
-    <%= f.text_field :MiddleSchool %>
+    <%= f.label :Middle_School %>
+    <%= f.text_field :MiddleSchool, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :SeniorHighSchool %>
-    <%= f.text_field :SeniorHighSchool %>
+    <%= f.label :Senior_High_School %>
+    <%= f.text_field :SeniorHighSchool, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :SubdivisonName %>
-    <%= f.text_field :SubdivisonName %>
+    <%= f.label :Subdivison_Name %>
+    <%= f.text_field :SubdivisonName, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :DevelopmentName %>
-    <%= f.text_field :DevelopmentName %>
+    <%= f.label :Development_Name %>
+    <%= f.text_field :DevelopmentName, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :ModelName %>
-    <%= f.text_field :ModelName %>
+    <%= f.label :Model_Name %>
+    <%= f.text_field :ModelName, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :User_id %>
-    <%= f.text_field :User_id %>
+    <%= f.label :User_Id %>
+    <%= f.text_field :user_id, class: 'form-control' %>
   </div>
+  <br>
+  <br>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
+
 <% end %>
