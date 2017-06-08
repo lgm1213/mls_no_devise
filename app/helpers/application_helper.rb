@@ -1,5 +1,6 @@
 module ApplicationHelper
 	include SessionsHelper
+	include BuildingsHelper
 
 	# for state drop down menus
 	def us_states
@@ -58,7 +59,7 @@ module ApplicationHelper
       ['Wyoming', 'WY']
     ]
   end
-
+  # helper method for select drop down of cities
   def sofl_cities
     [
     	['Atlantis', 'Atlantis' ],
@@ -209,6 +210,7 @@ module ApplicationHelper
   	]
   end
 
+  #helper method for select drop down of counties
   def sofl_counties
   	[
   		['Broward County', 'Broward County'],
@@ -216,5 +218,19 @@ module ApplicationHelper
   		['West Palm Beach County', 'West Palm Beach County'],
   		['Other County', 'Other County']
     ]
+  end
+
+  # helper method for select drop down of compass directions
+  def compass_directions
+  	[
+  		['N','N'],
+  		['NE', 'NE'],
+  		['E', 'E'],
+  		['SE', 'SE'],
+  		['S', 'S'],
+  		['SW', 'SW'],
+  		['W', 'W'],
+  		['NW', 'NW'],
+  	]
   end
 end

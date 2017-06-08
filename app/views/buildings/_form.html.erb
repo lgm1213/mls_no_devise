@@ -48,7 +48,7 @@
   <div class="form-group">
     <div class="field">
       <%= f.label :Compass_Point %>
-      <%= f.text_field :CompassPoint, class: 'form-control' %>
+      <%= f.select :CompassPoint, options_for_select(compass_directions), {}, class: 'form-control' %>
     </div>
   </div>
 
@@ -135,17 +135,17 @@
 
   <div class="field">
     <%= f.label :Elementary_School %>
-    <%= f.text_field :ElementarySchool, class: 'form-control' %>
+    <%= f.select :ElementarySchool, options_for_select(sofl_elem),{}, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Middle_School %>
-    <%= f.text_field :MiddleSchool, class: 'form-control' %>
+    <%= f.select :MiddleSchool, options_for_select(sofl_middle), {}, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Senior_High_School %>
-    <%= f.text_field :SeniorHighSchool, class: 'form-control' %>
+    <%= f.select :SeniorHighSchool, options_for_select(sofl_hs), {}, class: 'form-control' %>
   </div>
 
   <div class="field">
