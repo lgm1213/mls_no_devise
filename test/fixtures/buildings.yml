@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  County: MyString
+  Area: MyString
+  City: MyString
+  Folio: MyString
+  Street: MyString
+  CompassPoint: MyString
+  StreetName: MyString
+  State: MyString
+  Zip: MyString
+  Zip4: MyString
+  Unit: MyString
+  Legal: MyString
+  Zoning: MyString
+  Geographical: MyString
+  Area: MyString
+  MunicipCode: MyString
+  Township: MyString
+  Section: MyString
+  Subdivision: MyString
+  Parcel: MyString
+  MapCoordinates: MyString
+  ElementarySchool: MyString
+  MiddleSchool: MyString
+  SeniorHighSchool: MyString
+  SubdivisonName: MyString
+  DevelopmentName: MyString
+  ModelName: MyString
+  User: one
+
+two:
+  County: MyString
+  Area: MyString
+  City: MyString
+  Folio: MyString
+  Street: MyString
+  CompassPoint: MyString
+  StreetName: MyString
+  State: MyString
+  Zip: MyString
+  Zip4: MyString
+  Unit: MyString
+  Legal: MyString
+  Zoning: MyString
+  Geographical: MyString
+  Area: MyString
+  MunicipCode: MyString
+  Township: MyString
+  Section: MyString
+  Subdivision: MyString
+  Parcel: MyString
+  MapCoordinates: MyString
+  ElementarySchool: MyString
+  MiddleSchool: MyString
+  SeniorHighSchool: MyString
+  SubdivisonName: MyString
+  DevelopmentName: MyString
+  ModelName: MyString
+  User: two

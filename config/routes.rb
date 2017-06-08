@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :buildings
   # static pages
   root 'static_pages#Home'
   get 'static_pages/About'

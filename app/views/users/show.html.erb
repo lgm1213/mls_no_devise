@@ -15,35 +15,6 @@
   <%= @user.password_digest %>
 </p>
 
-<p>
-  <strong>Activation digest:</strong>
-  <%= @user.activation_digest %>
-</p>
-
-<p>
-  <strong>Remember digest:</strong>
-  <%= @user.remember_digest %>
-</p>
-
-<p>
-  <strong>Activated:</strong>
-  <%= @user.activated %>
-</p>
-
-<p>
-  <strong>Activated ad:</strong>
-  <%= @user.activated_ad %>
-</p>
-
-<p>
-  <strong>Reset digest:</strong>
-  <%= @user.reset_digest %>
-</p>
-
-<p>
-  <strong>Reset sent at:</strong>
-  <%= @user.reset_sent_at %>
-</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

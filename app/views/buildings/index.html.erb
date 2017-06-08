@@ -1,0 +1,81 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Buildings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>County</th>
+      <th>Area</th>
+      <th>City</th>
+      <th>Folio</th>
+      <th>Street</th>
+      <th>Compasspoint</th>
+      <th>Streetname</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Zip4</th>
+      <th>Unit</th>
+      <th>Legal</th>
+      <th>Zoning</th>
+      <th>Geographical</th>
+      <th>Area</th>
+      <th>Municipcode</th>
+      <th>Township</th>
+      <th>Section</th>
+      <th>Subdivision</th>
+      <th>Parcel</th>
+      <th>Mapcoordinates</th>
+      <th>Elementaryschool</th>
+      <th>Middleschool</th>
+      <th>Seniorhighschool</th>
+      <th>Subdivisonname</th>
+      <th>Developmentname</th>
+      <th>Modelname</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buildings.each do |building| %>
+      <tr>
+        <td><%= building.County %></td>
+        <td><%= building.Area %></td>
+        <td><%= building.City %></td>
+        <td><%= building.Folio %></td>
+        <td><%= building.Street %></td>
+        <td><%= building.CompassPoint %></td>
+        <td><%= building.StreetName %></td>
+        <td><%= building.State %></td>
+        <td><%= building.Zip %></td>
+        <td><%= building.Zip4 %></td>
+        <td><%= building.Unit %></td>
+        <td><%= building.Legal %></td>
+        <td><%= building.Zoning %></td>
+        <td><%= building.Geographical %></td>
+        <td><%= building.Area %></td>
+        <td><%= building.MunicipCode %></td>
+        <td><%= building.Township %></td>
+        <td><%= building.Section %></td>
+        <td><%= building.Subdivision %></td>
+        <td><%= building.Parcel %></td>
+        <td><%= building.MapCoordinates %></td>
+        <td><%= building.ElementarySchool %></td>
+        <td><%= building.MiddleSchool %></td>
+        <td><%= building.SeniorHighSchool %></td>
+        <td><%= building.SubdivisonName %></td>
+        <td><%= building.DevelopmentName %></td>
+        <td><%= building.ModelName %></td>
+        <td><%= building.User %></td>
+        <td><%= link_to 'Show', building %></td>
+        <td><%= link_to 'Edit', edit_building_path(building) %></td>
+        <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Building', new_building_path %>

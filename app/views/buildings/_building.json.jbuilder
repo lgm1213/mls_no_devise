@@ -1,0 +1,2 @@
+json.extract! building, :id, :County, :Area, :City, :Folio, :Street, :CompassPoint, :StreetName, :State, :Zip, :Zip4, :Unit, :Legal, :Zoning, :Geographical, :Area, :MunicipCode, :Township, :Section, :Subdivision, :Parcel, :MapCoordinates, :ElementarySchool, :MiddleSchool, :SeniorHighSchool, :SubdivisonName, :DevelopmentName, :ModelName, :User_id, :created_at, :updated_at
+json.url building_url(building, format: :json)
