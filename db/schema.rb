@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170612003116) do
+ActiveRecord::Schema.define(version: 20170612050544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "building_dinnings", force: :cascade do |t|
+    t.integer  "building_id"
+    t.integer  "dining_area_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["building_id"], name: "index_building_dinnings_on_building_id", using: :btree
+    t.index ["dining_area_id"], name: "index_building_dinnings_on_dining_area_id", using: :btree
+  end
+
+  create_table "building_leasing_terms", force: :cascade do |t|
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "building_id"
+    t.integer  "leasing_terms_id"
+    t.index ["building_id"], name: "index_building_leasing_terms_on_building_id", using: :btree
+    t.index ["leasing_terms_id"], name: "index_building_leasing_terms_on_leasing_terms_id", using: :btree
+  end
 
   create_table "buildings", force: :cascade do |t|
     t.string   "County"
@@ -146,6 +164,17 @@ ActiveRecord::Schema.define(version: 20170612003116) do
     t.string   "virtual_tour"
     t.string   "photo_instructions"
     t.index ["user_id"], name: "index_buildings_on_user_id", using: :btree
+  end
+
+  create_table "dining_areas", force: :cascade do |t|
+    t.string   "options"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "leasing_terms", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
