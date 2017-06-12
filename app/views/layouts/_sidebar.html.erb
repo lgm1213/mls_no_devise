@@ -5,15 +5,14 @@
 	  <div class="sidebar-category sidebar-category-visible">
 	    <div class="category-title h6">
 	    	<span>Main Navigation</span>
-	    	<ul class="icon-list">
+	    	<ul class="icons-list">
 	    		<li><a href="#" data-action="collapse"></a></li>
 	    	</ul>
 	    </div>
 
 	    <div class="category-content sidebar-user">
 	    	<div class="media">
-	    	<% if current_user %>
-	    	  <%= link_to image_tag("placeholder.jpg"), user_path(current_user) %>
+		    	<%= link_to(image_tag("placeholder.jpg",:class =>"img-circle img-sm"), user_path(current_user), :class => "media-left") %>
 	    	  <div class="media-body">
 	    	  	<span class="media-heading text-semibold">
 	    	  		<%= current_user.username %>
@@ -23,13 +22,7 @@
 	    	  	  	Fill In, Later
 	    	  	</div>
 	    	  </div>
-	    	<% else %>
-	    	 <div class="media-body">
-	    	 	<span class="media-hearing text-semibold"></span>
-	    	 	<div class="text-size-mini text-muted"></div>
-	    	 </div>
-	    	 <% end %>
-	    	</div>
+	     	</div>
 	    </div>
 	    <div class="category-content no-padding">
 	    	<ul class="navigation navigation-main navigation-accordion">

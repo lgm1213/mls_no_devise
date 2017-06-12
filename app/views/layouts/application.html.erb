@@ -7,44 +7,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="nabar-bottom pace-done">
-
-    <!-- Main navbar -->
-    <%= render 'layouts/navbar' %>
-    <!-- /main navbar -->
-
-
-    <!-- Page header -->
-    <div class="page-header">
-      Header
-    </div>
-    <!-- /page header -->
-
-
-    <!-- Page container -->
-    <div class="page-container">
-      <!-- Page content -->
-      <div class="page-content">
-        <% if current_user %>
-        <%= render 'layouts/sidebar' %>
-        <% else %>
-        <!-- Main content -->
-        <div class="content-wrapper">
-          <%= yield %>
-        </div>
-        <% end %>
-        <!-- /main content -->
-
-      </div>
-      <!-- /page content -->
-
-
-      <!-- Footer -->
-      <%= render 'layouts/footer' %>
-      <!-- /footer -->
-
-    </div>
-    <!-- /page container -->
-
+    <% if current_user %>
+      <%= render 'layouts/current_user' %>
+    <% else %>
+    <% end %>
   </body>
 </html>
 

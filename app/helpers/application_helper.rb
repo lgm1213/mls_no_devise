@@ -1,7 +1,4 @@
 module ApplicationHelper
-	include SessionsHelper
-	include BuildingsHelper
-
 	# for state drop down menus
 	def us_states
     [
