@@ -137,8 +137,8 @@
 
 <p>
   <strong>User:</strong>
-  <%= @building.User %>
+  <%= @building.user.username %>
 </p>
 
-<%= link_to 'Edit', edit_building_path(@building) %> |
-<%= link_to 'Back', buildings_path %>
+<%= link_to 'Edit', edit_building_path(@building), class: 'btn btn-primary' %> |
+<%= link_to 'Back', buildings_path, class: 'btn btn-primary' %>

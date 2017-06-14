@@ -13,20 +13,20 @@
 
   <div class="form-group">
       <%= f.label :County %>
-      <%= f.select :County, options_for_select(sofl_counties), {}, class: 'form-control' %>
+      <%= f.select :county, options_for_select(sofl_counties), {}, class: 'form-control' %>
   </div>
 
   <div class="form-group">
     <div class="field">
       <%= f.label :Area %>
-      <%= f.text_field :Area, class: 'form-control' %>
+      <%= f.text_field :area, class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="field">
       <%= f.label :City %>
-      <%= f.select :City, options_for_select(sofl_cities), {}, class: 'form-control' %>
+      <%= f.select :city, options_for_select(sofl_cities), {}, class: 'form-control' %>
     </div>
   </div>
 
@@ -34,133 +34,133 @@
   <div class="form-group">
     <div class="field">
       <%= f.label :Folio %>
-      <%= f.text_field :Folio, class: 'form-control' %>
+      <%= f.text_field :folio, class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="field">
       <%= f.label :Street %>
-      <%= f.text_field :Street, class: 'form-control' %>
+      <%= f.text_field :street, class: 'form-control' %>
     </div>
   </div>
   
   <div class="form-group">
     <div class="field">
       <%= f.label :Compass_Point %>
-      <%= f.select :CompassPoint, options_for_select(compass_directions), {}, class: 'form-control' %>
+      <%= f.select :compass_point, options_for_select(compass_directions), {}, class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group">    
     <div class="field">
       <%= f.label :Street_Name %>
-      <%= f.text_field :StreetName, class: 'form-control' %>
+      <%= f.text_field :street_name, class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="field">
       <%= f.label :State %>
-      <%= f.select :State, options_for_select(us_states),{}, class: 'form-control' %>
+      <%= f.select :state, options_for_select(us_states),{}, class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="field">
       <%= f.label :Zip %>
-      <%= f.text_field :Zip, class: 'form-control' %>
+      <%= f.text_field :zip, class: 'form-control' %>
     </div>
   </div>
 
   <div class="field">
     <%= f.label :Zip4, "Zip+4" %>
-    <%= f.text_field :Zip4, class: 'form-control' %>
+    <%= f.text_field :zip4, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Unit %>
-    <%= f.text_field :Unit, class: 'form-control' %>
+    <%= f.text_field :unit, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Legal %>
-    <%= f.text_field :Legal, class: 'form-control' %>
+    <%= f.text_field :legal, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Zoning %>
-    <%= f.text_field :Zoning, class: 'form-control' %>
+    <%= f.text_field :zoning, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Geographical %>
-    <%= f.text_field :Geographical, class: 'form-control' %>
+    <%= f.text_field :geographical, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Area %>
-    <%= f.text_field :Area, class: 'form-control' %>
+    <%= f.text_field :area, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Municipal_Code %>
-    <%= f.text_field :MunicipCode, class: 'form-control' %>
+    <%= f.text_field :municipCode, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Township %>
-    <%= f.text_field :Township, class: 'form-control' %>
+    <%= f.text_field :township, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Section %>
-    <%= f.text_field :Section, class: 'form-control' %>
+    <%= f.text_field :section, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Subdivision %>
-    <%= f.text_field :Subdivision, class: 'form-control' %>
+    <%= f.text_field :subdivision, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Parcel %>
-    <%= f.text_field :Parcel, class: 'form-control' %>
+    <%= f.text_field :parcel, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Map_Coordinates %>
-    <%= f.text_field :MapCoordinates, class: 'form-control' %>
+    <%= f.text_field :map_coordinates, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Elementary_School %>
-    <%= f.select :ElementarySchool, options_for_select(sofl_elem),{}, class: 'form-control' %>
+    <%= f.select :elementary_school, options_for_select(sofl_elem),{}, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Middle_School %>
-    <%= f.select :MiddleSchool, options_for_select(sofl_middle), {}, class: 'form-control' %>
+    <%= f.select :middle_school, options_for_select(sofl_middle), {}, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Senior_High_School %>
-    <%= f.select :SeniorHighSchool, options_for_select(sofl_hs), {}, class: 'form-control' %>
+    <%= f.select :senior_high_school, options_for_select(sofl_hs), {}, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Subdivison_Name %>
-    <%= f.text_field :SubdivisonName, class: 'form-control' %>
+    <%= f.text_field :subdivison_name, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Development_Name %>
-    <%= f.text_field :DevelopmentName, class: 'form-control' %>
+    <%= f.text_field :development_name, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :Model_Name %>
-    <%= f.text_field :ModelName, class: 'form-control' %>
+    <%= f.text_field :model_name, class: 'form-control' %>
   </div>
 
   <div class="field">
@@ -171,7 +171,7 @@
   <br>
 
   <div class="actions">
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   </div>
 
 <% end %>
