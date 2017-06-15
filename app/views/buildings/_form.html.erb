@@ -105,7 +105,7 @@
 
   <div class="field">
     <%= f.label :Municipal_Code %>
-    <%= f.text_field :municipCode, class: 'form-control' %>
+    <%= f.text_field :municip_code, class: 'form-control' %>
   </div>
 
   <div class="field">
@@ -150,7 +150,7 @@
 
   <div class="field">
     <%= f.label :Subdivison_Name %>
-    <%= f.text_field :subdivison_name, class: 'form-control' %>
+    <%= f.text_field :subdivision_name, class: 'form-control' %>
   </div>
 
   <div class="field">
@@ -167,6 +167,17 @@
     <%= f.label :User_Id %>
     <%= f.text_field :user_id, class: 'form-control' %>
   </div>
+  
+  <div class="field">
+    <%= f.label "Amenities" %><br>
+    <%= f.collection_check_boxes :amenity_ids, Amenity.all, :id, :options %>
+      <div class="collection-check-box">
+        <%= b.check_box %>
+        <%= b.label %>
+      </div>
+      <% end %>
+  </div>
+
   <br>
   <br>
 
