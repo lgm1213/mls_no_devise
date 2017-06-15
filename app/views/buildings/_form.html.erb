@@ -169,7 +169,7 @@
   </div>
   
   <div class="field">
-    <%= f.label "Amenities" %><br> 
+    <%= f.label "Amenities" %><br>
     <%= f.collection_check_boxes :amenity_ids, Amenity.all, :id, :options do |b| %>
       <div class="collection-check-box">
         <%= b.check_box %>
