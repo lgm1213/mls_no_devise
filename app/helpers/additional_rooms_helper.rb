@@ -1,0 +1,2 @@
+module AdditionalRoomsHelper
+end

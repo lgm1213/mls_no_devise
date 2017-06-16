@@ -10,8 +10,14 @@ class Building < ApplicationRecord
   has_many :building_approvals
   has_many :approvals, :through => :building_approvals
 
+  has_many :building_constructions
+  has_many :constructions, :through => :building_constructions
+
   has_many :building_cooling_descriptions
   has_many :cooling_descriptions, :through => :building_cooling_descriptions
+
+  has_many :building_designs
+  has_many :designs, :through => :building_designs
 
   has_many :building_dinings
   has_many :dining_areas, :through => :building_dinings
@@ -22,17 +28,32 @@ class Building < ApplicationRecord
   has_many :building_exterior_features
   has_many :exterior_features, :through => :building_exterior_features
 
+  has_many :building_floors
+  has_many :floors, :through => :building_floors
+
+  has_many :building_heats
+  has_many :buildings, :through => :building_heats
+
   has_many :building_interior_features
   has_many :interior_features, :through => :building_interior_features
 
   has_many :building_leasing_terms
   has_many :leasing_terms, :through => :building_leasing_terms
 
+  has_many :building_lot_descriptions
+  has_many :lot_descriptions, :through => :building_lot_descriptions
+
   has_many :building_miscs
   has_many :misc, :through => :building_miscs
+
+  has_many :building_parking_restrictions
+  has_many :parking_restrictions, :through => :building_parking_restrictions
   
   has_many :building_pet_restrictions
   has_many :pet_restrictions, :through => :building_pet_restrictions
+
+  has_many :building_pool_descriptions
+  has_many :buildings, :through => :building_pool_descriptions
 
   has_many :building_rental_dep_incls
   has_many :rental_dep_incls, :through => :building_rental_dep_incls
@@ -48,5 +69,11 @@ class Building < ApplicationRecord
   
   has_many :building_window_treatments
   has_many :window_treatments, :through => :building_window_treatments
+
+  has_many :building_water_accesses
+  has_many :water_accesses, :through => :building_water_accesses
+
+  has_many :building_waterfront_descs
+  has_many :waterfront_descs, :through => :building_waterfront_descs
 
 end

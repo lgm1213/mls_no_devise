@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-
   # static pages
   root 'static_pages#Home'
   get 'static_pages/About'
@@ -35,5 +33,12 @@ Rails.application.routes.draw do
   #building and associated routes
   resources :buildings
   resources :amenities
+
+  #building related routes and has_many_through models
+  resources :buildings
+  resources :additional_rooms
+  resources :amenities
+
+
 
 end
