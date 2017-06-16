@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Additional Rooms</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @additional_rooms.each do |additional_room| %>
+      <tr>
+        <td><%= additional_room.options %></td>
+        <td><%= link_to 'Show', additional_room %></td>
+        <td><%= link_to 'Edit', edit_additional_room_path(additional_room) %></td>
+        <td><%= link_to 'Destroy', additional_room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Additional Room', new_additional_room_path %>

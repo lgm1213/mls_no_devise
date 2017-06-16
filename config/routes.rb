@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
 
 
-  resources :buildings
   # static pages
   root 'static_pages#Home'
   get 'static_pages/About'
@@ -33,5 +32,12 @@ Rails.application.routes.draw do
 
   # password resets
   resources :password_resets, only: [:new, :create, :edit, :update]
+
+  #building related routes and has_many_through models
+  resources :buildings
+  resources :additional_rooms
+  resources :amenities
+
+
 
 end
