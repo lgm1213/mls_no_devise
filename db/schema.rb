@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170616171033) do
+ActiveRecord::Schema.define(version: 20170621165516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -308,7 +308,7 @@ ActiveRecord::Schema.define(version: 20170616171033) do
     t.datetime "updated_at",                null: false
     t.string   "rent_price"
     t.string   "rent_per_period"
-    t.string   "for_sale"
+    t.boolean  "for_sale"
     t.string   "beds"
     t.string   "fbaths"
     t.string   "hbaths"
@@ -320,7 +320,7 @@ ActiveRecord::Schema.define(version: 20170616171033) do
     t.string   "style"
     t.string   "sqft"
     t.string   "liv_area"
-    t.string   "balcony"
+    t.boolean  "balcony"
     t.string   "convert_beds"
     t.string   "efficiency"
     t.string   "faces"
@@ -328,16 +328,16 @@ ActiveRecord::Schema.define(version: 20170616171033) do
     t.string   "garage_description"
     t.string   "carport_spaces"
     t.string   "carport_description"
-    t.string   "waterfront"
+    t.boolean  "waterfront"
     t.string   "waterfront_frontage"
     t.string   "approx_lot_size"
     t.string   "lotsf"
     t.string   "additioal_parking_info"
     t.string   "furnished_information"
     t.date     "available_date"
-    t.string   "pool"
+    t.boolean  "pool"
     t.string   "pool_dimensions"
-    t.string   "spa"
+    t.boolean  "spa"
     t.string   "lot_description"
     t.string   "waterfront_description"
     t.string   "parking_restrictions"
@@ -353,8 +353,8 @@ ActiveRecord::Schema.define(version: 20170616171033) do
     t.text     "directions"
     t.text     "broker_remarks"
     t.text     "internet_remarks"
-    t.string   "pets_allowed"
-    t.string   "cable_available"
+    t.boolean  "pets_allowed"
+    t.boolean  "cable_available"
     t.string   "pet_restrictions"
     t.string   "furn_annual_rent"
     t.string   "furn_seasonal_rent"
@@ -366,8 +366,8 @@ ActiveRecord::Schema.define(version: 20170616171033) do
     t.string   "leases_per_year"
     t.string   "application_fee"
     t.string   "move_in_cost"
-    t.string   "renewable"
-    t.string   "additional_moving_cost"
+    t.boolean  "renewable"
+    t.boolean  "additional_moving_cost"
     t.string   "sewer_description"
     t.string   "water"
     t.string   "housing_older_persons_act"
@@ -386,10 +386,10 @@ ActiveRecord::Schema.define(version: 20170616171033) do
     t.string   "list_agent_mls_id"
     t.string   "list_agent_alt_phone"
     t.string   "co_list_agent_mls_id"
-    t.string   "internet"
-    t.string   "avm"
-    t.string   "blogging"
-    t.string   "address_on_internet"
+    t.boolean  "internet"
+    t.boolean  "avm"
+    t.boolean  "blogging"
+    t.boolean  "address_on_internet"
     t.string   "listing_type"
     t.date     "list_date"
     t.date     "expiration_date"
@@ -398,7 +398,7 @@ ActiveRecord::Schema.define(version: 20170616171033) do
     t.string   "variable_dual_rate"
     t.string   "owner_agent"
     t.string   "occupancy_information"
-    t.string   "lender_approval"
+    t.boolean  "lender_approval"
     t.string   "compensation_trans_broker"
     t.string   "compensation_buyers_agent"
     t.string   "compensation_non_rep"
@@ -406,6 +406,7 @@ ActiveRecord::Schema.define(version: 20170616171033) do
     t.string   "agent_url"
     t.string   "virtual_tour"
     t.string   "photo_instructions"
+    t.string   "status"
     t.index ["user_id"], name: "index_buildings_on_user_id", using: :btree
   end
 

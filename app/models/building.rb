@@ -75,5 +75,10 @@ class Building < ApplicationRecord
 
   has_many :building_waterfront_descs
   has_many :waterfront_descs, :through => :building_waterfront_descs
+  
+  validates :county, :presence => true, :if => :active?
 
+  def active?
+    status == 'active'
+  end
 end

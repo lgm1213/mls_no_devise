@@ -25,7 +25,7 @@ class BuildingsController < ApplicationController
   # POST /buildings.json
   def create
     @building = Building.new(building_params)
-
+    redirect_to listing_wizards_path
     respond_to do |format|
       if @building.save
         format.html { redirect_to @building, notice: 'Building was successfully created.' }

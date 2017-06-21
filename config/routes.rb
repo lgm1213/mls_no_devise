@@ -39,6 +39,8 @@ Rails.application.routes.draw do
   resources :additional_rooms
   resources :amenities
 
+  #wizard for building creation routes
+  resources :listing_wizards
 
 
 end
