@@ -1,4 +1,4 @@
 class BuildingFloor < ApplicationRecord
-	belong_to :building 
-	belong_to :floor 
+	belongs_to :building 
+	belongs_to :floor 
 end
