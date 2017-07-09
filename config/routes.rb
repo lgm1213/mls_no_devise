@@ -34,11 +34,6 @@ Rails.application.routes.draw do
   resources :buildings
   resources :amenities
 
-  #building related routes and has_many_through models
-  resources :buildings
-  resources :additional_rooms
-  resources :amenities
-
   #wizard for building creation routes
   resources :listing_wizards
 

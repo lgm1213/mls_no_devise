@@ -60,5 +60,5 @@ gem 'hirb'
 gem "therubyracer"
 gem 'less', '~> 2.6'
 
-gem 'wicked'
+gem 'rails-jquery-steps'
 gem 'rails-erd'

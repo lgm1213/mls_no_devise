@@ -1,4 +1,16 @@
 <%= form_for(building) do |f| %>
+ <% if building.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(building.errors.count, "error") %> prohibited this building from being saved:</h2>
+
+    <ul>
+    <% building.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  <% end %>
+  </div>
+<div class="form-horizontal">
   <% if building.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(building.errors.count, "error") %> prohibited this building from being saved:</h2>
@@ -10,8 +22,6 @@
       </ul>
     </div>
   <% end %>
-<div class="form-horizontal">
-  
   <div class="row">
     <div class="form-group">
       <div class="col-md-4">

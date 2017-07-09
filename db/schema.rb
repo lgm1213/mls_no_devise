@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621165516) do
+ActiveRecord::Schema.define(version: 20170627053613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -332,7 +332,7 @@ ActiveRecord::Schema.define(version: 20170621165516) do
     t.string   "waterfront_frontage"
     t.string   "approx_lot_size"
     t.string   "lotsf"
-    t.string   "additioal_parking_info"
+    t.string   "additional_parking_info"
     t.string   "furnished_information"
     t.date     "available_date"
     t.boolean  "pool"
