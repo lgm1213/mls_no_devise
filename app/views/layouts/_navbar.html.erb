@@ -1,6 +1,10 @@
 <header class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-header">
-			<%= link_to "Get Leased Up!", root_path, class: 'navbar-brand' %>
+		<% if current_user %>
+			<%= link_to "Get Leased Up!", buildings_path, class: 'navbar-brand' %>
+		<% else %>
+		  <%= link_to "Get Leased Up!", root_path, class: 'navbar-brand' %>
+		<% end %>
 			<ul class="nav navbar-nav pull-right visible-xs-block">
 				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
 				<li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
