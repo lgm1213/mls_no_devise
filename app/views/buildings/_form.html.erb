@@ -1,15 +1,4 @@
-<%= form_for(building) do |f| %>
- <% if building.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(building.errors.count, "error") %> prohibited this building from being saved:</h2>
-
-    <ul>
-    <% building.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  <% end %>
-  </div>
+<%= form_for(building, html: {class: 'stepy-validation'}) do |f| %>
 <div class="form-horizontal">
   <% if building.errors.any? %>
     <div id="error_explanation">
@@ -22,27 +11,27 @@
       </ul>
     </div>
   <% end %>
+<h6>Location Info</h6>
+<fieldset title="1" class="stepy-step">
   <div class="row">
     <div class="form-group">
       <div class="col-md-4">
-          <%= f.label :Legal %>
-          <%= f.text_field :legal, class: 'form-control' %>
+        <%= f.label :Legal %>
+        <%= f.text_field :legal, class: 'form-control' %>
       </div>  
       <div class="col-md-4">
-          <%= f.label :Development_Name %>
-          <%= f.text_field :development_name, class: 'form-control' %>
-   
-    </div>
+        <%= f.label :Development_Name %>
+        <%= f.text_field :development_name, class: 'form-control' %>
+      </div>
       <div class="col-md-4">
           <%= f.label :Folio_Number %>
         <div class="input-group">
           <span class="input-group-addon" id="basic-addon2">#</span>
           <%= f.text_field :folio, class: 'form-control' %>
-      </div>
+        </div>
       </div>
     </div>
   </div>
-<br>
   <div class="row">
     <div class="form-group">
       <div class="col-md-4">
@@ -59,146 +48,156 @@
       </div>
     </div>
   </div>
-  
-<br>
-
-<div class="row">
-  <div class="form-group">
-    <div class="col-md-4">
-      <%= f.label :Street %>
-      <%= f.text_field :street, class: 'form-control' %>
-    </div>
-    <div class="col-md-4">
-      <%= f.label :Compass_Point %>
-      <%= f.select :compass_point, options_for_select(compass_directions), {}, class: 'form-control' %>
-    </div>
-    <div class="col-md-4">
-      <%= f.label :Street_Name %>
-      <%= f.text_field :street_name, class: 'form-control' %>
-    </div>    
-  </div>
-</div>
-
-<br>
-
-<div class="row">  
-  <div class="form-group">
-    <div class="col-md-4"> 
-      <%= f.label :Zip %>
-      <%= f.text_field :zip, class: 'form-control' %>
-    </div>
-    <div class="col-md-4">
-      <%= f.label :Zip4, "Zip+4" %>
-      <%= f.text_field :zip4, class: 'form-control' %>
-    </div>
-    <div class="col-md-4"> 
-      <%= f.label :Unit %>
-      <div class="input-group">
-        <span class="input-group-addon" id="basic-addon2">#</span>
-        <%= f.text_field :unit, class: 'form-control' %>
+  <br>
+  <div class="row">
+    <div class="form-group">
+      <div class="col-md-4">
+        <%= f.label :Street %>
+        <%= f.text_field :street, class: 'form-control' %>
       </div>
-    </div>  
+      <div class="col-md-4">
+        <%= f.label :Compass_Point %>
+        <%= f.select :compass_point, options_for_select(compass_directions), {}, class: 'form-control' %>
+      </div>
+      <div class="col-md-4">
+        <%= f.label :Street_Name %>
+        <%= f.text_field :street_name, class: 'form-control' %>
+      </div>    
+    </div>
   </div>
-</div>
-
-
+  <br>
+  <div class="row">  
+    <div class="form-group">
+      <div class="col-md-4"> 
+        <%= f.label :Zip %>
+        <%= f.text_field :zip, class: 'form-control' %>
+      </div>
+      <div class="col-md-4">
+        <%= f.label :Zip4, "Zip+4" %>
+        <%= f.text_field :zip4, class: 'form-control' %>
+      </div>
+      <div class="col-md-4"> 
+        <%= f.label :Unit %>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon2">#</span>
+          <%= f.text_field :unit, class: 'form-control' %>
+        </div>
+      </div>  
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <div class="col-md-4">
+        <%= f.label :Zoning %>
+        <%= f.text_field :zoning, class: 'form-control' %>
+      </div>  
+      <div class="col-md-4">
+        <%= f.label :Geographical %>
+        <%= f.text_field :geographical, class: 'form-control' %>
+      </div>
+      <div class="col-md-4">
+        <%= f.label :Area %>
+        <%= f.text_field :area, class: 'form-control' %>
+      </div>  
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="form-group">
+      <div class="col-md-4">
+        <%= f.label :Municipal_Code %>
+        <%= f.text_field :municip_code, class: 'form-control' %>
+      </div>  
+      <div class="col-md-4">
+        <%= f.label :Township %>
+        <%= f.text_field :township, class: 'form-control' %>
+      </div>
+      <div class="col-md-4">
+        <%= f.label :Section %>
+        <%= f.text_field :section, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="form-group">
+      <div class="col-md-4">
+        <%= f.label :Subdivision %>
+        <%= f.text_field :subdivision, class: 'form-control' %>
+      </div>  
+      <div class="col-md-4">
+        <%= f.label :Parcel %>
+        <%= f.text_field :parcel, class: 'form-control' %>
+      </div>
+      <div class="col-md-4">
+        <%= f.label :Map_Coordinates %>
+        <%= f.text_field :map_coordinates, class: 'form-control' %>
+      </div> 
+    </div>
+  </div>
+  <br>
+  <div class="row"> 
+    <div class="form-group">
+      <div class="col-md-4">    
+        <%= f.label :Elementary_School %>
+        <%= f.select :elementary_school, options_for_select(sofl_elem),{}, class: 'form-control' %>
+      </div>  
+      <div class="col-md-4">
+        <%= f.label :Middle_School %>
+        <%= f.select :middle_school, options_for_select(sofl_middle), {}, class: 'form-control' %>
+      </div>  
+      <div class="col-md-4">
+        <%= f.label :Senior_High_School %>
+        <%= f.select :senior_high_school, options_for_select(sofl_hs), {}, class: 'form-control' %>
+      </div>  
+    </div>
+  </div>
+  <br>
+  <div class="row">  
+    <div class="form-group">
+      <div class="col-md-4">
+        <%= f.label :Subdivison_Name %>
+        <%= f.text_field :subdivision_name, class: 'form-control' %>
+      </div>  
+      <div class="col-md-4">
+        <%= f.label :Model_Name %>
+        <%= f.text_field :model_name_in_mls, class: 'form-control' %>
+      </div>
+      <div class="col-md-4">
+        <%= f.label :User_Id %>
+        <%= f.text_field :user_id, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <br>
+</fieldset>
+<h6>General Information</h6>
+<fieldset title="Step 2" class="stepy-step">
   
-<div class="row">
-  <div class="form-group">
-    <div class="col-md-4">
-      <%= f.label :Zoning %>
-      <%= f.text_field :zoning, class: 'form-control' %>
-    </div>  
-    <div class="col-md-4">
-      <%= f.label :Geographical %>
-      <%= f.text_field :geographical, class: 'form-control' %>
-    </div>
-    <div class="col-md-4">
-      <%= f.label :Area %>
-      <%= f.text_field :area, class: 'form-control' %>
-    </div>  
-  </div>
-</div>
-<br>
-
-<div class="row">
-  <div class="form-group">
-    <div class="col-md-4">
-      <%= f.label :Municipal_Code %>
-      <%= f.text_field :municip_code, class: 'form-control' %>
-    </div>  
-    <div class="col-md-4">
-      <%= f.label :Township %>
-      <%= f.text_field :township, class: 'form-control' %>
-    </div>
-    <div class="col-md-4">
-      <%= f.label :Section %>
-      <%= f.text_field :section, class: 'form-control' %>
-    </div>
-  </div>
-</div>
-<br>
-<div class="row">
-  <div class="form-group">
-    <div class="col-md-4">
-      <%= f.label :Subdivision %>
-      <%= f.text_field :subdivision, class: 'form-control' %>
-    </div>  
-    <div class="col-md-4">
-      <%= f.label :Parcel %>
-      <%= f.text_field :parcel, class: 'form-control' %>
-    </div>
-    <div class="col-md-4">
-      <%= f.label :Map_Coordinates %>
-      <%= f.text_field :map_coordinates, class: 'form-control' %>
-    </div> 
-  </div>
-</div>
-<br>
-<div class="row"> 
-  <div class="form-group">
-    <div class="col-md-4">    
-      <%= f.label :Elementary_School %>
-      <%= f.select :elementary_school, options_for_select(sofl_elem),{}, class: 'form-control' %>
-    </div>  
-    <div class="col-md-4">
-      <%= f.label :Middle_School %>
-      <%= f.select :middle_school, options_for_select(sofl_middle), {}, class: 'form-control' %>
-    </div>  
-    <div class="col-md-4">
-      <%= f.label :Senior_High_School %>
-      <%= f.select :senior_high_school, options_for_select(sofl_hs), {}, class: 'form-control' %>
-    </div>  
-  </div>
-</div>
-<br>
-
-<div class="row">  
-  <div class="form-group">
-    <div class="col-md-4">
-      <%= f.label :Subdivison_Name %>
-      <%= f.text_field :subdivision_name, class: 'form-control' %>
-    </div>  
-    <div class="col-md-4">
-      <%= f.label :Model_Name %>
-      <%= f.text_field :model_name_in_mls, class: 'form-control' %>
-    </div>
-    <div class="col-md-4">
-      <%= f.label :User_Id %>
-      <%= f.text_field :user_id, class: 'form-control' %>
-    </div>
-  </div>
-</div>
-<br>
-
-</div>
-
+</fieldset>
+<h6>Remarks</h6>
+<fieldset title="3" class="stepy-step">
+  
+</fieldset>
+<h6>Additional Information</h6>
+<fieldset title="4" class="stepy-step">
+  
+</fieldset>
+<h6>Rental Information</h6>
+<fieldset title="5" class="stepy-step">
+  
+</fieldset>
+<h6>Office Information</h6>
+<fieldset title="6" class="stepy-step">
+  
+</fieldset>
+  <a class="stepy-back"></a>
+  <a class="btn btn-primary button-next stepy-next"></a>
   <br>
   <br>
-
+  </div>
   <div class="actions">
-    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <%= f.submit yield(:button_text), class: "btn btn-primary stepy-finish" %>
   </div>
-
 <% end %>
-</div>
+
