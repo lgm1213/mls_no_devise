@@ -12,7 +12,6 @@
 //
 //= require pace.min
 //= require jquery
-<<<<<<< HEAD
 //= require bootstrap-sprockets
 //= require blockui.min
 //= require steps.min
@@ -25,11 +24,3 @@
 //= require wizard_steps
 //= require_tree .
 
- 
-=======
-//= require jquery_ujs
-//= require jquery-ui
-//= require turbolinks
-//= require bootstrap-sprockets
-//= require_tree .
->>>>>>> e9e87d0f8a2e24f396ab9ad4e37ce4c5c22484d8
