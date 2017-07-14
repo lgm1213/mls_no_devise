@@ -22,5 +22,9 @@
 //= require cookie
 //= require app
 //= require wizard_steps
+//= require moment
+//= require sweet_alert.min
+//= require dashboard
+//= require core.min
 //= require_tree .
 
