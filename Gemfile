@@ -62,4 +62,3 @@ gem 'less', '~> 2.6'
 
 gem 'rails-jquery-steps'
 gem 'rails-erd'
-gem 'jquery-ui-rails'
