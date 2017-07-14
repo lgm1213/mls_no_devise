@@ -10,9 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require pace.min
 //= require jquery
-//= require jquery_ujs
-//= require jquery-ui
-//= require turbolinks
-//= require_tree .
 //= require bootstrap-sprockets
+//= require blockui.min
+//= require steps.min
+//= require select2.min
+//= require uniform.min
+//= require jasny_bootstrap.min
+//= require validate.min
+//= require cookie
+//= require app
+//= require wizard_steps
+//= require_tree .
+
+ 

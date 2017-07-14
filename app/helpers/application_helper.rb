@@ -230,4 +230,63 @@ module ApplicationHelper
   		['NW', 'NW'],
   	]
   end
+
+  def rentperperiod
+  	[
+  		['Week', 'Week'],
+  		['Month', 'Month'],
+  	  ['Year', 'Year']
+    ]
+  end
+  
+  def yes_or_no
+  	[
+  		['Yes', true],
+  		['No', false]
+  	]
+  end
+
+  def yearbuiltdescription
+  	[
+  		['New Sale', 'New Sale'],
+  		['Resale', 'Resale'],
+  		['Under Construction', 'Under Construction'],
+  		['Unknown', 'Unknown']
+  	]
+  end
+
+  def type_of_property
+  	[
+  		['Apartment', 'Apartment'],
+      ['Condo', 'Condo'],
+      ['Efficiency', 'Efficiency'],
+      ['Multifamily', 'Multifamily'],
+      ['Single', 'Single'],
+      ['Townhouse', 'Townhouse'],
+      ['Villa', 'Villa']
+  	]
+  end
+
+  def style
+  	[
+  		['C23-Condo/Time', 'C23-Condo/Timeshare'],
+  		['R60-Residential-Annual', 'R60-Residential-Annual'],
+  		['R61-Residential-Seasonal', 'R61-Residential-Seasonal'],
+  		['R62-Condo/Co-OP/Annual', 'R62-Condo/Co-OP/Annual'],
+  		['R63-Condo/Co-Seasonal', 'R63-Condo/Co-Seasonal'],
+  		['R64-Apartments-Annual', 'R64-Apartments-Annual'],
+  		['R65-Apartments-Seasonal', 'R65-Apartments-Seasonal'],
+  		['R66-Duplex/Tri/Quad-Annual', 'R66-Duplex/Tri/Quad-Annual'],
+  		['R67-Duplex/Tri/Quad-Seasonal', 'R67-Duplex/Tri/Quad-Annual'],
+  		['R70-Townhouse/Villa-Annual', 'R70-Townhouse/Villa-Annual'],
+  		['R71-Townhouse/Villa-Seasonal', 'R71-Townhouse/Villa-Seasonal'],
+  		['R72-Eff/Std/Hotel Room(Annual)', 'R72-Eff/Std/Hotl Room(Annual)'],
+  		['R73-Eff/Std/Hotel Room(Seasonal)', 'R73-Eff/Std/Hotl Room(Seasonal)'],
+  		['R80-Residential-Offseason', 'R80-Residential-Offseason'],
+  		['R81-Condo/Co-Op/Offseason', 'R81-Condo/Co-Op/Offseason'],
+  		['R82-Apartments-Offseason', 'R82-Apartments-Offseason'],
+  		['R83-Duplex/Tri/Quad-Offseason', 'R83-Duplex/Tri/Quad-Offseason'],
+  		['R84-Townhouse/Villa-Offseason', 'R84-Townhouse/Villa-Offseason']
+  	]
+  end
 end

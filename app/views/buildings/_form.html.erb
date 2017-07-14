@@ -1,16 +1,6 @@
-<%= form_for(building) do |f| %>
- <% if building.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(building.errors.count, "error") %> prohibited this building from being saved:</h2>
-
-    <ul>
-    <% building.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  <% end %>
-  </div>
-<div class="form-horizontal">
+<!-- New Building Form with Validation Wizard -->
+<%= form_for(building, html: {class: 'steps-basic wizard clearfix'}) do |f| %>
+<!-- <div class="form-horizontal"> -->
   <% if building.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(building.errors.count, "error") %> prohibited this building from being saved:</h2>
@@ -22,183 +12,344 @@
       </ul>
     </div>
   <% end %>
-  <div class="row">
-    <div class="form-group">
-      <div class="col-md-4">
-          <%= f.label :Legal %>
-          <%= f.text_field :legal, class: 'form-control' %>
-      </div>  
-      <div class="col-md-4">
-          <%= f.label :Development_Name %>
-          <%= f.text_field :development_name, class: 'form-control' %>
-   
-    </div>
-      <div class="col-md-4">
-          <%= f.label :Folio_Number %>
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon2">#</span>
-          <%= f.text_field :folio, class: 'form-control' %>
+  <div class="steps clearfix">
+    <ul role="tablist">
+      <li role="tab" class="first current" aria-disabled="false" aria-selected="true">
+        <a id="steps-uid-4-t-0" href="#steps-uid-4-h-0" aria-controls="steps-uid-4-p-0">
+          <span class="current-info">current step: </span> 
+          <span class="number">1</span>Location Information</a>
+      </li>
+      <li role="tab" class="disabled" aria-disabled="true">
+        <a id="steps-uid-4-t-1" href="#steps-uid-4-h-1" aria-controls="steps-uid-4-p-1">
+          <span class="number">2</span> General Information</a>
+      </li>
+      <li role="tab" class="disabled" aria-disabled="true">
+        <a id="steps-uid-4-t-2" href="#steps-uid-4-h-2" aria-controls="steps-uid-4-p-2">
+          <span class="number">3</span> Remarks</a>
+      </li>
+      <li role="tab" class="disabled" aria-disabled="true">
+        <a id="steps-uid-4-t-3" href="#steps-uid-4-h-3" aria-controls="steps-uid-4-p-3">
+          <span class="number">4</span> Additional Info</a>
+      </li>
+      <li role="tab" class="disabled" aria-disabled="true">
+        <a id="steps-uid-4-t-4" href="#steps-uid-4-h-4" aria-controls="steps-uid-4-p-4">
+          <span class="number">5</span> Rental information</a>
+      </li>
+      <li role="tab" class="disabled" aria-disabled="true">
+        <a id="steps-uid-4-t-5" href="#steps-uid-4-h-5" aria-controls="steps-uid-4-p-5">
+          <span class="number">6</span> Office Information</a>
+      </li>
+    </ul>
+  </div>
+  <div class="content clearfix">
+    <h6 id="steps-uid-0-h-0" tabindex="-1" class="title current">Location Information</h6>
+    <fieldset id="steps-uid-0-p-0" role="tabpanel" aria-labelledby="steps-uid-0-h-0" class="body current" aria-hidden="false" style="display: block;">
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= f.label :Legal %>
+            <%= f.text_field :legal, class: 'form-control' %>
+          </div>  
+          <div class="col-md-4">
+            <%= f.label :Development_Name %>
+            <%= f.text_field :development_name, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+              <%= f.label :Folio_Number %>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon2">#</span>
+              <%= f.text_field :folio, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= f.label :County %>
+            <%= f.select :county, options_for_select(sofl_counties), {}, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :City %>
+            <%= f.select :city, options_for_select(sofl_cities), {}, class: 'form-control' %>
+          </div>
+          <div class="col-md-4"> 
+            <%= f.label :State %>
+            <%= f.select :state, options_for_select(us_states),{}, class: 'form-control' %>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-<br>
-  <div class="row">
-    <div class="form-group">
-      <div class="col-md-4">
-        <%= f.label :County %>
-        <%= f.select :county, options_for_select(sofl_counties), {}, class: 'form-control' %>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= f.label :Street %>
+            <%= f.text_field :street, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :Compass_Point %>
+            <%= f.select :compass_point, options_for_select(compass_directions), {}, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :Street_Name %>
+            <%= f.text_field :street_name, class: 'form-control' %>
+          </div>    
+        </div>
       </div>
-      <div class="col-md-4">
-        <%= f.label :City %>
-        <%= f.select :city, options_for_select(sofl_cities), {}, class: 'form-control' %>
+      <br>
+      <div class="row">  
+        <div class="form-group">
+          <div class="col-md-4"> 
+            <%= f.label :Zip %>
+            <%= f.text_field :zip, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :Zip4, "Zip+4" %>
+            <%= f.text_field :zip4, class: 'form-control' %>
+          </div>
+          <div class="col-md-4"> 
+            <%= f.label :Unit %>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon2">#</span>
+              <%= f.text_field :unit, class: 'form-control' %>
+            </div>
+          </div>  
+        </div>
       </div>
-      <div class="col-md-4"> 
-        <%= f.label :State %>
-        <%= f.select :state, options_for_select(us_states),{}, class: 'form-control' %>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= f.label :Zoning %>
+            <%= f.text_field :zoning, class: 'form-control' %>
+          </div>  
+          <div class="col-md-4">
+            <%= f.label :Geographical %>
+            <%= f.text_field :geographical, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :Area %>
+            <%= f.text_field :area, class: 'form-control' %>
+          </div>  
+        </div>
       </div>
-    </div>
-  </div>
-  
-<br>
-
-<div class="row">
-  <div class="form-group">
-    <div class="col-md-4">
-      <%= f.label :Street %>
-      <%= f.text_field :street, class: 'form-control' %>
-    </div>
-    <div class="col-md-4">
-      <%= f.label :Compass_Point %>
-      <%= f.select :compass_point, options_for_select(compass_directions), {}, class: 'form-control' %>
-    </div>
-    <div class="col-md-4">
-      <%= f.label :Street_Name %>
-      <%= f.text_field :street_name, class: 'form-control' %>
-    </div>    
-  </div>
-</div>
-
-<br>
-
-<div class="row">  
-  <div class="form-group">
-    <div class="col-md-4"> 
-      <%= f.label :Zip %>
-      <%= f.text_field :zip, class: 'form-control' %>
-    </div>
-    <div class="col-md-4">
-      <%= f.label :Zip4, "Zip+4" %>
-      <%= f.text_field :zip4, class: 'form-control' %>
-    </div>
-    <div class="col-md-4"> 
-      <%= f.label :Unit %>
-      <div class="input-group">
-        <span class="input-group-addon" id="basic-addon2">#</span>
-        <%= f.text_field :unit, class: 'form-control' %>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= f.label :Municipal_Code %>
+            <%= f.text_field :municip_code, class: 'form-control' %>
+          </div>  
+          <div class="col-md-4">
+            <%= f.label :Township %>
+            <%= f.text_field :township, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :Section %>
+            <%= f.text_field :section, class: 'form-control' %>
+          </div>
+        </div>
       </div>
-    </div>  
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= f.label :Subdivision %>
+            <%= f.text_field :subdivision, class: 'form-control' %>
+          </div>  
+          <div class="col-md-4">
+            <%= f.label :Parcel %>
+            <%= f.text_field :parcel, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :Map_Coordinates %>
+            <%= f.text_field :map_coordinates, class: 'form-control' %>
+          </div> 
+        </div>
+      </div>
+      <br>
+      <div class="row"> 
+        <div class="form-group">
+          <div class="col-md-4">    
+            <%= f.label :Elementary_School %>
+            <%= f.select :elementary_school, options_for_select(sofl_elem),{}, class: 'form-control' %>
+          </div>  
+          <div class="col-md-4">
+            <%= f.label :Middle_School %>
+            <%= f.select :middle_school, options_for_select(sofl_middle), {}, class: 'form-control' %>
+          </div>  
+          <div class="col-md-4">
+            <%= f.label :Senior_High_School %>
+            <%= f.select :senior_high_school, options_for_select(sofl_hs), {}, class: 'form-control' %>
+          </div>  
+        </div>
+      </div>
+      <br>
+      <div class="row">  
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= f.label :Subdivison_Name %>
+            <%= f.text_field :subdivision_name, class: 'form-control' %>
+          </div>  
+          <div class="col-md-4">
+            <%= f.label :Model_Name %>
+            <%= f.text_field :model_name_in_mls, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :User_Id %>
+            <%= f.text_field :user_id, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+    </fieldset>
+    <h6 id="steps-uid-0-h-1" tabindex="-1" class="title current">General Information</h6>
+    <fieldset id="steps-uid-0-p-0" role="tabpanel" aria-labelledby="steps-uid-0-h-0" class="body current" aria-hidden="false" style="display: block;">
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= f.label :Rent %>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon2">$</span>
+                <%= f.text_field :rent_price, class: 'form-control' %>
+              <span class="input-group-addon" id="basic-addon2">.00</span>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <%= f.label "Rent Per Period" %>
+            <%= f.select :rent_per_period, options_for_select(rentperperiod), {}, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :For_Sale %>
+            <%= f.select :for_sale, options_for_select(yes_or_no), {}, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= f.label :Number_Of_Beds %>
+            <%= f.text_field :beds, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :Number_Of_Full_Baths %>
+            <%= f.text_field :fbaths, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :Number_Of_Half_Baths %>
+            <%= f.text_field :hbaths, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= f.label :Year_Built %>
+            <%= f.text_field :year_built, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :Year_built_description %>
+            <%= f.select :year_built_description, options_for_select(yearbuiltdescription), {}, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :Number_Of_Stories %>
+            <%= f.text_field :stories, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= f.label "Unit Floor Location" %>
+            <%= f.text_field :unit_floor_location, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label "Type of Property" %>
+            <%= f.select :type_of_property, options_for_select(type_of_property), {}, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label "Style" %>
+            <%= f.select :style, options_for_select(style), {}, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <h6 id="steps-uid-0-h-2" tabindex="-1" class="title current">Remarks</h6>
+    <fieldset id="steps-uid-0-p-0" role="tabpanel" aria-labelledby="steps-uid-0-h-0" class="body current" aria-hidden="false" style="display: block;">
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-6">
+            <%= f.label :Remarks %>
+            <%= f.text_area :remarks, class: 'form-control' %>
+          </div>
+          <div class="col-md-6">
+            <%= f.label :Directions %>
+            <%= f.text_area :directions, class: 'form-control' %>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+          <div class="form-group">
+            <div class="col-md-6">
+              <%= f.label "Broker Remarks" %>
+              <%= f.text_area :broker_remarks, class: 'form-control' %>
+            </div>
+            <div class="col-md-6">
+              <%= f.label "Internet Remarks" %>
+              <%= f.text_area :internet_remarks, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <h6 id="steps-uid-0-h-3" tabindex="-1" class="title current">Additional Information</h6>
+    <fieldset id="steps-uid-0-p-0" role="tabpanel" aria-labelledby="steps-uid-0-h-0" class="body current" aria-hidden="false" style="display: block;">
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.label "Pets Allowed" %>
+          <%= f.select :pets_allowed, options_for_select(yes_or_no), {}, class: 'form-control' %>
+        </div>
+        <div class="col-md-4">
+          <%= f.label "Cable Available" %>
+          <%= f.select :cable_available, options_for_select(yes_or_no), {}, class: 'form-control' %>
+        </div>
+      </div>
+    </fieldset>
+    <h6 id="steps-uid-0-h-4" tabindex="-1" class="title current">Rental Information</h6>
+    <fieldset id="steps-uid-0-p-0" role="tabpanel" aria-labelledby="steps-uid-0-h-0" class="body current" aria-hidden="false" style="display: block;">  
+    </fieldset>
+    <h6 id="steps-uid-0-h-5" tabindex="-1" class="title current">Office Information</h6>
+    <fieldset id="steps-uid-0-p-0" role="tabpanel" aria-labelledby="steps-uid-0-h-0" class="body current" aria-hidden="false" style="display: block;">  
+    </fieldset>
   </div>
-</div>
-
-
-  
-<div class="row">
-  <div class="form-group">
-    <div class="col-md-4">
-      <%= f.label :Zoning %>
-      <%= f.text_field :zoning, class: 'form-control' %>
-    </div>  
-    <div class="col-md-4">
-      <%= f.label :Geographical %>
-      <%= f.text_field :geographical, class: 'form-control' %>
-    </div>
-    <div class="col-md-4">
-      <%= f.label :Area %>
-      <%= f.text_field :area, class: 'form-control' %>
-    </div>  
-  </div>
-</div>
-<br>
-
-<div class="row">
-  <div class="form-group">
-    <div class="col-md-4">
-      <%= f.label :Municipal_Code %>
-      <%= f.text_field :municip_code, class: 'form-control' %>
-    </div>  
-    <div class="col-md-4">
-      <%= f.label :Township %>
-      <%= f.text_field :township, class: 'form-control' %>
-    </div>
-    <div class="col-md-4">
-      <%= f.label :Section %>
-      <%= f.text_field :section, class: 'form-control' %>
-    </div>
-  </div>
-</div>
-<br>
-<div class="row">
-  <div class="form-group">
-    <div class="col-md-4">
-      <%= f.label :Subdivision %>
-      <%= f.text_field :subdivision, class: 'form-control' %>
-    </div>  
-    <div class="col-md-4">
-      <%= f.label :Parcel %>
-      <%= f.text_field :parcel, class: 'form-control' %>
-    </div>
-    <div class="col-md-4">
-      <%= f.label :Map_Coordinates %>
-      <%= f.text_field :map_coordinates, class: 'form-control' %>
-    </div> 
-  </div>
-</div>
-<br>
-<div class="row"> 
-  <div class="form-group">
-    <div class="col-md-4">    
-      <%= f.label :Elementary_School %>
-      <%= f.select :elementary_school, options_for_select(sofl_elem),{}, class: 'form-control' %>
-    </div>  
-    <div class="col-md-4">
-      <%= f.label :Middle_School %>
-      <%= f.select :middle_school, options_for_select(sofl_middle), {}, class: 'form-control' %>
-    </div>  
-    <div class="col-md-4">
-      <%= f.label :Senior_High_School %>
-      <%= f.select :senior_high_school, options_for_select(sofl_hs), {}, class: 'form-control' %>
-    </div>  
-  </div>
-</div>
-<br>
-
-<div class="row">  
-  <div class="form-group">
-    <div class="col-md-4">
-      <%= f.label :Subdivison_Name %>
-      <%= f.text_field :subdivision_name, class: 'form-control' %>
-    </div>  
-    <div class="col-md-4">
-      <%= f.label :Model_Name %>
-      <%= f.text_field :model_name_in_mls, class: 'form-control' %>
-    </div>
-    <div class="col-md-4">
-      <%= f.label :User_Id %>
-      <%= f.text_field :user_id, class: 'form-control' %>
-    </div>
-  </div>
-</div>
-<br>
-
-</div>
-
   <br>
   <br>
-
-  <div class="actions">
-    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <!--   </div> -->
+  <div class="action clearfix">
+    <ul role="menu" aria-label="Pagination">
+      <li class="disabled" aria-disabled="true">
+        <a href="#previous" role="menuitem">Previous</a>
+      </li>
+      <li aria-hidden="false" aria-disabled="false" class="" style="display: list-item;">
+        <a href="#next" role="menuitem">Next</a>
+      </li>
+      <li aria-hidden="true" style="display:none;">
+        <a href="#finish" role="menuitem">Submit</a>
+      </li>
+    </ul>
   </div>
-
+    
+<!--   </div> -->
 <% end %>
-</div>
+<!-- End of Form with Wizard Validation -->
+<!-- < -->
+<!-- %= f.submit  -->
+<!--# yield(:button_text), class: "btn btn-primary" %> -->
