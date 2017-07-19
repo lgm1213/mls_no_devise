@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170627053613) do
+ActiveRecord::Schema.define(version: 20170718135535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -306,24 +306,10 @@ ActiveRecord::Schema.define(version: 20170627053613) do
     t.integer  "user_id"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.string   "rent_price"
-    t.string   "rent_per_period"
-    t.boolean  "for_sale"
-    t.string   "beds"
-    t.string   "fbaths"
-    t.string   "hbaths"
     t.string   "year_built"
     t.string   "year_built_description"
     t.string   "stories"
-    t.string   "unit_floor_location"
-    t.string   "type_of_property"
-    t.string   "style"
-    t.string   "sqft"
-    t.string   "liv_area"
-    t.boolean  "balcony"
     t.string   "convert_beds"
-    t.string   "efficiency"
-    t.string   "faces"
     t.string   "garage_spaces"
     t.string   "garage_description"
     t.string   "carport_spaces"
@@ -332,9 +318,6 @@ ActiveRecord::Schema.define(version: 20170627053613) do
     t.string   "waterfront_frontage"
     t.string   "approx_lot_size"
     t.string   "lotsf"
-    t.string   "additional_parking_info"
-    t.string   "furnished_information"
-    t.date     "available_date"
     t.boolean  "pool"
     t.string   "pool_dimensions"
     t.boolean  "spa"
@@ -342,13 +325,10 @@ ActiveRecord::Schema.define(version: 20170627053613) do
     t.string   "waterfront_description"
     t.string   "parking_restrictions"
     t.string   "pool_description"
-    t.string   "view"
     t.string   "water_access"
     t.string   "construction"
     t.string   "design"
-    t.string   "floor"
     t.string   "roof_description"
-    t.string   "dinning"
     t.text     "remarks"
     t.text     "directions"
     t.text     "broker_remarks"
@@ -364,7 +344,7 @@ ActiveRecord::Schema.define(version: 20170627053613) do
     t.string   "unfurn_off_rent"
     t.string   "min_days_to_lease"
     t.string   "leases_per_year"
-    t.string   "application_fee"
+    t.string   "application_fee" r6 r 
     t.string   "move_in_cost"
     t.boolean  "renewable"
     t.boolean  "additional_moving_cost"
@@ -390,9 +370,6 @@ ActiveRecord::Schema.define(version: 20170627053613) do
     t.boolean  "avm"
     t.boolean  "blogging"
     t.boolean  "address_on_internet"
-    t.string   "listing_type"
-    t.date     "list_date"
-    t.date     "expiration_date"
     t.string   "owners_name"
     t.string   "owners_phone"
     t.string   "variable_dual_rate"
@@ -468,6 +445,43 @@ ActiveRecord::Schema.define(version: 20170627053613) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "options"
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.integer  "building_id"
+    t.string   "unit_no"
+    t.string   "floor_plan"
+    t.string   "num_fbaths"
+    t.string   "num_hbaths"
+    t.text     "advertising"
+    t.text     "move_in_special"
+    t.string   "commission"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "rent_price"
+    t.string   "rent_per_period"
+    t.boolean  "for_sale"
+    t.string   "beds"
+    t.string   "fbaths"
+    t.string   "hbaths"
+    t.string   "unit_floor_location"
+    t.string   "type_of_property"
+    t.string   "style"
+    t.string   "sqft"
+    t.boolean  "balcony"
+    t.string   "liv_area"
+    t.string   "efficiency"
+    t.string   "faces"
+    t.string   "additional_parking_info"
+    t.string   "furnished_information"
+    t.date     "available_date"
+    t.string   "view"
+    t.string   "floor"
+    t.string   "dinning"
+    t.string   "listing_type"
+    t.date     "list_date"
+    t.date     "expiration_date"
+    t.index ["building_id"], name: "index_listings_on_building_id", using: :btree
   end
 
   create_table "lot_descriptions", force: :cascade do |t|
@@ -581,4 +595,5 @@ ActiveRecord::Schema.define(version: 20170627053613) do
   end
 
   add_foreign_key "buildings", "users"
+  add_foreign_key "listings", "buildings"
 end

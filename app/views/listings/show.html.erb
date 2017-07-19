@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Building:</strong>
+  <%= @listing.building %>
+</p>
+
+<p>
+  <strong>Unit no:</strong>
+  <%= @listing.unit_no %>
+</p>
+
+<p>
+  <strong>Floor plan:</strong>
+  <%= @listing.floor_plan %>
+</p>
+
+<p>
+  <strong>Rent:</strong>
+  <%= @listing.rent %>
+</p>
+
+<p>
+  <strong>Num fbaths:</strong>
+  <%= @listing.num_fbaths %>
+</p>
+
+<p>
+  <strong>Num hbaths:</strong>
+  <%= @listing.num_hbaths %>
+</p>
+
+<p>
+  <strong>Advertising:</strong>
+  <%= @listing.advertising %>
+</p>
+
+<p>
+  <strong>Move in special:</strong>
+  <%= @listing.move_in_special %>
+</p>
+
+<p>
+  <strong>Commission:</strong>
+  <%= @listing.commission %>
+</p>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>

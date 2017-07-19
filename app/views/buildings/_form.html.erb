@@ -1,5 +1,5 @@
 <!-- New Building Form with Validation Wizard -->
-<%= form_for(building, html: {class: 'steps-basic wizard clearfix'}) do |f| %>
+<%= form_for(building, html: {id: 'form', class: 'wizard-big clearfix'}) do |f| %>
 <!-- <div class="form-horizontal"> -->
   <% if building.errors.any? %>
     <div id="error_explanation">
@@ -67,7 +67,7 @@
         <div class="form-group">
           <div class="col-md-4">
             <%= f.label :County %>
-            <%= f.select :county, options_for_select(sofl_counties), {}, class: 'form-control' %>
+            <%= f.select :county, options_for_select(sofl_counties), {}, class: 'form-control select"' %>
           </div>
           <div class="col-md-4">
             <%= f.label :City %>
@@ -206,46 +206,6 @@
       <div class="row">
         <div class="form-group">
           <div class="col-md-4">
-            <%= f.label :Rent %>
-            <div class="input-group">
-              <span class="input-group-addon" id="basic-addon2">$</span>
-                <%= f.text_field :rent_price, class: 'form-control' %>
-              <span class="input-group-addon" id="basic-addon2">.00</span>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <%= f.label "Rent Per Period" %>
-            <%= f.select :rent_per_period, options_for_select(rentperperiod), {}, class: 'form-control' %>
-          </div>
-          <div class="col-md-4">
-            <%= f.label :For_Sale %>
-            <%= f.select :for_sale, options_for_select(yes_or_no), {}, class: 'form-control' %>
-          </div>
-        </div>
-      </div>
-      <br>
-      <br>
-      <br>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-md-4">
-            <%= f.label :Number_Of_Beds %>
-            <%= f.text_field :beds, class: 'form-control' %>
-          </div>
-          <div class="col-md-4">
-            <%= f.label :Number_Of_Full_Baths %>
-            <%= f.text_field :fbaths, class: 'form-control' %>
-          </div>
-          <div class="col-md-4">
-            <%= f.label :Number_Of_Half_Baths %>
-            <%= f.text_field :hbaths, class: 'form-control' %>
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-md-4">
             <%= f.label :Year_Built %>
             <%= f.text_field :year_built, class: 'form-control' %>
           </div>
@@ -259,28 +219,62 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= f.label "Garage Spaces" %>
+            <%= f.text_field :garage_spaces, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label "Garage Description" %>
+            <%= f.label :garage_description, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label "Carport Spaces" %>
+            <%= f.text_field :carport_spaces, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          
+        </div>
+      </div>
+      
       <br>
       <br>
       <br>
       <div class="row">
         <div class="form-group">
           <div class="col-md-4">
-            <%= f.label "Unit Floor Location" %>
-            <%= f.text_field :unit_floor_location, class: 'form-control' %>
+            
           </div>
           <div class="col-md-4">
-            <%= f.label "Type of Property" %>
-            <%= f.select :type_of_property, options_for_select(type_of_property), {}, class: 'form-control' %>
+
           </div>
           <div class="col-md-4">
-            <%= f.label "Style" %>
-            <%= f.select :style, options_for_select(style), {}, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= f.label "Square Foot Living" %>
           </div>
         </div>
       </div>
     </fieldset>
     <h6 id="steps-uid-0-h-2" tabindex="-1" class="title current">Remarks</h6>
     <fieldset id="steps-uid-0-p-0" role="tabpanel" aria-labelledby="steps-uid-0-h-0" class="body current" aria-hidden="false" style="display: block;">
+
       <div class="row">
         <div class="form-group">
           <div class="col-md-6">

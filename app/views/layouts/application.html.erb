@@ -5,11 +5,15 @@
     <%= csrf_meta_tags %>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Style Sheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
     <%= stylesheet_link_tag    'application', media: 'all'%>
-    <%= javascript_include_tag 'application' %>
+    <!-- Js files -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>  
     
+
   </head>
-  <body class="nabar-bottom pace-done">
+  <body class="navbar-bottom pace-done">
     <% if current_user %>
       <%= render 'layouts/current_user' %>
     <% else %>

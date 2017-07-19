@@ -25,7 +25,7 @@ gem 'coffee-rails', '~> 4.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Use the JqueryUI library
-gem 'jquery-ui-rails'
+# gem 'jquery-ui-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 # gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -58,7 +58,11 @@ gem 'hirb'
 
 # gem for Less.js, must include therubyracer gem
 gem "therubyracer"
-gem 'less', '~> 2.6'
+
+group :assets do
+  gem 'less-rails', '~> 2.7.0'
+end
 
 gem 'rails-jquery-steps'
 gem 'rails-erd'
+

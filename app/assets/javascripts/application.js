@@ -10,21 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require pace.min
-//= require jquery
+//= require jquery/jquery-3.1.1.min.js
 //= require bootstrap-sprockets
-//= require blockui.min
-//= require steps.min
-//= require select2.min
-//= require uniform.min
-//= require jasny_bootstrap.min
-//= require validate.min
-//= require cookie
-//= require app
-//= require wizard_steps
-//= require moment
-//= require sweet_alert.min
-//= require dashboard
-//= require core.min
-//= require_tree .
+//= require metisMenu/jquery.metisMenu.js
+//= require pace/pace.min.js
+//= require peity/jquery.peity.min.js
+//= require slimscroll/jquery.slimscroll.min.js
+//= require inspinia.js
+
 

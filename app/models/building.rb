@@ -75,6 +75,9 @@ class Building < ApplicationRecord
 
   has_many :building_waterfront_descs
   has_many :waterfront_descs, :through => :building_waterfront_descs
+
+  #listing relationship
+  has_many :listings
   
   validates :county, :presence => true, :if => :active?
 

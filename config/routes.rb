@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  resources :listings
   # static pages
   root 'static_pages#Home'
   get 'static_pages/About'
   get 'static_pages/Contact'
   get 'static_pages/Help'
   get 'static_pages/Terms'
+  get 'static_pages/test'
 
   # user routes
   resources :users

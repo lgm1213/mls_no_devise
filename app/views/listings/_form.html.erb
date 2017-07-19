@@ -1,0 +1,91 @@
+<%= form_for(listing) do |f| %>
+  <% if listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+
+      <ul>
+      <% listing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :building_id %>
+    <%= f.text_field :building_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :unit_no %>
+    <%= f.text_field :unit_no %>
+  </div>
+
+  <div class="field">
+    <%= f.label :floor_plan %>
+    <%= f.text_field :floor_plan %>
+  </div>
+
+  <div class="row">
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= f.label :Rent %>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon2">$</span>
+                <%= f.text_field :rent_price, class: 'form-control' %>
+              <span class="input-group-addon" id="basic-addon2">.00</span>
+            </div>
+          </div>
+          <div class="col-md-4">
+
+          </div>
+          <div class="col-md-4">
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= f.label "Unit Floor Location" %>
+            <%= f.text_field :unit_floor_location, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label "Type of Property" %>
+            <%= f.select :type_of_property, options_for_select(type_of_property), {}, class: 'form-control' %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label "Style" %>
+            <%= f.select :style, options_for_select(style), {}, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+  <div class="field">
+    <%= f.label :num_fbaths %>
+    <%= f.text_field :num_fbaths %>
+  </div>
+
+  <div class="field">
+    <%= f.label :num_hbaths %>
+    <%= f.text_field :num_hbaths %>
+  </div>
+
+  <div class="field">
+    <%= f.label :advertising %>
+    <%= f.text_area :advertising %>
+  </div>
+
+  <div class="field">
+    <%= f.label :move_in_special %>
+    <%= f.text_area :move_in_special %>
+  </div>
+
+  <div class="field">
+    <%= f.label :commission %>
+    <%= f.text_field :commission %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

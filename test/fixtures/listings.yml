@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  building: one
+  unit_no: MyString
+  floor_plan: MyString
+  rent: MyString
+  num_fbaths: MyString
+  num_hbaths: MyString
+  advertising: MyText
+  move_in_special: MyText
+  commission: MyString
+
+two:
+  building: two
+  unit_no: MyString
+  floor_plan: MyString
+  rent: MyString
+  num_fbaths: MyString
+  num_hbaths: MyString
+  advertising: MyText
+  move_in_special: MyText
+  commission: MyString
