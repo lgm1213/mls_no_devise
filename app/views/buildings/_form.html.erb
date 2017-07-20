@@ -294,6 +294,8 @@
                     </div>
                   </div>
                 </div>
+                <br>
+                <br>
                 <div class="row">
                   <div class="form-group">
                     <div class="col-lg-2">
@@ -418,20 +420,258 @@
               <fieldset>
                 <h2>Additional Information</h2>
                 <div class="row">
-                  <div class="col-lg-4">
-                    <%= f.label "Pets Allowed" %>
-                    <%= f.select :pets_allowed, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                  <div class="form-group">
+                    <div class="col-lg-4">
+                      <%= f.label "Pets Allowed" %>
+                      <%= f.select :pets_allowed, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                    </div>
+                    <div class="col-lg-4">
+                      <%= f.label "Cable Available" %>
+                      <%= f.select :cable_available, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                    </div>
+                    <div class="col-lg-2">
+                      <%= f.label :pet_restrictions, "Pet Restrictions" %>
+                      <br>
+                      <%= f.collection_check_boxes :pet_restriction_ids, PetRestriction.all, :id, :options do |b| %>
+                        <%= b.label do %>
+                          <%= b.check_box %>
+                          <%= b.object.options %>
+                        <% end %>
+                      <% end %>                      
+                    </div>
                   </div>
-                  <div class="col-lg-4">
-                    <%= f.label "Cable Available" %>
-                    <%= f.select :cable_available, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-lg-2">
+                      <%= f.label :security, "Security" %>
+                      <br>
+                      <%= f.collection_check_boxes :security_ids, Security.all, :id, :options do |b| %>
+                        <%= b.label do %>
+                          <%= b.check_box %>
+                          <%= b.object.options %>
+                        <% end %>
+                      <% end %>                      
+                    </div>
+                    <div class="col-lg-2">
+                      <%= f.label :equipment, "Equipment" %>
+                      <br>
+                      <%= f.collection_check_boxes :equipment_ids, Equipment.all, :id, :options do |b| %>
+                        <%= b.label do %>
+                          <%= b.check_box %>
+                          <%= b.object.options %>
+                        <% end %>
+                      <% end %>                      
+                    </div>
+                    <div class="col-lg-2">
+                      <%= f.label :exterior_features, "Exterior Features" %>
+                      <br>
+                      <%= f.collection_check_boxes :exterior_feature_ids, ExteriorFeature.all, :id, :options do |b| %>
+                        <%= b.label do %>
+                          <%= b.check_box %>
+                          <%= b.object.options %>
+                        <% end %>
+                      <% end %>                      
+                    </div>
+                    <div class="col-lg-2">
+                      <%= f.label :amenities, "Building Amenities" %>
+                      <br>
+                      <%= f.collection_check_boxes :amenity_ids, Amenity.all, :id, :options do |b| %>
+                        <%= b.label do %>
+                          <%= b.check_box %>
+                          <%= b.object.options %>
+                        <% end %>
+                      <% end %>                      
+                    </div>
+                    <div class="col-lg-2">
+                      <%= f.label :misc, "Miscellaneous" %>
+                      <br>
+                      <%= f.collection_check_boxes :misc_ids, Misc.all, :id, :options do |b| %>
+                        <%= b.label do %>
+                          <%= b.check_box %>
+                          <%= b.object.options %>
+                        <% end %>
+                      <% end %>                      
+                    </div> 
+                  </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-lg-2">
+                      <%= f.label :rental_restrictions, "Rental Restrictions" %>
+                      <br>
+                      <%= f.collection_check_boxes :rental_restriction_ids, RentalRestriction.all, :id, :options do |b| %>
+                        <%= b.label do %>
+                          <%= b.check_box %>
+                          <%= b.object.options %>
+                        <% end %>
+                      <% end %>                      
+                    </div>
+                    <div class="col-lg-2">
+                      <%= f.label :window_treatments, "Window Treatments" %>
+                      <br>
+                      <%= f.collection_check_boxes :window_treatment_ids, WindowTreatment.all, :id, :options do |b| %>
+                        <%= b.label do %>
+                          <%= b.check_box %>
+                          <%= b.object.options %>
+                        <% end %>
+                      <% end %>                      
+                    </div>
+                    <div class="col-lg-2">
+                      <%= f.label :additional_rooms, "Additional Rooms" %>
+                      <br>
+                      <%= f.collection_check_boxes :additional_room_ids, AdditionalRoom.all, :id, :options do |b| %>
+                        <%= b.label do %>
+                          <%= b.check_box %>
+                          <%= b.object.options %>
+                        <% end %>
+                      <% end %>                      
+                    </div>
                   </div>
                 </div>
               </fieldset>
 
               <h1>Rental Information</h1>
               <fieldset>
-                <h2>Rental Information</h2>  
+                <h2>Rental Information</h2>
+                  <div class="row">
+                    <div class="form-group">
+                      <div class="col-lg-4">
+                        <%= f.label :furn_annual_rent, "Furn Annual Rent" %>
+                        <%= f.text_field :furn_annual_rent, class: 'form-control' %>
+                      </div>
+                      <div class="col-lg-4">
+                        <%= f.label :furn_seasonal_rent, "Furn Seasonal Rent" %>
+                        <%= f.text_field :furn_annual_rent, class: 'form-control' %>
+                      </div>
+                      <div class="col-lg-4">
+                        <%= f.label :furn_off_rent, "Furn Off Rent" %>
+                        <%= f.text_field :furn_off_rent, class: 'form-control' %>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="form-group">
+                      <div class="col-lg-4">
+                        <%= f.label :unfurn_annual_rent, "Unfurn Annual Rent" %>
+                        <%= f.text_field :unfurn_annual_rent, class: 'form-control' %>
+                      </div>
+                      <div class="col-lg-4">
+                        <%= f.label :unfurn_season_rent, "Unfurn Seasonal Rent" %>
+                        <%= f.text_field :unfurn_seasonal_rent, class: 'form-control' %>
+                      </div>
+                      <div class="col-lg-4">
+                        <%= f.label :unfurn_off_rent, "Unfurn Off Rent" %>
+                        <%= f.text_field :unfurn_off_rent, class: 'form-control' %>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="form-group">
+                      <div class="col-lg-4">
+                        <%= f.label :min_days_to_lease, "Minimum Number of Days to Lease" %>
+                        <%= f.text_field :min_days_to_lease, class: 'form-control' %>
+                      </div>
+                      <div class="col-lg-4">
+                        <%= f.label :leases_per_year, "Number of Leases Per Year" %>
+                        <%= f.text_field :leases_per_year, class: 'form-control' %>
+                      </div>
+                      <div class="col-lg-4">
+                        <%= f.label :application_fee, "Application Fee" %>
+                        <%= f.text_field :application_fee, class: 'form-control' %>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="form-group">
+                      <div class="col-lg-4">
+                        <%= f.label :move_in_cost, "Move In Cost" %>
+                        <%= f.text_field :move_in_cost, class: 'form-control' %>
+                      </div>
+                      <div class="col-lg-4">
+                        <%= f.label :renewable, "Renewable" %>
+                        <%= f.select :renewable, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                      </div>
+                      <div class="col-lg-4">
+                        <%= f.label :additional_moving_cost, "Additional Moving Cost?" %>
+                        <%= f.select :additional_moving_cost, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="row">
+                    <div class="form-group">
+                      <div class="col-lg-2">
+                        <%= f.label :approval, "Approval Options" %>
+                        <br>
+                        <%= f.collection_check_boxes :approval_ids, Approval.all, :id, :options do |b| %>
+                          <%= b.label do %>
+                            <%= b.check_box %>
+                            <%= b.object.options %>
+                          <% end %>
+                        <% end %>                      
+                      </div>
+                      <div class="col-lg-2">
+                        <%= f.label :leasing_term, "Leasing Terms" %>
+                        <br>
+                        <%= f.collection_check_boxes :leasing_term_ids, LeasingTerm.all, :id, :options do |b| %>
+                          <%= b.label do %>
+                            <%= b.check_box %>
+                            <%= b.object.options %>
+                          <% end %>
+                        <% end %>                      
+                      </div>
+                      <div class="col-lg-2">
+                        <%= f.label :rental_pay_inc, "Rental Payment Includes" %>
+                        <br>
+                        <%= f.collection_check_boxes :rental_pay_inc_ids, RentalPayInc.all, :id, :options do |b| %>
+                          <%= b.label do %>
+                            <%= b.check_box %>
+                            <%= b.object.options %>
+                          <% end %>
+                        <% end %>                      
+                      </div>
+                      <div class="col-lg-2">
+                        <%= f.label :heats, "Heating Options" %>
+                        <br>
+                        <%= f.collection_check_boxes :heat_ids, Heat.all, :id, :options do |b| %>
+                          <%= b.label do %>
+                            <%= b.check_box %>
+                            <%= b.object.options %>
+                          <% end %>
+                        <% end %>                      
+                      </div>
+                      <div class="col-lg-2">
+                        <%= f.label :rental_dep_incl, "Rental Deposit Includes" %>
+                        <br>
+                        <%= f.collection_check_boxes :rental_dep_incl_ids, RentalDepIncl.all, :id, :options do |b| %>
+                          <%= b.label do %>
+                            <%= b.check_box %>
+                            <%= b.object.options %>
+                          <% end %>
+                        <% end %>                      
+                      </div>
+                      <div class="col-lg-2">
+                        <%= f.label :cooling_description, "Cooling Description" %>
+                        <br>
+                        <%= f.collection_check_boxes :cooling_description_ids, CoolingDescription.all, :id, :options do |b| %>
+                          <%= b.label do %>
+                            <%= b.check_box %>
+                            <%= b.object.options %>
+                          <% end %>
+                        <% end %>                      
+                      </div>
+                    </div>
+                  </div>
               </fieldset>
               <h1>Office Information</h1>
               <fieldset>
@@ -451,3 +691,83 @@
     </div>
   </div>
 </div>
+
+<% content_for :javascript do %>
+
+<script type="text/javascript">
+
+
+$(function() {
+
+    $("#wizard").steps();
+    $("#form").steps({
+        bodyTag: "fieldset",
+        onStepChanging: function (event, currentIndex, newIndex) {
+            // Always allow going backward even if the current step contains invalid fields!
+            if (currentIndex > newIndex) {
+                return true;
+            }
+
+            // Forbid suppressing "Warning" step if the user is to young
+            if (newIndex === 3 && Number($("#age").val()) < 18) {
+                return false;
+            }
+
+            var form = $(this);
+
+            // Clean up if user went backward before
+            if (currentIndex < newIndex) {
+                // To remove error styles
+                $(".body:eq(" + newIndex + ") label.error", form).remove();
+                $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+            }
+
+            // Disable validation on fields that are disabled or hidden.
+            form.validate().settings.ignore = ":disabled,:hidden";
+
+            // Start validation; Prevent going forward if false
+            return form.valid();
+        },
+        onStepChanged: function (event, currentIndex, priorIndex) {
+            // Suppress (skip) "Warning" step if the user is old enough.
+            if (currentIndex === 2 && Number($("#age").val()) >= 18) {
+                $(this).steps("next");
+            }
+
+            // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+            if (currentIndex === 2 && priorIndex === 3) {
+                $(this).steps("previous");
+            }
+        },
+        onFinishing: function (event, currentIndex) {
+            var form = $(this);
+
+            // Disable validation on fields that are disabled.
+            // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+            form.validate().settings.ignore = ":disabled";
+
+            // Start validation; Prevent form submission if false
+            return form.valid();
+        },
+        onFinished: function (event, currentIndex) {
+            var form = $(this);
+
+            // Submit form input
+            form.submit();
+        }
+    }).validate({
+                errorPlacement: function (error, element) {
+                    element.before(error);
+                },
+                rules: {
+                    confirm: {
+                        equalTo: "#password"
+                    }
+                }
+            });
+
+});
+
+</script>
+
+<% end %>

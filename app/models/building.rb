@@ -32,7 +32,7 @@ class Building < ApplicationRecord
   has_many :floors, :through => :building_floors
 
   has_many :building_heats
-  has_many :buildings, :through => :building_heats
+  has_many :heats, :through => :building_heats
 
   has_many :building_interior_features
   has_many :interior_features, :through => :building_interior_features
@@ -55,11 +55,14 @@ class Building < ApplicationRecord
   has_many :building_pool_descriptions
   has_many :pool_descriptions, :through => :building_pool_descriptions
 
+  has_many :building_rental_pay_inc
+  has_many :rental_pay_inc, :through => :building_rental_pay_inc
+ 
   has_many :building_rental_dep_incls
   has_many :rental_dep_incls, :through => :building_rental_dep_incls
 
-  has_many :building_rental_restrictions
-  has_many :rental_restrictions, :through => :building_rental_restrictions
+ has_many :building_rental_restrictions
+ has_many :rental_restrictions, :through => :building_rental_restrictions
 
   has_many :building_roof_descriptions
   has_many :roof_descriptions, :through => :building_roof_descriptions

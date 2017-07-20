@@ -392,6 +392,16 @@ module ApplicationHelper
 		]
 	end
 
+	def rental_status
+		[
+			['Annual', 'Annual'],
+			['Not Available', 'Not Available'],
+			['Offseason', 'Offseason'],
+			['Rented', 'Rented'],
+			['Seasonal', 'Seasonal']
+		]
+	end
+
 
 
 
