@@ -1,4 +1,18 @@
 module ApplicationHelper
+	# to help assign which controller will be currently used
+	def is_active_controller(controller_name, class_name = nil)
+	  if params[:controller] == controller_name
+	    class_name == nil ? "active" : class_name
+	  else
+	    nil
+	  end
+	end
+
+  # to help make sure a current action is the active choice
+	def is_active_action(action_name)
+	  params[:action] == action_name ? "active" : nil
+	end	
+	
 	# for state drop down menus
 	def us_states
     [
@@ -289,4 +303,97 @@ module ApplicationHelper
   		['R84-Townhouse/Villa-Offseason', 'R84-Townhouse/Villa-Offseason']
   	]
   end
+
+  def carport_description
+  	[
+  		['Attached','Attached'],
+  		['Detached', 'Detached']
+  	]
+  end
+
+  def add_park_info
+  	[
+  		['1 Space', '1 Space'],
+  		['2 Spaces', '2 Spaces'],
+  		['Assigned Parking', 'Assigned Parking'],
+  		['Circular Drive', 'Circular Drive'],
+  		['Covered Parking', 'Covered Parking'],
+  		['Detached', 'Detached'],
+  		['Guest Parking', 'Guest Parking'],
+  		['Not Assigned', 'Not Assigned'],
+  		['Parking Garage', 'Parking Garage'],
+  		['Slab/Strip', 'Slab/Strip'],
+  		['Street Parking', 'Street Parking'],
+  		['Valet Parking', 'Valet Parking']
+  	]
+  end
+
+  def lot_description
+  [
+  	['Less Than 1/4 Acre Lot','Less Than 1/4 Acre Lot' ],
+  	['1 to Less Than 2 Acre Lot', '1 to Less Than 2 Acre Lot'],
+  	['1/2 to Less Than 3/4 Acre Lot','1/2 to Less Than 3/4 Acre Lot'],
+  	['1/4 to Less Than 1/2 Acre Lot','1/4 to Less Than 1/2 Acre Lot'],
+  	['10 or More Acre Lot','10 or More Acre Lot'],
+  	['2 to Less than 3 Acre Lot','2 to Less than 3 Acre Lot'],
+  	['3 to Less than 4 Acre Lot','3 to Less than 4 Acre Lot'],
+  	['3/4 to Less than 1 Acre Lot','3/4 to Less than 1 Acre Lot'],
+  	['4 to Less Than 5 Acre Lot', '4 to Less Than 5 Acre Lot'],
+  	['5 to Less than 10 Acre Lot','5 to Less than 10 Acre Lot'],
+  	['Corner Lot', 'Corner Lot'],
+  	['Cul-De-Sac Lot', 'Cul-De-Sac Lot'],
+  	['East of US-1', 'East of US-1'],
+  	['Flood Zone Lot', 'Flood Zone Lot'],
+  	['Golf Course Lot', 'Golf Course Lot'],
+  	['Interior Lot', 'Interior Lot'],
+  	['Irregular Lot', 'Irregular Lot'],
+  	['Other Lot Description', 'Other Lot Description'],
+  	['Oversized Lot', 'Oversized Lot'],
+  	['Regular Lot', 'Regular Lot'],
+  	['West of US-1', 'West of US-1'],
+  	['Zero Lot Line Lot', 'Zero Lot Line Lot']
+  ]  	
+  end
+
+  def waterfront_description
+  	[
+  		['Bay Front', 'Bay Front'],
+  		['Canal Front', 'Canal Front'],
+  		['Creek Front', 'Creek Front'],
+  		['Canal Width 1-80 Feet', 'Canal Width 1-80 Feet'],
+  		['Canal Width 121 Feet or More', 'Canal Width 121 Feet or More'],
+  		['Canal Width 81-120 Feet', 'Canal Width 81-120 Feet'],
+  		['Fixed Bridge(S)', 'Fixed Bridge(S)'],
+  		['Intersecting Canals', 'Intersecting Canals'],
+  		['Intracoastal Front', 'Intercoastal Front'],
+  		['Lagoon Front', 'Lagoon Front'],
+  		['Lake Front', 'Lake Front'],
+  		['Lake Access', 'Lake Access'],
+  		['Mangrove Front', 'Mangrove Front'],
+  		['Navigable', 'Navigable'],
+  		['No Fixed Bridges', 'No Fixed Bridges'],
+  		['Ocean Access', 'Ocean Access'],
+  		['Ocean Front', 'Ocean Front'],
+  		['One Fixed Bridge', 'One Fixed Bridge'],
+  		['Other Waterfront', 'Other Waterfront'],
+  		['Point Lot','Point Lot'],
+  		['Pond Front', 'Pond Front'],
+  		['Rip Rap', 'Rip Rap'],
+  		['River Front','River Front']
+  	]
+  end
+
+	def park_restrict
+		[
+			['Limited Number Of Vehicles', 'Limited Number of Videos'],
+			['No Motorcycle', 'No Motorcycle'],
+			['No Rv/Boats', 'No Rv/Boats'],
+			['No Trucks/Trailers','No Trucks/Trailers']
+		]
+	end
+
+
+
+
+
 end

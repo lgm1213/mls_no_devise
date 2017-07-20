@@ -53,13 +53,16 @@ class Building < ApplicationRecord
   has_many :pet_restrictions, :through => :building_pet_restrictions
 
   has_many :building_pool_descriptions
-  has_many :buildings, :through => :building_pool_descriptions
+  has_many :pool_descriptions, :through => :building_pool_descriptions
 
   has_many :building_rental_dep_incls
   has_many :rental_dep_incls, :through => :building_rental_dep_incls
 
   has_many :building_rental_restrictions
-  has_many :rental_restrictions, :through => :rental_restrictions
+  has_many :rental_restrictions, :through => :building_rental_restrictions
+
+  has_many :building_roof_descriptions
+  has_many :roof_descriptions, :through => :building_roof_descriptions
 
   has_many :building_securities
   has_many :securities, :through => :building_securities
@@ -73,8 +76,8 @@ class Building < ApplicationRecord
   has_many :building_water_accesses
   has_many :water_accesses, :through => :building_water_accesses
 
-  has_many :building_waterfront_descs
-  has_many :waterfront_descs, :through => :building_waterfront_descs
+  has_many :building_waterfront_descriptions
+  has_many :waterfront_descriptions, :through => :building_waterfront_descriptions
 
   #listing relationship
   has_many :listings

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718135535) do
+ActiveRecord::Schema.define(version: 20170720172939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -231,6 +231,11 @@ ActiveRecord::Schema.define(version: 20170718135535) do
     t.index ["rental_restriction_id"], name: "index_building_rental_restrictions_on_rental_restriction_id", using: :btree
   end
 
+  create_table "building_roof_descriptions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "building_securities", force: :cascade do |t|
     t.integer  "building_id"
     t.integer  "security_id"
@@ -344,7 +349,7 @@ ActiveRecord::Schema.define(version: 20170718135535) do
     t.string   "unfurn_off_rent"
     t.string   "min_days_to_lease"
     t.string   "leases_per_year"
-    t.string   "application_fee" r6 r 
+    t.string   "application_fee"
     t.string   "move_in_cost"
     t.boolean  "renewable"
     t.boolean  "additional_moving_cost"
@@ -542,6 +547,12 @@ ActiveRecord::Schema.define(version: 20170718135535) do
     t.string   "options"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "roof_descriptions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "options"
   end
 
   create_table "securities", force: :cascade do |t|

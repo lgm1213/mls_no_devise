@@ -6,9 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-WindowTreatment.destroy_all
-
-WindowTreatment.create!([
-	{options:'Arched Windows'},	{options:'Awning'},	{options:'Bay Window'},	{options:'Blinds/Shades'},	{options:'Casement'},	{options:'Double Hung Metal'},	{options:'Double Hung Wood'},	{options:'Drapes & Rods'},	{options:'High Impact Windows'},	{options:'Impact Glass'},	{options:'Jalousie'},	{options:'Other Windows'},	{options:'Picture Window'}])
-
-p "Created #{WindowTreatment.count} options"
+RoofDescription.create!([{options:'Aluminum Roof'},
+{options:'Bahama Roof'},
+{options:'Barrel Roof'},
+{options:'Built-Up Roof'},
+{options:'Composition Roll'},
+{options:'Concrete Roof'},
+{options:'Fiberglass Roof'},
+{options:'Flat Tile Roof'},
+{options:'Flat Roof With Facade Front'},
+{options:'Manufactured/Mobile Home'},
+{options:'Metal Roof'},
+{options:'Other Roof'},
+{options:'Roof Over'},
+{options:'Curved/S-Tile Roof'},
+{options:'Wood Shake Roof'},
+{options:'Comp Shingle Roof'},
+{options:'Slate Roof'},
+{options:'Tar & Gravel Roof'},
+{options:'Wood Shingle Roof'}
+])
+p "created #{RoofDescription.count} entries"
