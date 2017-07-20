@@ -421,15 +421,21 @@
                 <h2>Additional Information</h2>
                 <div class="row">
                   <div class="form-group">
-                    <div class="col-lg-4">
+                    <div class="col-lg-6">
                       <%= f.label "Pets Allowed" %>
                       <%= f.select :pets_allowed, options_for_select(yes_or_no), {}, class: 'form-control' %>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-6">
                       <%= f.label "Cable Available" %>
                       <%= f.select :cable_available, options_for_select(yes_or_no), {}, class: 'form-control' %>
                     </div>
-                    <div class="col-lg-2">
+                  </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-lg-3">
                       <%= f.label :pet_restrictions, "Pet Restrictions" %>
                       <br>
                       <%= f.collection_check_boxes :pet_restriction_ids, PetRestriction.all, :id, :options do |b| %>
@@ -439,13 +445,7 @@
                         <% end %>
                       <% end %>                      
                     </div>
-                  </div>
-                </div>
-                <br>
-                <br>
-                <div class="row">
-                  <div class="form-group">
-                    <div class="col-lg-2">
+                    <div class="col-lg-3">
                       <%= f.label :security, "Security" %>
                       <br>
                       <%= f.collection_check_boxes :security_ids, Security.all, :id, :options do |b| %>
@@ -455,7 +455,7 @@
                         <% end %>
                       <% end %>                      
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-3">
                       <%= f.label :equipment, "Equipment" %>
                       <br>
                       <%= f.collection_check_boxes :equipment_ids, Equipment.all, :id, :options do |b| %>
@@ -465,7 +465,7 @@
                         <% end %>
                       <% end %>                      
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-3">
                       <%= f.label :exterior_features, "Exterior Features" %>
                       <br>
                       <%= f.collection_check_boxes :exterior_feature_ids, ExteriorFeature.all, :id, :options do |b| %>
@@ -485,7 +485,13 @@
                         <% end %>
                       <% end %>                      
                     </div>
-                    <div class="col-lg-2">
+                  </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col-lg-3">
                       <%= f.label :misc, "Miscellaneous" %>
                       <br>
                       <%= f.collection_check_boxes :misc_ids, Misc.all, :id, :options do |b| %>
@@ -495,13 +501,7 @@
                         <% end %>
                       <% end %>                      
                     </div> 
-                  </div>
-                </div>
-                <br>
-                <br>
-                <div class="row">
-                  <div class="form-group">
-                    <div class="col-lg-2">
+                    <div class="col-lg-3">
                       <%= f.label :rental_restrictions, "Rental Restrictions" %>
                       <br>
                       <%= f.collection_check_boxes :rental_restriction_ids, RentalRestriction.all, :id, :options do |b| %>
@@ -511,7 +511,7 @@
                         <% end %>
                       <% end %>                      
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-3">
                       <%= f.label :window_treatments, "Window Treatments" %>
                       <br>
                       <%= f.collection_check_boxes :window_treatment_ids, WindowTreatment.all, :id, :options do |b| %>
@@ -521,7 +521,7 @@
                         <% end %>
                       <% end %>                      
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-3">
                       <%= f.label :additional_rooms, "Additional Rooms" %>
                       <br>
                       <%= f.collection_check_boxes :additional_room_ids, AdditionalRoom.all, :id, :options do |b| %>
@@ -531,6 +531,11 @@
                         <% end %>
                       <% end %>                      
                     </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                    
                   </div>
                 </div>
               </fieldset>
@@ -669,6 +674,20 @@
                             <%= b.object.options %>
                           <% end %>
                         <% end %>                      
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="row">
+                    <div class="form-group">
+                      <div class="col-lg-4">
+                        <%= f.label :sewer_description, "Sewer Description" %>
+                        <%= f.select :sewer_description, options_for_select(sewer_description), {}, class: 'form-control' %>
+                      </div>
+                      <div class="col-lg-4">
+                        <%= f.label :water, "Water Source" %>
+                        <%= f.select :water, options_for_select(water_source), {}, class: 'form-control' %>
                       </div>
                     </div>
                   </div>

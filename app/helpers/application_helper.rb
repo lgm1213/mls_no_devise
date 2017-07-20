@@ -402,6 +402,70 @@ module ApplicationHelper
 		]
 	end
 
+	def sewer_description
+		[
+			['Both Septic and Sewer', 'Both Septic and Sewer'],
+			['Septic Tank', 'Septic Tank'],
+			['Sewer', 'Sewer']
+		]
+	end
+
+	def water_source
+		[
+			['Lake Worth Drain', 'Lake Worth Drain'],
+			['Municipal', 'Municipal'],
+			['Other', 'Other'],
+			['Well Water', 'Well Water']
+		]
+		
+	end
+
+	def hopa
+		[
+			['No HOPA', 'No HOPA'],
+			['Unverified', 'Unverified'],
+			['Verified', 'Verified']
+		]
+	end
+
+	def listing_type
+		[
+			['Exclusive Agency', 'Exclusive Ageny'],
+			['Exclusive with exceptions', 'Exclusive with exceptions'],
+			['Exclusive Right', 'Exclusive Right'],
+			['Limited Representation','Limited Representation'],
+			['Limited Service', 'Limited Service']
+		]
+		
+	end
+
+ def occupancy_info
+ 	[
+ 		['Annual','Annual'],
+ 		['Monthly','Monthly'],
+ 		['Offseason', 'Offseason'],
+ 		['Seasonal', 'Seasonal'],
+ 		['Vacant', 'Vacant']
+ 	]
+ end
+
+ def lender_approval
+ 	[
+ 		['Approved', true],
+ 		['Unapproved', false]
+ 	]
+ end
+
+ def renewal_commision
+ 	[
+ 		['2+ Year Commission', '2+ Year Commission'],
+ 		['Less Commission On Renewal', 'Less Commission On Renewal'],
+ 		['None/Non-Applicable', 'None/Non-Applicable'],
+ 		['Renewable Commission', 'Renewable Commission']
+ 	]
+ end
+
+
 
 
 
