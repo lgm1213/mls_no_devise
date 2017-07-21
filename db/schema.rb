@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720172939) do
+ActiveRecord::Schema.define(version: 20170721142651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -377,8 +377,8 @@ ActiveRecord::Schema.define(version: 20170720172939) do
     t.boolean  "address_on_internet"
     t.string   "owners_name"
     t.string   "owners_phone"
-    t.string   "variable_dual_rate"
-    t.string   "owner_agent"
+    t.boolean  "variable_dual_rate"
+    t.boolean  "owner_agent"
     t.string   "occupancy_information"
     t.boolean  "lender_approval"
     t.string   "compensation_trans_broker"
@@ -389,6 +389,7 @@ ActiveRecord::Schema.define(version: 20170720172939) do
     t.string   "virtual_tour"
     t.string   "photo_instructions"
     t.string   "status"
+    t.string   "list_type"
     t.index ["user_id"], name: "index_buildings_on_user_id", using: :btree
   end
 

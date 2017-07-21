@@ -63,7 +63,6 @@ group :assets do
   gem 'less-rails', '~> 2.7.0'
 end
 
-gem 'rails-jquery-steps'
 gem 'rails-erd'
 gem "font-awesome-rails"
 

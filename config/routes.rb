@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   get 'forms/basic_forms'
 
   get 'forms/advanced'
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :listings
   # static pages
-  root 'static_pages#Home'
+  # root 'static_pages#Home'
   get 'static_pages/About'
   get 'static_pages/Contact'
   get 'static_pages/Help'
@@ -54,7 +55,7 @@ Rails.application.routes.draw do
   resources :listing_wizards
 
 # You can have the root of your site routed with "root"
-  root to: 'dashboards#dashboard_1'
+  root 'landing#index'
 
   # All routes
   get "dashboards/dashboard_1"

@@ -1,18 +1,6 @@
 <%= provide(:title, 'Create A New Listing') %>
 <%= provide(:button_text, 'Create New Listing') %>
-<div class="panel panel-white">
-	<div class="panel-heading">
-		<h1 class="panel-title">New Property</h1>
-	</div>
-	<div class="panel-body" style="display:block;">
-		<div class="row">
-			<div class="col-md-12">
-				<%= render 'form', building: @building %>
-			</div>	
-		</div>
-	</div>
-</div>
 
-
+	<%= render 'form', building: @building %>
 
 <%= link_to 'Back', buildings_path %>
