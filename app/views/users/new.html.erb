@@ -1,17 +1,16 @@
-<% provide(:title, 'Sign Up') %>
-<% provide(:button_text, 'Create Account') %>
-
-<div class="row">
-  <div class="col-lg-12">
-    <div class="panel panel-flat">
-      <div class="panel-heading">
-        <h6 class="panel-title">Section Title</h6>
-        <div class="heading-elements">  
-        </div>
-					<h1>New User</h1>
-					<%= render 'form', user: @user %>
-					<%= link_to 'Back', users_path %>
-      </div>
+<% provide(:title, 'Register') %>
+<% provide(:button_text, 'Register Account') %>
+<div class="middle-box text-center loginscreen   animated fadeInDown">
+  <div>
+    <div>
+      <h1 class="logo-name">IN+</h1>
     </div>
-  </div>
+      <h3>Register for GetLeasedUp!</h3>
+      <p>Create account to see it in action.</p>
+					<%= render 'form', user: @user %>
+					<%= link_to 'Back', root_path %>
+      
+        <p class="m-t"> <small>leasedUp created by LGM Studios</small> </p>
+    </div>
 </div>
+

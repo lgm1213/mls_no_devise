@@ -1,4 +1,4 @@
-<%= form_for(user) do |f| %>
+<%= form_for(user, html: {class: 'm-t', role: 'form'}) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -10,27 +10,31 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :username %>
-    <%= f.text_field :username, class: 'form-control' %>
+    <%= f.text_field :username, class: 'form-control', placeholder: 'Username' %>
   </div>
+    
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %>
-    <%= f.text_field :email, class: 'form-control' %>
+    <%= f.text_field :email, class: 'form-control', placeholder: 'email' %>
   </div>
 
   <div class="field">
     <%= f.label :password%>
-    <%= f.password_field :password, class: 'form-control' %>
+    <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation, class: 'form-control' %>
+    <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm Password' %>
   </div>
 
   <div class="actions">
-    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <%= f.submit yield(:button_text), class: "btn btn-primary block full-width m-b" %>
   </div>
+  <p class="text-muted text-center"><small>Already have an account?</small></p>
+  <%= link_to "Login", login_path, class: 'btn btn-sm btn-white btn-block' %>
+
 <% end %>
