@@ -4,7 +4,7 @@ class BuildingsController < ApplicationController
   # GET /buildings
   # GET /buildings.json
   def index
-    @buildings = Building.all
+    @buildings = Building.where(user_id: current_user)
   end
 
   # GET /buildings/1

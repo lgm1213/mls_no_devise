@@ -1,5 +1,5 @@
 // Basic Colors
-$navy: #1ab394;       // Primary color
+$navy: #FF4147;       // Primary color
 $dark-gray: #c2c2c2;  // Default color
 $blue: #1c84c6;       // Success color
 $lazur: #23c6c8;      // Info color
@@ -7,11 +7,12 @@ $yellow: #f8ac59;     // Warning color
 $red: #ED5565;        // Danger color
 
 // Various colors
-$text-color: #676a6c;   // Body text
+$text-color: #3C4141;   // Body text
 $gray: #f3f3f4;         // Background wrapper color
 $light-gray: #D1DADE;   // Default label, badge
 $label-badge-color: #5E5E5E;
 $light-blue:#f3f6fb;
+
 
 // Spinner color and margin
 $spin-color: $navy;
@@ -34,6 +35,6 @@ $boxed-background: image-url('patterns/shattered.png');
 $btn-border-radius: 3px;
 
 //Navigation
-$nav-bg: #2F4050;
+$nav-bg: #D0EFF5;
 $nav-profile-pattern: image-url("patterns/header-profile.png");
 $nav-text-color: #a7b1c2;
