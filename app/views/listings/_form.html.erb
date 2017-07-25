@@ -1,91 +1,128 @@
-<%= form_for(listing) do |f| %>
-  <% if listing.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
-
-      <ul>
-      <% listing.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :building_id %>
-    <%= f.text_field :building_id %>
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    New Building or Property
+    <ol class="breadcrumb">
+      <li>
+        <%= link_to "Home", root_path %></a>
+      </li>
+      <li>
+        <strong><%= link_to "Portfolio", listings_path %></strong>
+      </li>
+      <li class="active">
+        <strong><%= link_to "New Listing", new_listing_path %></strong>
+      </li>
+    </ol>
   </div>
-
-  <div class="field">
-    <%= f.label :unit_no %>
-    <%= f.text_field :unit_no %>
+  <div class="col-lg-2">
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :floor_plan %>
-    <%= f.text_field :floor_plan %>
-  </div>
 
+<div class="wrapper wrapper-content animaed fadeInRight">
   <div class="row">
-        <div class="form-group">
-          <div class="col-md-4">
-            <%= f.label :Rent %>
-            <div class="input-group">
-              <span class="input-group-addon" id="basic-addon2">$</span>
+    <div class="col-lg-12">
+      <div class="box">
+        <div class="ibox-title">
+          <h5>Create A New Rental Listing</h5>
+          <div class="ibox-tools">
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <h2>New Listing Creation Form</h2>
+          <%= form_for(listing, html: {id: 'form', class: 'wizard-big form-horizontal'}) do |f| %>
+          <h1>Rental Description</h1>
+          <fieldset>
+            <h2>Rental Listing Description</h2>
+              <div class="form-group">
+                <%= f.label :building_id, "Lease Up Building Id", class: 'control-label col-sm-4' %>
+                <div class="col-sm-2">
+                  <%= f.text_field :building_id, class: 'form-control' %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :unit_no, "Unit Number", class: 'control-label col-sm-4' %>
+                <div class="col-sm-2">
+                  <%= f.text_field :unit_no, class: 'form-control' %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :floor_plan, "Floor Plan Id", class: 'control-label col-sm-4'%>
+                <div class="col-sm-2">
+                  <%= f.text_field :floor_plan, class: 'form-control' %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :num_fbaths, "Number of Full Bathrooms", class: 'control-label col-sm-4' %>
+                <div class="col-sm-2">
+                  <%= f.text_field :num_fbaths, class: 'form-control' %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :num_hbaths, "Number of Half Baths", class: 'control-label col-sm-4' %>
+                <div class="col-sm-2">
+                  <%= f.text_field :num_hbaths, class: 'form-control' %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :beds, "Number of Bedrooms", class: 'control-label col-sm-4' %>
+                <div class="col-sm-2">
+                  <%= f.text_field :beds, class: 'form-control' %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :available_date, class: 'control-label col-sm-4' %>
+                <div class="col-sm-2">
+                  <%= f.date_select :available_date, class: 'form-control' %>
+                </div>
+              </div>
+          </fieldset>
+          <h1>Cost Description</h1>
+          <fieldset>
+            <h2>Cost Description</h2>
+            <div class="form-group">
+              <%= f.label :rent_price, "Rental Price", class: 'control-label col-sm-4' %>
+              <div class="col-sm-2">
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon2">$</span>
                 <%= f.text_field :rent_price, class: 'form-control' %>
-              <span class="input-group-addon" id="basic-addon2">.00</span>
+                </div>
+              </div>              
             </div>
-          </div>
-          <div class="col-md-4">
+            <div class="form-group">
+              <%= f.label :rent_per_period, "Rent Per Period", class: 'control-label col-sm-4' %>
+              <div class="col-sm-2">
+                <%= f.text_field :rent_per_period, class: 'control-label col-sm-4' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :for_sale, "Is The Unit For Sale?", class: 'control-label col-sm-4' %>
+              <div class="col-sm-2">
+                <%= f.select :for_sale, options_for_select(yes_or_no), {}, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :move_in_special, "Move-In Specials", class: 'control-label col-sm-4' %>
+              <div class="col-sm-2">
+                <%= f.text_area :move_in_special, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :advertising, "Advertising", class: 'control-label col-sm-4' %>
+              <div class="col-sm-2">
+                <%= f.text_area :advertising, class: 'form-control' %>
+              </div>
+            </div>
 
-          </div>
-          <div class="col-md-4">
+          </fieldset>
 
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-md-4">
-            <%= f.label "Unit Floor Location" %>
-            <%= f.text_field :unit_floor_location, class: 'form-control' %>
-          </div>
-          <div class="col-md-4">
-            <%= f.label "Type of Property" %>
-            <%= f.select :type_of_property, options_for_select(type_of_property), {}, class: 'form-control' %>
-          </div>
-          <div class="col-md-4">
-            <%= f.label "Style" %>
-            <%= f.select :style, options_for_select(style), {}, class: 'form-control' %>
-          </div>
-        </div>
-      </div>
-  <div class="field">
-    <%= f.label :num_fbaths %>
-    <%= f.text_field :num_fbaths %>
-  </div>
 
-  <div class="field">
-    <%= f.label :num_hbaths %>
-    <%= f.text_field :num_hbaths %>
-  </div>
 
-  <div class="field">
-    <%= f.label :advertising %>
-    <%= f.text_area :advertising %>
-  </div>
+  
+ 
 
-  <div class="field">
-    <%= f.label :move_in_special %>
-    <%= f.text_area :move_in_special %>
-  </div>
 
-  <div class="field">
-    <%= f.label :commission %>
-    <%= f.text_field :commission %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
