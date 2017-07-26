@@ -43,6 +43,12 @@
                 </div>
               </div>
               <div class="form-group">
+              <%= f.label :type_of_property, "Type of Property", class: 'control-label col-sm-4' %>
+              <div class="col-sm-2">
+                <%= f.select :type_of_property, options_for_select(type_of_property), {}, class: 'form-control' %>
+              </div>
+              </div>
+              <div class="form-group">
                 <%= f.label :unit_no, "Unit Number", class: 'control-label col-sm-4' %>
                 <div class="col-sm-2">
                   <%= f.text_field :unit_no, class: 'form-control' %>
@@ -72,12 +78,6 @@
                   <%= f.text_field :beds, class: 'form-control' %>
                 </div>
               </div>
-              <div class="form-group">
-                <%= f.label :available_date, class: 'control-label col-sm-4' %>
-                <div class="col-sm-2">
-                  <%= f.date_select :available_date, class: 'form-control' %>
-                </div>
-              </div>
           </fieldset>
           <h1>Cost Description</h1>
           <fieldset>
@@ -88,13 +88,14 @@
                 <div class="input-group">
                   <span class="input-group-addon" id="basic-addon2">$</span>
                 <%= f.text_field :rent_price, class: 'form-control' %>
+                  <span class="input-group-addon">.00</span>
                 </div>
               </div>              
             </div>
             <div class="form-group">
               <%= f.label :rent_per_period, "Rent Per Period", class: 'control-label col-sm-4' %>
               <div class="col-sm-2">
-                <%= f.text_field :rent_per_period, class: 'control-label col-sm-4' %>
+                <%= f.select :rent_per_period,options_for_select(rentperperiod), {}, class: 'control-label col-sm-4' %>
               </div>
             </div>
             <div class="form-group">
@@ -118,11 +119,155 @@
 
           </fieldset>
 
+          <h1>Property Description</h1>
+          <fieldset>
+            <h2>Property Description</h2>
+            <div class="form-group">
+              <%= f.label :unit_floor_location, "Unit's Floor Location", class: 'control-label col-sm-4' %>
+              <div class="col-sm-2">
+                <%= f.text_field :unit_floor_location, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :style, class: 'control-label col-sm-4' %>
+              <div class="col-sm-2">
+                <%= f.select :style, options_for_select(style), {}, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :sqft, class: 'control-label col-sm-4' %>
+              <div class="col-sm-2">
+                <%= f.text_field :sqft, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :balcony, class: 'control-label col-sm-4' %>
+              <div class="col-sm-2">
+                <%= f.select :balcony, options_for_select(yes_or_no), {}, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :efficiency, class: 'control-label col-sm-4' %>
+              <div class="col-sm-2">
+                <%= f.select :efficiency, options_for_select(yes_or_no), {}, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :faces, class: 'control-label col-sm-4' %>
+              <div class="col-sm-2">
+                <%= f.select :faces, options_for_select(faces), {}, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :furnished_information, class: 'control-label col-sm-4' %>
+              <div class="col-sm-2">
+                <%= f.select :furnished_information, options_for_select(furnished), {}, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :view, class: 'control-label col-sm-4' %>
+              <div class="col-sm-2">
+                <%= f.select :view, options_for_select(view), {}, class: 'form-control' %>
+              </div>
+            </div>
+
+            
+          </fieldset>
 
 
-  
- 
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+              <div class="form-group">
+                <%= f.label :available_date, class: 'control-label col-sm-4' %>
+                <div class="col-sm-2">
+                  <div class="input-group date" data-provide="datepicker">
+                    <%= f.text_field :available_date, class: 'form-control' %>
+                    <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
+<% content_for :javascript do %>
+
+  <script type="text/javascript">
+    $(function() {
+
+        $("#wizard").steps();
+        $("#form").steps({
+            bodyTag: "fieldset",
+            onStepChanging: function (event, currentIndex, newIndex) {
+                // Always allow going backward even if the current step contains invalid fields!
+                if (currentIndex > newIndex) {
+                    return true;
+                }
+
+                // Forbid suppressing "Warning" step if the user is to young
+                if (newIndex === 3 && Number($("#age").val()) < 18) {
+                    return false;
+                }
+
+                var form = $(this);
+
+                // Clean up if user went backward before
+                if (currentIndex < newIndex) {
+                    // To remove error styles
+                    $(".body:eq(" + newIndex + ") label.error", form).remove();
+                    $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+                }
+
+                // Disable validation on fields that are disabled or hidden.
+                form.validate().settings.ignore = ":disabled,:hidden";
+
+                // Start validation; Prevent going forward if false
+                return form.valid();
+            },
+            onStepChanged: function (event, currentIndex, priorIndex) {
+                // Suppress (skip) "Warning" step if the user is old enough.
+                if (currentIndex === 2 && Number($("#age").val()) >= 18) {
+                    $(this).steps("next");
+                }
+
+                // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+                if (currentIndex === 2 && priorIndex === 3) {
+                    $(this).steps("previous");
+                }
+            },
+            onFinishing: function (event, currentIndex) {
+                var form = $(this);
+
+                // Disable validation on fields that are disabled.
+                // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+                form.validate().settings.ignore = ":disabled";
+
+                // Start validation; Prevent form submission if false
+                return form.valid();
+            },
+            onFinished: function (event, currentIndex) {
+                var form = $(this);
+
+                // Submit form input
+                form.submit();
+            }
+        }).validate({
+                    errorPlacement: function (error, element) {
+                        element.before(error);
+                    },
+                    rules: {
+                        confirm: {
+                            equalTo: "#password"
+                        }
+                    }
+                });
+
+    });
+
+  </script>
 
 <% end %>

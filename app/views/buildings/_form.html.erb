@@ -41,130 +41,143 @@
               <div class="row">
                 <div class="form-group">
                   <div class="col-lg-4">
-                    <%= f.label :Legal %>
                     <%= f.text_field :legal, class: 'form-control' %>
+                    <%= f.label :Legal %>
                   </div>  
                   <div class="col-lg-4">
-                    <%= f.label :Development_Name, "Development_Name" %>
                     <%= f.text_field :development_name, class: 'form-control' %>
+                    <%= f.label :Development_Name, "Development_Name" %>
                   </div>
                   <div class="col-lg-4">
-                      <%= f.label :Folio_Number, "Folio Number" %>
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon2">#</span>
                       <%= f.text_field :folio, class: 'form-control' %>
                     </div>
+                      <%= f.label :Folio_Number, "Folio Number" %>
+                  </div>
+    
+                  <div class="col-lg-4">
+                    <%= f.text_field :street, class: 'form-control' %>
+                    <%= f.label :Street %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :County %>
+                    <%= f.select :compass_point, options_for_select(compass_directions), {}, class: 'form-control' %>
+                    <%= f.label :Compass_Point, "Compass Point" %>
+                  </div>
+                  <div class="col-lg-4">
+                    <%= f.text_field :street_name, class: 'form-control' %>
+                    <%= f.label :Street_Name, "Street Name" %>
+                  </div>
+                  <div class="col-lg-4">
                     <%= f.select :county, options_for_select(sofl_counties), {}, class: 'form-control select"' %>
+                    <%= f.label :County %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :City %>
                     <%= f.select :city, options_for_select(sofl_cities), {}, class: 'form-control' %>
+                    <%= f.label :City %>
                   </div>
                   <div class="col-lg-4"> 
-                    <%= f.label :State %>
                     <%= f.select :state, options_for_select(us_states),{}, class: 'form-control' %>
+                    <%= f.label :State %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :Street %>
                     <%= f.text_field :street, class: 'form-control' %>
+                    <%= f.label :Street %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :Compass_Point, "Compass Point" %>
                     <%= f.select :compass_point, options_for_select(compass_directions), {}, class: 'form-control' %>
+                    <%= f.label :Compass_Point, "Compass Point" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :Street_Name, "Street Name" %>
                     <%= f.text_field :street_name, class: 'form-control' %>
+                    <%= f.label :Street_Name, "Street Name" %>
                   </div>    
               
                   <div class="col-lg-4"> 
-                    <%= f.label :Zip %>
                     <%= f.text_field :zip, class: 'form-control' %>
+                    <%= f.label :Zip %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :Zip4, "Zip+4" %>
                     <%= f.text_field :zip4, class: 'form-control' %>
+                    <%= f.label :Zip4, "Zip+4" %>
                   </div>
                   <div class="col-lg-4"> 
-                    <%= f.label :Unit %>
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon2">#</span>
                       <%= f.text_field :unit, class: 'form-control' %>
                     </div>
+                    <%= f.label :Unit %>
                   </div>  
                 
                   <div class="col-lg-4">
-                    <%= f.label :Zoning %>
                     <%= f.text_field :zoning, class: 'form-control' %>
+                    <%= f.label :Zoning %>
                   </div>  
                   <div class="col-lg-4">
-                    <%= f.label :Geographical %>
                     <%= f.text_field :geographical, class: 'form-control' %>
+                    <%= f.label :Geographical %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :Area %>
                     <%= f.text_field :area, class: 'form-control' %>
+                    <%= f.label :Area %>
                   </div>  
                 
                   <div class="col-lg-4">
-                    <%= f.label :Municipal_Code, "Municipal Code" %>
                     <%= f.text_field :municip_code, class: 'form-control' %>
+                    <%= f.label :Municipal_Code, "Municipal Code" %>
                   </div>  
                   <div class="col-lg-4">
-                    <%= f.label :Township %>
                     <%= f.text_field :township, class: 'form-control' %>
+                    <%= f.label :Township %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :Section %>
                     <%= f.text_field :section, class: 'form-control' %>
+                    <%= f.label :Section %>
                   </div>
                 </div>
               
                   <div class="col-lg-4">
-                    <%= f.label :Subdivision %>
                     <%= f.text_field :subdivision, class: 'form-control' %>
+                    <%= f.label :Subdivision %>
                   </div>  
                   <div class="col-lg-4">
-                    <%= f.label :Parcel %>
                     <%= f.text_field :parcel, class: 'form-control' %>
+                    <%= f.label :Parcel %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :Map_Coordinates, "Map Coordinates" %>
                     <%= f.text_field :map_coordinates, class: 'form-control' %>
+                    <%= f.label :Map_Coordinates, "Map Coordinates" %>
                   </div> 
                 
                   <div class="col-lg-4">    
-                    <%= f.label :Elementary_School, "Elementary School" %>
                     <%= f.select :elementary_school, options_for_select(sofl_elem),{}, class: 'form-control' %>
+                    <%= f.label :Elementary_School, "Elementary School" %>
                   </div>  
                   <div class="col-lg-4">
-                    <%= f.label :Middle_School, "Middle School" %>
                     <%= f.select :middle_school, options_for_select(sofl_middle), {}, class: 'form-control' %>
+                    <%= f.label :Middle_School, "Middle School" %>
                   </div>  
                   <div class="col-lg-4">
-                    <%= f.label :Senior_High_School, "Senior High School" %>
                     <%= f.select :senior_high_school, options_for_select(sofl_hs), {}, class: 'form-control' %>
+                    <%= f.label :Senior_High_School, "Senior High School" %>
                   </div>  
                
                   <div class="col-lg-4">
-                    <%= f.label :Subdivison_Name, "Subdivision Name" %>
                     <%= f.text_field :subdivision_name, class: 'form-control' %>
+                    <%= f.label :Subdivison_Name, "Subdivision Name" %>
                   </div>  
                   <div class="col-lg-4">
-                    <%= f.label :Model_Name, "Model Name" %>
                     <%= f.text_field :model_name_in_mls, class: 'form-control' %>
+                    <%= f.label :Model_Name, "Model Name" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :User_Id, "User Id" %>
                     <%= f.text_field :user_id, class: 'form-control' %>
+                    <%= f.label :User_Id, "User Id" %>
                   </div>
                
                   <div class="col-lg-4">
-                    <%= f.label :waterfront_description, "Waterfront Description" %>
                     <%= f.select :waterfront_description, options_for_select(waterfront_description), {}, class: 'form-control' %>
+                    <%= f.label :waterfront_description, "Waterfront Description" %>
                   </div>
                 </div>
             </fieldset>
@@ -175,68 +188,68 @@
               <div class="row">
                 <div class="form-group">
                   <div class="col-lg-4">
-                    <%= f.label :Year_Built, "Year Built" %>
                     <%= f.text_field :year_built, class: 'form-control' %>
+                    <%= f.label :Year_Built, "Year Built" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :Year_built_description, "Year Built Description" %>
                     <%= f.select :year_built_description, options_for_select(yearbuiltdescription), {}, class: 'form-control' %>
+                    <%= f.label :Year_built_description, "Year Built Description" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :Number_Of_Stories, "Number of Stories" %>
                     <%= f.text_field :stories, class: 'form-control' %>
+                    <%= f.label :Number_Of_Stories, "Number of Stories" %>
                   </div>
                 
                   <div class="col-lg-4">
-                    <%= f.label :garage_spaces, "Garage Spaces" %>
                     <%= f.text_field :garage_spaces, class: 'form-control' %>
+                    <%= f.label :garage_spaces, "Garage Spaces" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :garage_description, "Garage Description" %>
                     <%= f.text_field :garage_description, class: 'form-control' %>
+                    <%= f.label :garage_description, "Garage Description" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :carport_spaces, "Carport Spaces" %>
                     <%= f.text_field :carport_spaces, class: 'form-control' %>
+                    <%= f.label :carport_spaces, "Carport Spaces" %>
                   </div>
                 
                   <div class="col-lg-4">
-                    <%= f.label :carport_description, "Carport Description" %>
                     <%= f.select :carport_description, options_for_select(carport_description), {}, class: 'form-control' %>
+                    <%= f.label :carport_description, "Carport Description" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :waterfront, "Waterfront" %>
                     <%= f.select :waterfront, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                    <%= f.label :waterfront, "Waterfront" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label "Waterfront Frontage" %>
                     <%= f.text_field :waterfront_frontage, class: "form-control" %>
+                    <%= f.label "Waterfront Frontage" %>
                   </div>          
                 
                   <div class="col-lg-4">
-                    <%= f.label :approx_lot_size,  "Approximate Lot Size" %>
                     <%= f.text_field :approx_lot_size, class: 'form-control' %>
+                    <%= f.label :approx_lot_size,  "Approximate Lot Size" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label "Lot Square footage" %>
                     <%= f.text_field :lotsf, class: 'form-control' %>
+                    <%= f.label "Lot Square footage" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label "Lot Description" %>
                     <%= f.select :lot_description, options_for_select(lot_description), {}, class: 'form-control' %>
+                    <%= f.label "Lot Description" %>
                   </div>
                 
                   <div class="col-lg-4">
-                    <%= f.label "Spa Available" %>
                     <%= f.select :spa, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                    <%= f.label "Spa Available" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label "Pool Available" %>
                     <%= f.select :pool, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                    <%= f.label "Pool Available" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label "Pool Dimensions" %>
                     <%= f.text_field :pool_dimensions, class: 'form-control' %>
+                    <%= f.label "Pool Dimensions" %>
                   </div>
                 <br>
                 <br>
@@ -331,21 +344,21 @@
               <div class="row">
                 <div class="form-group">
                   <div class="col-lg-6">
-                    <%= f.label :Remarks %>
                     <%= f.text_area :remarks, class: 'form-control' %>
+                    <%= f.label :Remarks %>
                   </div>
                   <div class="col-lg-6">
-                    <%= f.label :Directions %>
                     <%= f.text_area :directions, class: 'form-control' %>
+                    <%= f.label :Directions %>
                   </div>
                 
                   <div class="col-lg-6">
-                    <%= f.label "Broker Remarks" %>
                     <%= f.text_area :broker_remarks, class: 'form-control' %>
+                    <%= f.label "Broker Remarks" %>
                   </div>
                   <div class="col-md-6">
-                    <%= f.label "Internet Remarks" %>
                     <%= f.text_area :internet_remarks, class: 'form-control' %>
+                    <%= f.label "Internet Remarks" %>
                   </div>
                 </div>
               </div>
@@ -357,8 +370,8 @@
               <div class="row">
                 <div class="form-group">
                   <div class="col-lg-6">
-                    <%= f.label "Pets Allowed" %>
                     <%= f.select :pets_allowed, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                    <%= f.label "Pets Allowed" %>
                   </div>
                   <div class="col-lg-6">
                     <%= f.label "Cable Available" %>
@@ -473,62 +486,62 @@
                 <div class="row">
                   <div class="form-group">
                     <div class="col-lg-4">
+                      <%= f.text_field :furn_annual_rent, class: 'form-control' %>
                       <%= f.label :furn_annual_rent, "Furn Annual Rent" %>
-                      <%= f.text_field :furn_annual_rent, class: 'form-control' %>
                     </div>
                     <div class="col-lg-4">
+                      <%= f.text_field :furn_annual_rent, class: 'form-control' %>
                       <%= f.label :furn_seasonal_rent, "Furn Seasonal Rent" %>
-                      <%= f.text_field :furn_annual_rent, class: 'form-control' %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :furn_off_rent, "Furn Off Rent" %>
                       <%= f.text_field :furn_off_rent, class: 'form-control' %>
+                      <%= f.label :furn_off_rent, "Furn Off Rent" %>
                     </div>
                     
                   
                 <br>
                 
                     <div class="col-lg-4">
-                      <%= f.label :unfurn_annual_rent, "Unfurn Annual Rent" %>
                       <%= f.text_field :unfurn_annual_rent, class: 'form-control' %>
+                      <%= f.label :unfurn_annual_rent, "Unfurn Annual Rent" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :unfurn_season_rent, "Unfurn Seasonal Rent" %>
                       <%= f.text_field :unfurn_seasonal_rent, class: 'form-control' %>
+                      <%= f.label :unfurn_season_rent, "Unfurn Seasonal Rent" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :unfurn_off_rent, "Unfurn Off Rent" %>
                       <%= f.text_field :unfurn_off_rent, class: 'form-control' %>
+                      <%= f.label :unfurn_off_rent, "Unfurn Off Rent" %>
                     </div>
                   
                 <br>
                 
                     <div class="col-lg-4">
-                      <%= f.label :min_days_to_lease, "Minimum Number of Days to Lease" %>
                       <%= f.text_field :min_days_to_lease, class: 'form-control' %>
+                      <%= f.label :min_days_to_lease, "Minimum Number of Days to Lease" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :leases_per_year, "Number of Leases Per Year" %>
                       <%= f.text_field :leases_per_year, class: 'form-control' %>
+                      <%= f.label :leases_per_year, "Number of Leases Per Year" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :application_fee, "Application Fee" %>
                       <%= f.text_field :application_fee, class: 'form-control' %>
+                      <%= f.label :application_fee, "Application Fee" %>
                     </div>
                   
                 <br>
                 
                     <div class="col-lg-4">
-                      <%= f.label :move_in_cost, "Move In Cost" %>
                       <%= f.text_field :move_in_cost, class: 'form-control' %>
+                      <%= f.label :move_in_cost, "Move In Cost" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :renewable, "Renewable" %>
                       <%= f.select :renewable, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                      <%= f.label :renewable, "Renewable" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :additional_moving_cost, "Additional Moving Cost?" %>
                       <%= f.select :additional_moving_cost, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                      <%= f.label :additional_moving_cost, "Additional Moving Cost?" %>
                     </div>
                  
                 <br>
@@ -599,70 +612,70 @@
                 <br>
                 
                     <div class="col-lg-4">
-                      <%= f.label :sewer_description, "Sewer Description" %>
                       <%= f.select :sewer_description, options_for_select(sewer_description), {}, class: 'form-control' %>
+                      <%= f.label :sewer_description, "Sewer Description" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :water, "Water Source" %>
                       <%= f.select :water, options_for_select(water_source), {}, class: 'form-control' %>
+                      <%= f.label :water, "Water Source" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :housing_older_persons_act, "Housing Older Persons Act(HOPA)" %>
                       <%= f.select :housing_older_persons_act, options_for_select(hopa), {}, class: 'form-control' %>
+                      <%= f.label :housing_older_persons_act, "Housing Older Persons Act(HOPA)" %>
                     </div>
                   
                 <br>
                 
                     <div class="col-lg-4">
-                      <%= f.label :rs_jan, "Rental Status-January" %>
                       <%= f.select :rs_jan, options_for_select(rental_status), {}, class: 'form-control' %>
+                      <%= f.label :rs_jan, "Rental Status-January" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :rs_feb, "Rental Status-February" %>
                       <%= f.select :rs_feb, options_for_select(rental_status), {}, class: 'form-control' %>
+                      <%= f.label :rs_feb, "Rental Status-February" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :rs_march, "Rental Status-March" %>
                       <%= f.select :rs_march, options_for_select(rental_status), {}, class: 'form-control' %>
+                      <%= f.label :rs_march, "Rental Status-March" %>
                     </div>                      
                   
                     <div class="col-lg-4">
-                      <%= f.label :rs_april, "Rental Status-April" %>
                       <%= f.select :rs_april, options_for_select(rental_status), {}, class: 'form-control' %>
+                      <%= f.label :rs_april, "Rental Status-April" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :rs_may, "Rental Status-May" %>
                       <%= f.select :rs_may, options_for_select(rental_status), {}, class: 'form-control' %>
+                      <%= f.label :rs_may, "Rental Status-May" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :rs_june, "Rental Status-June" %>
                       <%= f.select :rs_june, options_for_select(rental_status), {}, class: 'form-control' %>
+                      <%= f.label :rs_june, "Rental Status-June" %>
                     </div>                      
                   
                     <div class="col-lg-4">
-                      <%= f.label :rs_july, "Rental Status-July" %>
                       <%= f.select :rs_july, options_for_select(rental_status), {}, class: 'form-control' %>
+                      <%= f.label :rs_july, "Rental Status-July" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :rs_aug, "Rental Status-August" %>
                       <%= f.select :rs_aug, options_for_select(rental_status), {}, class: 'form-control' %>
+                      <%= f.label :rs_aug, "Rental Status-August" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :rs_sept, "Rental Status-September" %>
                       <%= f.select :rs_sept, options_for_select(rental_status), {}, class: 'form-control' %>
+                      <%= f.label :rs_sept, "Rental Status-September" %>
                     </div>                      
                   
                     <div class="col-lg-4">
-                      <%= f.label :rs_oct, "Rental Status-October" %>
                       <%= f.select :rs_oct, options_for_select(rental_status), {}, class: 'form-control' %>
+                      <%= f.label :rs_oct, "Rental Status-October" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :rs_nov, "Rental Status-November" %>
                       <%= f.select :rs_nov, options_for_select(rental_status), {}, class: 'form-control' %>
+                      <%= f.label :rs_nov, "Rental Status-November" %>
                     </div>
                     <div class="col-lg-4">
-                      <%= f.label :rs_dec, "Rental Status-December" %>
                       <%= f.select :rs_dec, options_for_select(rental_status), {}, class: 'form-control' %>
+                      <%= f.label :rs_dec, "Rental Status-December" %>
                     </div>                      
                   </div>
                 </div>
@@ -674,66 +687,66 @@
               <div class="row">
                 <div class="form-group">
                   <div class="col-lg-4">
-                    <%= f.label :list_agent_mls_id, "Listing Agent's MLS ID" %>
                     <%= f.text_field :list_agent_mls_id, class: 'form-control' %>
+                    <%= f.label :list_agent_mls_id, "Listing Agent's MLS ID" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :list_agent_alt_phone, "Listing Agent's Alternate Phone" %>
                     <%= f.text_field :list_agent_alt_phone, class: 'form-control' %>
+                    <%= f.label :list_agent_alt_phone, "Listing Agent's Alternate Phone" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :co_list_agent_mls_id, "Co-Listing Agent's MLS Id" %>
                     <%= f.text_field :co_list_agent_mls_id, class: 'form-control' %>
+                    <%= f.label :co_list_agent_mls_id, "Co-Listing Agent's MLS Id" %>
                   </div>
                 
               <br>
               
                   <div class="col-lg-3">
-                    <%= f.label :internet, "Internet" %>
                     <%= f.select :internet, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                    <%= f.label :internet, "Internet" %>
                   </div>
                   <div class="col-lg-3">
-                    <%= f.label :avm, "AVM" %>
                     <%= f.select :avm, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                    <%= f.label :avm, "AVM" %>
                   </div>
                   <div class="col-lg-3">
-                    <%= f.label :blogging, "Blogging" %>
                     <%= f.select :blogging, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                    <%= f.label :blogging, "Blogging" %>
                   </div>
                   <div class="col-lg-3">
-                    <%= f.label :address_on_internet, "Address is on the Internet?" %>
                     <%= f.select :address_on_internet, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                    <%= f.label :address_on_internet, "Address is on the Internet?" %>
                   </div>
                 
               <br>
               
                   <div class="col-lg-4">
-                    <%= f.label :list_type, "Listing Type" %>
                     <%= f.select :list_type, options_for_select(listing_type), {}, class: 'form-control' %>
+                    <%= f.label :list_type, "Listing Type" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :owners_name, "Owner's Name" %>
                     <%= f.text_field :owners_name, class: 'form-control' %>
+                    <%= f.label :owners_name, "Owner's Name" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :owners_phone, "Owner's Phone" %>
                     <%= f.text_field :owners_phone, class: 'form-control' %>
+                    <%= f.label :owners_phone, "Owner's Phone" %>
                   </div>
                
               <br>
               <div class="row">
                 <div class="form-group">
                   <div class="col-lg-4">
-                    <%= f.label :variable_dual_rate, "Variable/Dual Rate" %>
                     <%= f.select :variable_dual_rate, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                    <%= f.label :variable_dual_rate, "Variable/Dual Rate" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :owner_agent, "Owner Agent" %>
                     <%= f.select :owner_agent, options_for_select(yes_or_no), {}, class: 'form-control' %>
+                    <%= f.label :owner_agent, "Owner Agent" %>
                   </div>
                   <div class="col-lg-4">
-                    <%= f.label :occupancy_information, "Occupany Information" %>
                     <%= f.select :occupancy_information, options_for_select(occupancy_info), {}, class: 'form-control' %>
+                    <%= f.label :occupancy_information, "Occupany Information" %>
                   </div>
                 </div>
               </div>
@@ -753,20 +766,20 @@
                     <% end %>                      
                   </div>
                   <div class="col-lg-2">
-                    <%= f.label :compensation_trans_broker, "Comensation Trans Broker" %>
                     <%= f.text_field :compensation_trans_broker, class: 'form-control' %>
+                    <%= f.label :compensation_trans_broker, "Comensation Trans Broker" %>
                   </div>
                   <div class="col-lg-2">
-                    <%= f.label :compensation_buyers_agent, "Compensation Buyer's Agent" %>
                     <%= f.text_field :compensation_buyers_agent, class: 'form-control' %>
+                    <%= f.label :compensation_buyers_agent, "Compensation Buyer's Agent" %>
                   </div>
                   <div class="col-lg-2">
                     <%= f.label :compensation_non_rep, "Compensation Non Rep" %>
                     <%= f.text_field :compensation_non_rep, class: 'form-control' %>
                   </div>
                   <div class="col-lg-2">
-                    <%= f.label :renewal_commission, "Renewal Commission" %>
                     <%= f.select :renewal_commission, options_for_select(renewal_commision), {}, class: 'form-control' %>
+                    <%= f.label :renewal_commission, "Renewal Commission" %>
                   </div>
                 </div>
               </div>
@@ -774,12 +787,12 @@
               <br>
               <div class="row">
                 <div class="col-lg-6">
-                  <%= f.label :agent_url, "Agent URL" %>
                   <%= f.text_field :agent_url, class: 'form-control' %>
+                  <%= f.label :agent_url, "Agent URL" %>
                 </div>
                 <div class="col-lg-6">
-                  <%= f.label :photo_instructions, "Photo Instructions" %>
                   <%= f.text_field :photo_instructions, class: 'form-control' %>
+                  <%= f.label :photo_instructions, "Photo Instructions" %>
                 </div>
               </div>  
             </fieldset>

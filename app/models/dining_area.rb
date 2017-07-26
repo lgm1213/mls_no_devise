@@ -1,4 +1,4 @@
 class DiningArea < ApplicationRecord
-	has_many :building_dinings
-	has_many :buildings, :through => :building_dinings
+	has_many :listing_dining_areas
+	has_many :listings, :through => :listing_dining_areas
 end

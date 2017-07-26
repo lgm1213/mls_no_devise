@@ -465,6 +465,49 @@ module ApplicationHelper
  	]
  end
 
+ def faces
+   [
+    ['North', 'North'],
+    ['Northeast', 'Northeast'],
+    ['East', 'East'],
+    ['Southeast','Southeast'],
+    ['South', 'South'],
+    ['Southwest', 'Southwest'],
+    ['West', 'West'],
+    ['Northwest', 'Northwest']
+   ]
+ end
+
+ def furnished
+  [
+    ['Furnished', 'Furnished'],
+    ['Partially Furnished', 'Partially Furnished'],
+    ['Furniture For Sale', 'Furniture For Sale'],
+    ['Furniture Negotiable', 'Furniture Negotiable'],
+    ['Unfurnished', 'Unfurnished']
+  ]   
+ end
+
+ def view
+  [
+    ['Bay', 'Bay'],
+    ['Canal', 'Canal'],
+    ['Club Area View' 'Club Area View'],
+    ['Garden View', 'Garden View'],
+    ['Golf View', 'Golf View'],
+    ['Intracoastal View', 'Intracoastal View'],
+    ['Lagoon', 'Lagoon'],
+    ['Lake', 'Lake'],
+    ['None', 'None'],
+    ['Ocean View', 'Ocean View'],
+    ['Pool Area View', 'Pool Area View'],
+    ['River', 'River'],
+    ['Water View', 'Water View']
+  ]
+ end
+
+ 
+
 
 
 

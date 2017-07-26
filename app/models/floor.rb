@@ -1,4 +1,5 @@
 class Floor < ApplicationRecord
-	has_many :building_floors
-	has_many :buildings, :through => :building_floors
+	has_many :listing_floors
+	has_many :listings, :through => :listing_floors
 end
+raek

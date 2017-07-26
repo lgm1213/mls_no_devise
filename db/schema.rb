@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721142651) do
+ActiveRecord::Schema.define(version: 20170726215859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -453,6 +453,33 @@ ActiveRecord::Schema.define(version: 20170721142651) do
     t.string   "options"
   end
 
+  create_table "listing_dining_areas", force: :cascade do |t|
+    t.integer  "dining_area_id"
+    t.integer  "listing_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["dining_area_id"], name: "index_listing_dining_areas_on_dining_area_id", using: :btree
+    t.index ["listing_id"], name: "index_listing_dining_areas_on_listing_id", using: :btree
+  end
+
+  create_table "listing_floors", force: :cascade do |t|
+    t.integer  "floor_id"
+    t.integer  "listing_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["floor_id"], name: "index_listing_floors_on_floor_id", using: :btree
+    t.index ["listing_id"], name: "index_listing_floors_on_listing_id", using: :btree
+  end
+
+  create_table "listing_interior_features", force: :cascade do |t|
+    t.integer  "interior_feature_id"
+    t.integer  "listing_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["interior_feature_id"], name: "index_listing_interior_features_on_interior_feature_id", using: :btree
+    t.index ["listing_id"], name: "index_listing_interior_features_on_listing_id", using: :btree
+  end
+
   create_table "listings", force: :cascade do |t|
     t.integer  "building_id"
     t.string   "unit_no"
@@ -476,7 +503,7 @@ ActiveRecord::Schema.define(version: 20170721142651) do
     t.string   "sqft"
     t.boolean  "balcony"
     t.string   "liv_area"
-    t.string   "efficiency"
+    t.boolean  "efficiency"
     t.string   "faces"
     t.string   "additional_parking_info"
     t.string   "furnished_information"
@@ -607,5 +634,11 @@ ActiveRecord::Schema.define(version: 20170721142651) do
   end
 
   add_foreign_key "buildings", "users"
+  add_foreign_key "listing_dining_areas", "dining_areas"
+  add_foreign_key "listing_dining_areas", "listings"
+  add_foreign_key "listing_floors", "floors"
+  add_foreign_key "listing_floors", "listings"
+  add_foreign_key "listing_interior_features", "interior_features"
+  add_foreign_key "listing_interior_features", "listings"
   add_foreign_key "listings", "buildings"
 end
