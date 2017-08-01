@@ -10,7 +10,7 @@
         <strong><%= link_to "Portfolio", listings_path %></strong>
       </li>
       <li class="active">
-        <strong><%= link_to "New Listing", new_listing_path %></strong>
+        <strong><%= link_to "New Listing", new_listing_path, remote: true %></strong>
       </li>
     </ol>
   </div>
@@ -63,4 +63,4 @@
 
 <br>
 
-<%= link_to 'New Listing', new_listing_path %>
+<%= link_to 'New Listing', new_listing_path, remote: true %>

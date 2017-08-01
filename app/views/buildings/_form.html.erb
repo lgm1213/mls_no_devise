@@ -34,6 +34,16 @@
           <p>Here you can fill in the fields below and create a new Building. The Building will hold the listings within the database</p>
           <!-- New Building Form with Validation Wizard -->
           <%= form_for(building, html: {id: 'form', class: 'wizard-big'}) do |f| %>
+            <% if building.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(building.errors.count, "error") %> prohibited this user from being saved:</h2>
+                <ul>
+                <% building.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+              <% end %>
 
             <h1>Location Information</h1>
             <fieldset>

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: false
   has_secure_password
   has_many :buildings
+  has_many :listings, as: :rentable
 
    # Returns the hash digest of a given string
   def User.digest(string)

@@ -56,42 +56,41 @@
   <tbody>
     <% @buildings.each do |building| %>
       <tr>
-        <td><%= building.county %></td>
-        <td><%= building.area %></td>
-        <td><%= building.city %></td>
-        <td><%= building.folio %></td>
-        <td><%= building.street %></td>
-        <td><%= building.compass_point %></td>
-        <td><%= building.street_name %></td>
-        <td><%= building.state %></td>
-        <td><%= building.zip %></td>
-        <td><%= building.zip4 %></td>
-        <td><%= building.unit %></td>
-        <td><%= building.legal %></td>
-        <td><%= building.zoning %></td>
-        <td><%= building.geographical %></td>
-        <td><%= building.area %></td>
-        <td><%= building.municip_code %></td>
-        <td><%= building.township %></td>
-        <td><%= building.section %></td>
-        <td><%= building.subdivision %></td>
-        <td><%= building.parcel %></td>
-        <td><%= building.map_coordinates %></td>
-        <td><%= building.elementary_school %></td>
-        <td><%= building.middle_school %></td>
-        <td><%= building.senior_high_school %></td>
-        <td><%= building.subdivision_name %></td>
-        <td><%= building.development_name %></td>
-        <td><%= building.model_name_in_mls %></td>
-        <td><%= building.user.username %></td>
         <td><%= link_to 'Show', building %></td>
         <td><%= link_to 'Edit', edit_building_path(building) %></td>
         <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+<div class="text-center">
+  <%= link_to "#{building.development_name}", building, class: 'btn btn-primary', data: {toggle:'modal', target: '#myModal'} %>
+</div>
   </tbody>
 </table>
 
 <br>
 
+<div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content animated bounceInRight">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <i class="fa fa-laptop modal-icon"></i>
+        <h4 class="modal-title"><%= building.development_name %></h4>
+        <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+      </div>
+      <div class="modal-body">
+        <p>
+          <strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+          printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged.
+        </p>
+        <div class="form-group"><label>Sample Input</label> <input type="email" placeholder="Enter your email" class="form-control"></div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <% end %>
 <%= link_to 'New Building', new_building_path %>

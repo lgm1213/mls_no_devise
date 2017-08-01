@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
-  belongs_to :building
-  belongs_to :user
+	#belongs to User and Building
+  belongs_to :rentable, polymorphic: true
 
   #multicheckbox relationship models
   has_many :listing_dining_areas

@@ -1,0 +1,54 @@
+//  Ajax call to submit data to DB
+    $("#finish").click(function() {
+        var submitData;
+        submitData = $.ajax({
+        	type: "POST",
+        	url: "listings/new",
+        	data: $([
+        		'building_id',
+						'unit_no',
+						'floor_plan',
+						'num_fbaths',
+						'num_hbaths',
+						'advertising',
+						'move_in_special',
+						'commission',
+						'created_at',
+						'rent_price',
+						'rent_per_period',
+						'for_sale',
+						'beds',
+						'fbaths',
+						'hbaths',
+						'unit_floor_location',
+						'type_of_property',
+						'style',
+						'sqft',
+						'balcony',
+						'liv_area',
+						'efficiency',
+						'faces',
+						'additional_parking_info',
+						'furnished_information',
+						'available_date',
+						'view',
+						'floor',
+						'dinning',
+						'listing_type',
+						'list_date',
+						'expiration_date',
+						'convert_bed'
+					].join(', ')).serialize(),
+        	success: 
+        	dataType: 
+        })
+
+
+
+        post(url, function(data, textStatus, submitData) {
+          return console.log('i guess it worked');
+        });
+        return submitData.fail(function() {
+          return console.log(submitData.responseText);
+        });
+      });

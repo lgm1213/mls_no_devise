@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726215859) do
+ActiveRecord::Schema.define(version: 20170801181313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -514,7 +514,8 @@ ActiveRecord::Schema.define(version: 20170726215859) do
     t.string   "listing_type"
     t.date     "list_date"
     t.date     "expiration_date"
-    t.index ["building_id"], name: "index_listings_on_building_id", using: :btree
+    t.boolean  "convert_bed"
+    t.integer  "user_id"
   end
 
   create_table "lot_descriptions", force: :cascade do |t|

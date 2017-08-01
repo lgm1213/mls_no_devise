@@ -61,8 +61,8 @@ class Building < ApplicationRecord
   has_many :building_rental_dep_incls
   has_many :rental_dep_incls, :through => :building_rental_dep_incls
 
- has_many :building_rental_restrictions
- has_many :rental_restrictions, :through => :building_rental_restrictions
+  has_many :building_rental_restrictions
+  has_many :rental_restrictions, :through => :building_rental_restrictions
 
   has_many :building_roof_descriptions
   has_many :roof_descriptions, :through => :building_roof_descriptions
@@ -83,7 +83,7 @@ class Building < ApplicationRecord
   has_many :waterfront_descriptions, :through => :building_waterfront_descriptions
 
   #listing relationship
-  has_many :listings
+  has_many :listings, as: :rentable
   
   validates :county, :presence => true, :if => :active?
 
