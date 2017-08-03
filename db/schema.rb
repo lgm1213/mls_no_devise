@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801181313) do
+ActiveRecord::Schema.define(version: 20170801184337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -481,7 +481,6 @@ ActiveRecord::Schema.define(version: 20170801181313) do
   end
 
   create_table "listings", force: :cascade do |t|
-    t.integer  "building_id"
     t.string   "unit_no"
     t.string   "floor_plan"
     t.string   "num_fbaths"
@@ -515,7 +514,9 @@ ActiveRecord::Schema.define(version: 20170801181313) do
     t.date     "list_date"
     t.date     "expiration_date"
     t.boolean  "convert_bed"
-    t.integer  "user_id"
+    t.string   "rentable_type"
+    t.integer  "rentable_id"
+    t.index ["rentable_type", "rentable_id"], name: "index_listings_on_rentable_type_and_rentable_id", using: :btree
   end
 
   create_table "lot_descriptions", force: :cascade do |t|
@@ -641,5 +642,4 @@ ActiveRecord::Schema.define(version: 20170801181313) do
   add_foreign_key "listing_floors", "listings"
   add_foreign_key "listing_interior_features", "interior_features"
   add_foreign_key "listing_interior_features", "listings"
-  add_foreign_key "listings", "buildings"
 end

@@ -4,7 +4,8 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
+    @rentable = Building.find(params[:building_id])
+    @listings = @rentable.listings
   end
 
   # GET /listings/1
@@ -14,7 +15,8 @@ class ListingsController < ApplicationController
 
   # GET /listings/new
   def new
-    @listing = current_user.Listing.build
+    @rentable = rentable
+    @listing = @rentable
   end
 
   # GET /listings/1/edit
@@ -24,7 +26,7 @@ class ListingsController < ApplicationController
   # POST /listings
   # POST /listings.json
   def create
-    @listing = current_user.Listing.new(listing_params)
+    @listing = Listing.new(listing_params)
 
     respond_to do |format|
       if @listing.save
@@ -73,4 +75,6 @@ class ListingsController < ApplicationController
     def listing_params
       params.require(:listing).permit(:building_id, :unit_no, :floor_plan, :num_fbaths, :num_hbaths, :advertising, :move_in_special, :commission,  :rent_price, :rent_per_period, :for_sale, :unit_floor_location, :type_of_property, :style, :sqft, :balcony, :liv_area, :efficiency, :faces, :additional_parking_info, :furnished_information, :available_date, :view, :floor, :dinning, :listing_type, :list_date, :expiration_date, :convert_bed, floor_ids: [], dining_area_ids: [], interior_feature_ids: [])
     end
+  
 end
+

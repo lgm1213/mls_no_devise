@@ -32,7 +32,7 @@
         </div>
         <div class="ibox-content">
           <h2>New Listing Creation Form</h2>
-          <%= form_for(listing, html: {id: 'form', class: 'wizard-big form-horizontal'}, remote: true, :authenticity_token => true) do |f| %>
+          <%= form_for([@listing, @rentable], html: {id: 'form', class: 'wizard-big form-horizontal'}, remote: true, :authenticity_token => true) do |f| %>
            <% if listing.errors.any? %>
             <div id="error_explanation">
               <h2><%= pluralize(listing.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -46,12 +46,7 @@
           <h1>Rental Description</h1>
           <fieldset>
             <h2>Rental Listing Description</h2>
-              <div class="form-group">
-                <%= f.label :building_id, "Lease Up Building Id", class: 'control-label col-sm-4' %>
-                <div class="col-sm-2">
-                  <%= f.text_field :building_id, class: 'form-control' %>
-                </div>
-              </div>
+
               <div class="form-group">
               <%= f.label :type_of_property, "Type of Property", class: 'control-label col-sm-4' %>
               <div class="col-sm-2">
@@ -235,9 +230,7 @@
                     <%= b.check_box(id: "checkbox8") %>
                     <%= b.object.options %>
                   <% end %>
-                <% end %>
-              <%= f.hidden_field :user_id, value: current_user.id %>
-        
+                <% end %>        
               </div>
                     
             </div>

@@ -1,17 +1,13 @@
 Rails.application.routes.draw do
+# You can have the root of your site routed with "root"
+  root 'landing#index'
   
   get 'forms/basic_forms'
-
   get 'forms/advanced'
-
   get 'forms/wizard'
-
   get 'forms/file_upload'
-
   get 'forms/text_editor'
-
   get 'forms/markdown'
-
   get 'landing/index'
 
   resources :listings
@@ -54,8 +50,6 @@ Rails.application.routes.draw do
   #wizard for building creation routes
   resources :listing_wizards
 
-# You can have the root of your site routed with "root"
-  root 'landing#index'
 
   # All routes
   get "dashboards/dashboard_1"
