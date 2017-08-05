@@ -16,11 +16,6 @@
 </p>
 
 <p>
-  <strong>Rent:</strong>
-  <%= @listing.rent %>
-</p>
-
-<p>
   <strong>Num fbaths:</strong>
   <%= @listing.num_fbaths %>
 </p>
@@ -45,5 +40,5 @@
   <%= @listing.commission %>
 </p>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+<%= link_to 'Edit', edit_building_listing_path(@listing) %> |
+<%= link_to 'Back', building_listings_path %>

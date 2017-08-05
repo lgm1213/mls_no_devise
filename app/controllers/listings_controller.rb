@@ -4,6 +4,7 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
+    @building = Building.find(params[:building_id])
     @listings = Listing.all
   end
 
@@ -26,12 +27,13 @@ class ListingsController < ApplicationController
   # POST /listings
   # POST /listings.json
   def create
-    byebug
+    # byebug
+    @building = Building.find(listing_params[:building_id])
     @listing = Listing.new(listing_params)
 
     respond_to do |format|
       if @listing.save
-        format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
+        format.html { redirect_to [@building, @listing], notice: 'Listing was successfully created.' }
         format.json { render :show, status: :created, location: @listing }
         format.js {}
       else
@@ -74,7 +76,9 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:building_id, :unit_no, :floor_plan, :num_fbaths, :num_hbaths, :advertising, :move_in_special, :commission,  :rent_price, :rent_per_period, :for_sale, :unit_floor_location, :type_of_property, :style, :sqft, :balcony, :liv_area, :efficiency, :faces, :additional_parking_info, :furnished_information, :available_date, :view, :floor, :dinning, :listing_type, :list_date, :expiration_date, :convert_bed, floor_ids: [], dining_area_ids: [], interior_feature_ids: [])
+      listing_stuff = params.require(:listing).permit(:building_id, :unit_no, :floor_plan, :num_fbaths, :num_hbaths, :advertising, :move_in_special, :commission,  :rent_price, :rent_per_period, :for_sale, :unit_floor_location, :type_of_property, :style, :sqft, :balcony, :liv_area, :efficiency, :faces, :additional_parking_info, :furnished_information, :available_date, :view, :floor, :dinning, :listing_type, :list_date, :expiration_date, :convert_bed, floor_ids: [], dining_area_ids: [], interior_feature_ids: []).to_h
+      listing_stuff[:building_id] = params[:building_id]
+      listing_stuff
     end
   
 end

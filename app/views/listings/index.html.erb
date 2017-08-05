@@ -4,13 +4,16 @@
     New Building or Property
     <ol class="breadcrumb">
       <li>
-        <%= link_to "Home", root_path %></a>
+        <%= link_to "Home", root_path %>
+      </li>
+      <li>
+        <%= link_to "Buildings", buildings_path %>
       </li>
       <li>
         <strong><%= link_to "Portfolio", building_listings_path %></strong>
       </li>
       <li class="active">
-        <strong><%= link_to "New Listing", new_building_listing_path, remote: true %></strong>
+        <%= link_to "New Listing", new_building_listing_path, remote: true %>
       </li>
     </ol>
   </div>
@@ -47,15 +50,14 @@
         <td><%= listing.building %></td>
         <td><%= listing.unit_no %></td>
         <td><%= listing.floor_plan %></td>
-        <td><%= listing.rent %></td>
         <td><%= listing.num_fbaths %></td>
         <td><%= listing.num_hbaths %></td>
         <td><%= listing.advertising %></td>
         <td><%= listing.move_in_special %></td>
         <td><%= listing.commission %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', building_listing_path(@building, listing) %></td>
+        <td><%= link_to 'Edit', edit_building_listing_path(@building, listing) %></td>
+        <td><%= link_to 'Destroy', building_listing_path(@building, listing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

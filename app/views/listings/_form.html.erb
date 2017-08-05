@@ -32,7 +32,7 @@
         </div>
         <div class="ibox-content">
           <h2>New Listing Creation Form</h2>
-          <%= form_for(building_listings_path(@building), html: {id: 'form', class: 'wizard-big form-horizontal'}, remote: true, :authenticity_token => true) do |f| %>
+          <%= form_for(@listing, url: {action: 'create'}, html: {id: 'form', class: 'wizard-big form-horizontal'}, :authenticity_token => true) do |f| %>
            <% if listing.errors.any? %>
             <div id="error_explanation">
               <h2><%= pluralize(listing.errors.count, "error") %> prohibited this user from being saved:</h2>
