@@ -15,8 +15,8 @@ class ListingsController < ApplicationController
 
   # GET /listings/new
   def new
-    @rentable = rentable
-    @listing = @rentable
+    @listing= Listing.new
+
   end
 
   # GET /listings/1/edit
