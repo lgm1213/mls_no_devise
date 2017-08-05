@@ -1,5 +1,6 @@
 class Building < ApplicationRecord
   belongs_to :user
+
   # has many through relationships for multiple data values with select checkboxes
   has_many :building_additional_rooms
   has_many :additional_rooms, :through => :building_additional_rooms
@@ -83,7 +84,7 @@ class Building < ApplicationRecord
   has_many :waterfront_descriptions, :through => :building_waterfront_descriptions
 
   #listing relationship
-  has_many :listings, as: :rentable
+  has_many :listings
   
   validates :county, :presence => true, :if => :active?
 

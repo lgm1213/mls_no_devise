@@ -6,10 +6,10 @@
         <%= link_to "Home", root_path %></a>
       </li>
       <li>
-        <strong><%= link_to "Portfolio", listings_path %></strong>
+        <strong><%= link_to "Portfolio", building_listings_path %></strong>
       </li>
       <li class="active">
-        <strong><%= link_to "New Listing", new_listing_path %></strong>
+        <strong><%= link_to "New Listing", new_building_listing_path %></strong>
       </li>
     </ol>
   </div>
@@ -32,7 +32,7 @@
         </div>
         <div class="ibox-content">
           <h2>New Listing Creation Form</h2>
-          <%= form_for([@listing, @rentable], html: {id: 'form', class: 'wizard-big form-horizontal'}, remote: true, :authenticity_token => true) do |f| %>
+          <%= form_for(building_listings_path(@building), html: {id: 'form', class: 'wizard-big form-horizontal'}, remote: true, :authenticity_token => true) do |f| %>
            <% if listing.errors.any? %>
             <div id="error_explanation">
               <h2><%= pluralize(listing.errors.count, "error") %> prohibited this user from being saved:</h2>

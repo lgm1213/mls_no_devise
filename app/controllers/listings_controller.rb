@@ -4,8 +4,7 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @rentable = Building.find(params[:building_id])
-    @listings = @rentable.listings
+    @listings = Listing.all
   end
 
   # GET /listings/1
@@ -15,7 +14,8 @@ class ListingsController < ApplicationController
 
   # GET /listings/new
   def new
-    @listing= Listing.new
+    @building = Building.find(params[:building_id])
+    @listing= Listing.new(building: @building)
 
   end
 
@@ -26,6 +26,7 @@ class ListingsController < ApplicationController
   # POST /listings
   # POST /listings.json
   def create
+    byebug
     @listing = Listing.new(listing_params)
 
     respond_to do |format|

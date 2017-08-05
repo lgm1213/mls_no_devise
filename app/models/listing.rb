@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
-  belongs_to :buildings
-  
+  belongs_to :building
+
 
   #multicheckbox relationship models
   has_many :listing_dining_areas
