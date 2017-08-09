@@ -66,3 +66,5 @@ end
 gem 'rails-erd'
 gem "font-awesome-rails"
 
+gem "paperclip"
+
