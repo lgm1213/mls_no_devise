@@ -30,8 +30,6 @@ class BuildingsController < ApplicationController
 
     respond_to do |format|
       if @building.save
-        session[:building_id] = @building.id
-        redirect_to listing_wizards_path
         format.html { redirect_to @building, notice: 'Building was successfully created.' }
         format.json { render :show, status: :created, location: @building }
       else

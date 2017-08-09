@@ -2,21 +2,27 @@
 
 
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-sm-4">
+    <p>
+      <strong>County:</strong>
+      <%= @building.county %>
+    </p>
+  </div>
+  <div class="col-sm-4">
+    <p>
+      <strong>Area:</strong>
+      <%= @building.area %>
+    </p>    
+  </div>
+  <div class="col-sm-4">
+    <p>
+      <strong>City:</strong>
+      <%= @building.city %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <strong>County:</strong>
-  <%= @building.county %>
-</p>
-
-<p>
-  <strong>Area:</strong>
-  <%= @building.area %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @building.city %>
-</p>
 
 <p>
   <strong>Folio:</strong>
