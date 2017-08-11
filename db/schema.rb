@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726230614) do
+ActiveRecord::Schema.define(version: 20170810134000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -515,6 +515,10 @@ ActiveRecord::Schema.define(version: 20170726230614) do
     t.date     "expiration_date"
     t.boolean  "convert_bed"
     t.integer  "building_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
     t.index ["building_id"], name: "index_listings_on_building_id", using: :btree
   end
 

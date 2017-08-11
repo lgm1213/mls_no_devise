@@ -66,5 +66,6 @@ end
 gem 'rails-erd'
 gem "font-awesome-rails"
 
-gem "paperclip"
+gem 'paperclip'
+gem 'aws-sdk'
 
