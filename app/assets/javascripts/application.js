@@ -13,4 +13,5 @@
 //= require slimscroll/jquery.slimscroll.min.js
 //= require inspinia.js
 //= require wow/wow.min.js
+//= require jquery_ujs
 

@@ -38,6 +38,8 @@ Rails.application.routes.draw do
   resources :buildings do
     resources :listings
   end
+  get 'buildings/:id/modal', to: 'buildings#open_building_modal'
+
 
   
 

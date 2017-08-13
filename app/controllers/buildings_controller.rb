@@ -1,5 +1,6 @@
 class BuildingsController < ApplicationController
   before_action :set_building, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery except: [:index, :open_building_modal, :show]
 
   # GET /buildings
   # GET /buildings.json
@@ -10,8 +11,17 @@ class BuildingsController < ApplicationController
   # GET /buildings/1
   # GET /buildings/1.json
   def show
+
     render layout: !request.xhr?
 
+  end
+
+  def open_building_modal
+    @building= Building.find(params[:id])
+    respond_to do |format|
+      format.js
+
+    end
   end
 
   # GET /buildings/new
@@ -26,11 +36,11 @@ class BuildingsController < ApplicationController
   # POST /buildings
   # POST /buildings.json
   def create
-    @building = Building.new(building_params)
+    @building = Building.new(building_params.merge({user_id: current_user.id}))
 
     respond_to do |format|
       if @building.save
-        format.html { redirect_to @building, notice: 'Building was successfully created.' }
+        format.html { redirect_to buildings_path, notice: 'Building was successfully created.' }
         format.json { render :show, status: :created, location: @building }
       else
         format.html { render :new }

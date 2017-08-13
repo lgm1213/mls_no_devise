@@ -33,7 +33,7 @@
           <h2>New Building Creation Form</h2>
           <p>Here you can fill in the fields below and create a new Building. The Building will hold the listings within the database</p>
           <!-- New Building Form with Validation Wizard -->
-          <%= form_for(@building, url: (@building.new_record? ? {action: 'create'} : {action: 'update'}), html: {id: 'form', class: 'wizard-big'}, remote: true, :authentictiy_token => true) do |f| %>
+          <%= form_for(@building, url: (@building.new_record? ? {action: 'create'} : {action: 'update'}), html: {id: 'form', class: 'wizard-big'}, :authentictiy_token => true) do |f| %>
             <% if building.errors.any? %>
               <div id="error_explanation">
                 <h2><%= pluralize(building.errors.count, "error") %> prohibited this user from being saved:</h2>
