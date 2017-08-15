@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+GetLeasedUp is an app for Property Management companies
 
-Things you may want to cover:
 
-* Ruby version
+Built using Rails 5
+An app for a real estate marketing company that is targeting property mgmt companies.
+The app will upload a property/building using a jQuery wizard( jQuerySteps), the User will then be able to track how many rental units they have available for rent and which units were rented and which are still available.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Photos of available units are uploaded using PaperClip and AWS S3

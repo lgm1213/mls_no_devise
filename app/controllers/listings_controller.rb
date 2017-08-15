@@ -78,7 +78,7 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      listing_stuff = params.require(:listing).permit(:building_id, :unit_no, :floor_plan, :num_fbaths, :num_hbaths, :advertising, :move_in_special, :commission,  :rent_price, :rent_per_period, :for_sale, :unit_floor_location, :type_of_property, :style, :sqft, :balcony, :liv_area, :efficiency, :faces, :additional_parking_info, :furnished_information, :available_date, :view, :floor, :dinning, :listing_type, :list_date, :expiration_date, :convert_bed, floor_ids: [], dining_area_ids: [], interior_feature_ids: []).to_h
+      listing_stuff = params.require(:listing).permit(:building_id, :unit_no, :floor_plan, :num_fbaths, :num_hbaths, :advertising, :move_in_special, :commission,  :rent_price, :rent_per_period, :photo, :for_sale, :unit_floor_location, :type_of_property, :style, :sqft, :balcony, :liv_area, :efficiency, :faces, :additional_parking_info, :furnished_information, :available_date, :view, :floor, :dinning, :listing_type, :list_date, :expiration_date, :convert_bed, floor_ids: [], dining_area_ids: [], interior_feature_ids: []).to_h
       listing_stuff[:building_id] = params[:building_id]
       listing_stuff
     end
