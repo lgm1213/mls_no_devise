@@ -13,7 +13,7 @@
         <strong><%= link_to "Portfolio", building_listings_path %></strong>
       </li>
       <li class="active">
-        <%= link_to "New Listing", new_building_listing_path, remote: true %>
+        <%= link_to "New Listing", new_building_listing_path %>
       </li>
     </ol>
   </div>
@@ -25,44 +25,46 @@
 
 
 <p id="notice"><%= notice %></p>
+<div class="ibox-content">
+  <h1>Listings</h1>
 
-<h1>Listings</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Building</th>
-      <th>Unit no</th>
-      <th>Floor plan</th>
-      <th>Rent</th>
-      <th>Num fbaths</th>
-      <th>Num hbaths</th>
-      <th>Advertising</th>
-      <th>Move in special</th>
-      <th>Commission</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @listings.each do |listing| %>
+  <table class="table table-striped table-bordered table-hover dataTables-example">
+    <thead>
       <tr>
-        <td><%= listing.building %></td>
-        <td><%= listing.unit_no %></td>
-        <td><%= listing.floor_plan %></td>
-        <td><%= listing.num_fbaths %></td>
-        <td><%= listing.num_hbaths %></td>
-        <td><%= listing.advertising %></td>
-        <td><%= listing.move_in_special %></td>
-        <td><%= listing.commission %></td>
-        <td><%= link_to 'Show', building_listing_path(@building, listing) %></td>
-        <td><%= link_to 'Edit', edit_building_listing_path(@building, listing) %></td>
-        <td><%= link_to 'Destroy', building_listing_path(@building, listing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Building</th>
+        <th>Unit no</th>
+        <th>Floor plan</th>
+        <th>Rent</th>
+        <th>Num fbaths</th>
+        <th>Num hbaths</th>
+        <th>Advertising</th>
+        <th>Move in special</th>
+        <th>Commission</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @listings.each do |listing| %>
+        <tr>
+          <td><%= listing.building %></td>
+          <td><%= listing.unit_no %></td>
+          <td><%= listing.floor_plan %></td>
+          <td><%= listing.num_fbaths %></td>
+          <td><%= listing.num_hbaths %></td>
+          <td><%= listing.advertising %></td>
+          <td><%= listing.move_in_special %></td>
+          <td><%= listing.commission %></td>
+          <td><%= link_to 'Show', building_listing_path(@building, listing) %></td>
+          <!-- <td><%#= link_to 'Edit', edit_building_listing_path(@building, listing) %></td> -->
+          <!-- <td><%#= link_to 'Destroy', building_listing_path(@building, listing), method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+</div>
 
 <br>
 
-<%= link_to 'New Listing', new_building_listing_path, remote: true %>
+<%= link_to 'New Listing', new_building_listing_path, class: 'btn btn-primary' %>

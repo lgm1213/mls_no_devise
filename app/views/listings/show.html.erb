@@ -1,4 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="col-lg-12">
+  <div class="ibox float-e-margins">
+    <div class="ibox-title">
+      <h5>Listing Details<small class="m-l-sm"></small></h5>
+    </div>
+      <div class="ibox-content">
+        <h2 >
+         Listing Id#<%= @listing.id %><br/>
+        </h2>
+        <p>
+          <strong>Lorem ipsum dolor</strong>
+          Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
+        <p>
+          <small>
+            Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+          </small>
+          <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Building:</strong>
@@ -40,5 +56,15 @@
   <%= @listing.commission %>
 </p>
 
-<%= link_to 'Edit', edit_building_listing_path(@listing) %> |
-<%= link_to 'Back', building_listings_path %>
+<%= link_to 'Edit Listing', edit_building_listing_path(@listing) %> |
+<%= link_to 'Listing Portfolio', building_listings_path %> |
+<%= link_to 'Destroy', building_listing_path(@listing), method: :delete, data: { confirm: 'Are you sure?' } %> 
+      </div>
+      <div class="ibox-footer">
+        <span class="pull-right">
+          The righ side of the footer
+        </span>
+          This is simple footer example
+      </div>
+  </div>
+</div>

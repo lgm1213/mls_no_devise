@@ -84,7 +84,7 @@ class Building < ApplicationRecord
   has_many :waterfront_descriptions, :through => :building_waterfront_descriptions
 
   #listing relationship
-  has_many :listings
+  has_many :listings, dependent: :destroy
   
   validates :county, :presence => true, :if => :active?
 
