@@ -41,14 +41,14 @@ class User < ApplicationRecord
   end
 
   #activates an account
-  def activate
-    update_columns(activated: true, activated_at: Time.zone.now)
-  end
+  # def activate
+  #   update_columns(activated: true, activated_at: Time.zone.now)
+  # end
 
-  #send the user an activation email
-  def send_activation_email
-    UserMailer.account_activation(self).deliver_now  
-  end
+  # #send the user an activation email
+  # def send_activation_email
+  #   UserMailer.account_activation(self).deliver_now  
+  # end
 
   #sets the password reset attributes
   # def create_reset_digest
@@ -69,10 +69,10 @@ class User < ApplicationRecord
 private
 
  #creates an activation token
-  def create_activation_digest
-    self.activation_token = User.new_token
-    self.activation_digest = User.digest(activation_token)
-  end
+  # def create_activation_digest
+  #   self.activation_token = User.new_token
+  #   self.activation_digest = User.digest(activation_token)
+  # end
 
   def downcase_email
     self.email = email.downcase
