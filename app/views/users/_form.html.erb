@@ -30,11 +30,10 @@
     <%= f.label :password_confirmation, "Confirmation" %>
     <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm Password' %>
   </div>
+  <br/>
 
   <div class="actions">
-    <%= f.submit yield(:button_text), class: "btn btn-primary block full-width m-b" %>
+    <%= f.submit yield(:button_text), class: "btn btn-primary center-block m-b" %>
   </div>
-  <p class="text-muted text-center"><small>Already have an account?</small></p>
-  <%= link_to "Login", login_path, class: 'btn btn-sm btn-white btn-block' %>
 
 <% end %>

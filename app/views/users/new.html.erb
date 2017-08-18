@@ -9,6 +9,8 @@
       <p>Create account to see it in action.</p>
 					<%= render 'form', user: @user %>
 					<%= link_to 'Back', root_path %>
+      <p class="text-muted text-center"><small>Already have an account?</small></p>
+      <%= link_to "Login", login_path, class: 'btn btn-sm btn-white btn-block' %>
       
         <p class="m-t"> <small>leasedUp created by LGM Studios</small> </p>
     </div>

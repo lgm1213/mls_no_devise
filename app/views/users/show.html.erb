@@ -1,18 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    New Building or Property
+    <ol class="breadcrumb">
+      <li>
+        <%= link_to "Home", root_path %>
+      </li>
+      <li>
+        <%= link_to "Buildings", buildings_path %>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+  </div>
+</div>
+<h1>Account Info</h1>
+<div class="ibox-content">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+	<p>
+	  <strong>Username:</strong>
+	  <%= @user.username %>
+	</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+	<p>
+	  <strong>Email:</strong>
+	  <%= @user.email %>
+	</p>
 
-<p>
-	<%= link_to "View Buildings", buildings_path %>
-</p>
+	<p>
+		<%= link_to "View Buildings", buildings_path, class: 'btn btn-primary' %>
+	</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+	<%= link_to 'Edit', edit_user_path(@user) %> |
+	<%= link_to 'Back', users_path %>
+</div>
