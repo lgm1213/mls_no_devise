@@ -1,5 +1,8 @@
 class User < ApplicationRecord
 	attr_accessor :remember_token, :activation_token, :reset_token
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update]
+  before_action :admin_user, only: :destroy
   before_save :downcase_email
   before_create :create_activation_digest
   validates :username, presence: true, length: { maximum: 30 }
@@ -77,4 +80,19 @@ private
   def downcase_email
     self.email = email.downcase
   end
+
+  # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
+  end
+
+# Confirms the correct user.
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless @user == current_user
+  end
+
 end

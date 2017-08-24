@@ -1,6 +1,7 @@
-<div class="col-md-3">
-      <div class="ibox">
-        <div class="ibox-content product-box">
+<div class="col-md-12">
+  <h1>Building Info</h1>
+  <div class="ibox">
+    <div class="ibox-content">
           <div class="product-imitation">
               [ INFO ]
           </div>
@@ -9,9 +10,10 @@
                 Building Id: <%= @building.id %></span>
               <small class="text-muted">Development Name</small>
               <%= link_to "#{@building.development_name}", @building %>
-              <div class="small m-t-xs">
-                  <p id="notice"><%= notice %></p>
-<div class="row">
+              
+     <div class="small m-t-xs">
+      <p id="notice"><%= notice %></p>
+      <div class="row">
   <div class="col-sm-4">
     <p>
       <strong>County:</strong>
@@ -26,130 +28,130 @@
   </div>
   <div class="col-sm-4">
     <p>
-<p>
-  <strong>Folio:</strong>
-  <%= @building.folio %>
-</p>
+        <p>
+          <strong>Folio:</strong>
+          <%= @building.folio %>
+        </p>
 
-<p>
-  <strong>Street:</strong>
-  <%= @building.street %>
-</p>
+        <p>
+          <strong>Street:</strong>
+          <%= @building.street %>
+        </p>
 
-<p>
-  <strong>Compasspoint:</strong>
-  <%= @building.compass_point %>
-</p>
+        <p>
+          <strong>Compasspoint:</strong>
+          <%= @building.compass_point %>
+        </p>
 
-<p>
-  <strong>Streetname:</strong>
-  <%= @building.street_name %>
-</p>
+        <p>
+          <strong>Streetname:</strong>
+          <%= @building.street_name %>
+        </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @building.state %>
-</p>
+        <p>
+          <strong>State:</strong>
+          <%= @building.state %>
+        </p>
 
-<p>
-  <strong>Zip:</strong>
-  <%= @building.zip %>
-</p>
+        <p>
+          <strong>Zip:</strong>
+          <%= @building.zip %>
+        </p>
 
-<p>
-  <strong>Zip4:</strong>
-  <%= @building.zip4 %>
-</p>
+        <p>
+          <strong>Zip4:</strong>
+          <%= @building.zip4 %>
+        </p>
 
-<p>
-  <strong>Unit:</strong>
-  <%= @building.unit %>
-</p>
+        <p>
+          <strong>Unit:</strong>
+          <%= @building.unit %>
+        </p>
 
-<p>
-  <strong>Legal:</strong>
-  <%= @building.legal %>
-</p>
+        <p>
+          <strong>Legal:</strong>
+          <%= @building.legal %>
+        </p>
 
-<p>
-  <strong>Zoning:</strong>
-  <%= @building.zoning %>
-</p>
+        <p>
+          <strong>Zoning:</strong>
+          <%= @building.zoning %>
+        </p>
 
-<p>
-  <strong>Geographical:</strong>
-  <%= @building.geographical %>
-</p>
+        <p>
+          <strong>Geographical:</strong>
+          <%= @building.geographical %>
+        </p>
 
-<p>
-  <strong>Area:</strong>
-  <%= @building.area %>
-</p>
+        <p>
+          <strong>Area:</strong>
+          <%= @building.area %>
+        </p>
 
-<p>
-  <strong>Municipcode:</strong>
-  <%= @building.municip_code %>
-</p>
+        <p>
+          <strong>Municipcode:</strong>
+          <%= @building.municip_code %>
+        </p>
 
-<p>
-  <strong>Township:</strong>
-  <%= @building.township %>
-</p>
+        <p>
+          <strong>Township:</strong>
+          <%= @building.township %>
+        </p>
 
-<p>
-  <strong>Section:</strong>
-  <%= @building.section %>
-</p>
+        <p>
+          <strong>Section:</strong>
+          <%= @building.section %>
+        </p>
 
-<p>
-  <strong>Subdivision:</strong>
-  <%= @building.subdivision %>
-</p>
+        <p>
+          <strong>Subdivision:</strong>
+          <%= @building.subdivision %>
+        </p>
 
-<p>
-  <strong>Parcel:</strong>
-  <%= @building.parcel %>
-</p>
+        <p>
+          <strong>Parcel:</strong>
+          <%= @building.parcel %>
+        </p>
 
-<p>
-  <strong>Mapcoordinates:</strong>
-  <%= @building.map_coordinates %>
-</p>
+        <p>
+          <strong>Mapcoordinates:</strong>
+          <%= @building.map_coordinates %>
+        </p>
 
-<p>
-  <strong>Elementaryschool:</strong>
-  <%= @building.elementary_school %>
-</p>
+        <p>
+          <strong>Elementaryschool:</strong>
+          <%= @building.elementary_school %>
+        </p>
 
-<p>
-  <strong>Middleschool:</strong>
-  <%= @building.middle_school %>
-</p>
+        <p>
+          <strong>Middleschool:</strong>
+          <%= @building.middle_school %>
+        </p>
 
-<p>
-  <strong>Seniorhighschool:</strong>
-  <%= @building.senior_high_school %>
-</p>
+        <p>
+          <strong>Seniorhighschool:</strong>
+          <%= @building.senior_high_school %>
+        </p>
 
-<p>
-  <strong>Subdivisonname:</strong>
-  <%= @building.subdivision_name %>
-</p>
+        <p>
+          <strong>Subdivisonname:</strong>
+          <%= @building.subdivision_name %>
+        </p>
 
-<p>
-  <strong>Developmentname:</strong>
-  <%= @building.development_name %>
-</p>
+        <p>
+          <strong>Developmentname:</strong>
+          <%= @building.development_name %>
+        </p>
 
-<p>
-  <strong>Modelname:</strong>
-  <%= @building.model_name_in_mls %>
-</p>
+        <p>
+          <strong>Modelname:</strong>
+          <%= @building.model_name_in_mls %>
+        </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @building.user.username %>
-</p>
+        <p>
+          <strong>User:</strong>
+          <%= @building.user.username %>
+        </p>
 
 <%= link_to 'Edit', edit_building_path(@building), class: 'btn btn-primary' %> |
 <%= link_to 'Back', buildings_path, class: 'btn btn-primary' %>
@@ -157,19 +159,14 @@
       <%= @building.city %>
     </p>
   </div>
-</div>
+    </div>
 
 
 
               </div>
-              <div class="m-t text-righ">
-                <%= link_to @building do %>
-                  Info <i class="fa fa-long-arrow-right"></i> 
-                <% end %>
-                <!-- <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a> -->
-              </div>
+
           </div>
-        </div>
+  </div>
       </div>
     </div>
     </div>

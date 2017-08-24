@@ -13,8 +13,9 @@
         </p>
       </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+        <%= link_to "See Building Listings", building_listings_path(@building), class: 'btn btn-blue' %>
+        <%= link_to "See More Info", building_path(@building), class: 'btn btn-primary'%>  
+        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
