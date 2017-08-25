@@ -12,7 +12,6 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/vendor/*
 .env
 
 # Ignore Byebug command history file.
