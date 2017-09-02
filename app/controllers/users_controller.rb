@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:edit, :update, :destroy, :show]
   before_action :correct_user, only: [:edit, :update]
+  skip_before_action :require_login, only: [:new]
 
   # GET /users
   # GET /users.json

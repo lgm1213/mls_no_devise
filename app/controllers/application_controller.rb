@@ -14,7 +14,7 @@ private
   def require_login
   	unless logged_in?
   		flash[:error] = "You Must be logged in to access this page"
-  		redirect_to login
+  		redirect_to login_path
   	end
   end
 end
