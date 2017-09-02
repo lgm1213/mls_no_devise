@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
   	user = User.find_by(username: params[:session][:username])
-    logger.debug user
+    logger.debug user.authenticate(params[:session][:password])
   	if user && user.authenticate(params[:session][:password])
   		if user.activated?
         puts "User Activated"
