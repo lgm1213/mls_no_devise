@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170902152831) do
+ActiveRecord::Schema.define(version: 20170902193756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -195,15 +195,6 @@ ActiveRecord::Schema.define(version: 20170902152831) do
     t.index ["pool_description_id"], name: "index_building_pool_descriptions_on_pool_description_id", using: :btree
   end
 
-  create_table "building_rent_dep_incs", force: :cascade do |t|
-    t.integer  "building_id"
-    t.integer  "rent_dep_inc_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["building_id"], name: "index_building_rent_dep_incs_on_building_id", using: :btree
-    t.index ["rent_dep_inc_id"], name: "index_building_rent_dep_incs_on_rent_dep_inc_id", using: :btree
-  end
-
   create_table "building_rental_dep_incls", force: :cascade do |t|
     t.integer  "building_id"
     t.integer  "rental_dep_incl_id"
@@ -327,7 +318,7 @@ ActiveRecord::Schema.define(version: 20170902152831) do
     t.string   "pool_dimensions"
     t.boolean  "spa"
     t.string   "lot_description"
-    t.string   "waterfront_description"
+    t.string   "waterfront_desc"
     t.string   "parking_restrictions"
     t.string   "pool_description"
     t.string   "water_access"
@@ -481,6 +472,7 @@ ActiveRecord::Schema.define(version: 20170902152831) do
   end
 
   create_table "listings", force: :cascade do |t|
+    t.integer  "building_id"
     t.string   "unit_no"
     t.string   "floor_plan"
     t.string   "num_fbaths"
@@ -514,7 +506,6 @@ ActiveRecord::Schema.define(version: 20170902152831) do
     t.date     "list_date"
     t.date     "expiration_date"
     t.boolean  "convert_bed"
-    t.integer  "building_id"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
@@ -552,12 +543,6 @@ ActiveRecord::Schema.define(version: 20170902152831) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "rent_dep_incs", force: :cascade do |t|
-    t.string   "options"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "rental_dep_incls", force: :cascade do |t|
     t.string   "options"
     t.datetime "created_at", null: false
@@ -565,12 +550,6 @@ ActiveRecord::Schema.define(version: 20170902152831) do
   end
 
   create_table "rental_pay_incs", force: :cascade do |t|
-    t.string   "options"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "rental_payment_includes", force: :cascade do |t|
     t.string   "options"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -621,12 +600,6 @@ ActiveRecord::Schema.define(version: 20170902152831) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "waterfront_descriptions", force: :cascade do |t|
-    t.string   "options"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "waterfront_descs", force: :cascade do |t|
     t.string   "options"
     t.datetime "created_at", null: false
@@ -646,4 +619,5 @@ ActiveRecord::Schema.define(version: 20170902152831) do
   add_foreign_key "listing_floors", "listings"
   add_foreign_key "listing_interior_features", "interior_features"
   add_foreign_key "listing_interior_features", "listings"
+  add_foreign_key "listings", "buildings"
 end

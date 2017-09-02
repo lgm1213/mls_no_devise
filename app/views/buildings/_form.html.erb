@@ -184,11 +184,7 @@
                     <%= f.label :User_Id, "User Id" %>
                     <%= f.text_field :user_id, class: 'form-control' %>
                   </div>
-               
-                  <div class="col-lg-4">
-                    <%= f.label :waterfront_description, "Waterfront Description" %>
-                    <%= f.select :waterfront_description, options_for_select(waterfront_description), {}, class: 'form-control' %>
-                  </div>
+              
                 </div>
             </fieldset>
 
@@ -273,9 +269,9 @@
                     <% end %>                      
                   </div>
                   <div class="col-lg-2">
-                    <%= f.label :waterfront_description, "Waterfront Description" %>
+                    <%= f.label :waterfront_desc, "Waterfront Description" %>
                     <br>
-                    <%= f.collection_check_boxes :waterfront_description_ids, WaterfrontDescription.all, :id, :options do |b| %>
+                    <%= f.collection_check_boxes :waterfront_desc_ids, WaterfrontDesc.all, :id, :options do |b| %>
                       <%= b.label do %>
                         <%= b.check_box %>
                         <%= b.object.options %>
