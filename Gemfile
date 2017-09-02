@@ -77,3 +77,5 @@ gem "font-awesome-rails"
 gem 'paperclip'
 gem 'aws-sdk'
 
+gem 'rails_12factor', group: :production
+
