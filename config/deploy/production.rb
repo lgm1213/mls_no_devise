@@ -1,3 +1,9 @@
+
+set :production
+server '165.227.208.185', user: 'lgm1213', roles: %w{app db web}
+
+
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
