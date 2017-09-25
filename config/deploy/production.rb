@@ -1,5 +1,5 @@
 
-set :production
+set :stage, :production
 server '165.227.208.185', user: 'lgm1213', roles: %w{app db web}
 
 

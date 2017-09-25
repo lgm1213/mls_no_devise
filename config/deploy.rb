@@ -1,6 +1,6 @@
 # config valid only for current version of Capistrano
 lock "3.9.1"
-
+set :bundle_binstubs, nil
 set :application, "LeaseIt"
 set :repo_url, "git@github.com:lgm1213/mls_no_devise.git"
 
