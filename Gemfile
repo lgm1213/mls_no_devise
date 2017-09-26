@@ -87,4 +87,4 @@ gem 'paperclip'
 gem 'aws-sdk'
 
 gem 'rails_12factor', group: :production
-gem 'rails_admin', '~> 1.2'
+
