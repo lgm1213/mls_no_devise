@@ -271,7 +271,7 @@
                   <div class="col-lg-2">
                     <%= f.label :waterfront_desc, "Waterfront Description" %>
                     <br>
-                    <%= f.collection_check_boxes :waterfront_desc_ids, WaterfrontDesc.all, :id, :options do |b| %>
+                    <%= f.collection_check_boxes :waterfront_desc_ids, ::WaterfrontDesc.all, :id, :options do |b| %>
                       <%= b.label do %>
                         <%= b.check_box %>
                         <%= b.object.options %>
