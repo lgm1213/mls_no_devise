@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171002232936) do
+ActiveRecord::Schema.define(version: 20171002234859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -477,23 +477,17 @@ ActiveRecord::Schema.define(version: 20171002232936) do
     t.string   "unit_model"
     t.string   "num_fbaths"
     t.string   "num_hbaths"
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.string   "beds"
-    t.string   "fbaths"
-    t.string   "hbaths"
-    t.string   "unit_floor_location"
-    t.string   "type_of_property"
-    t.string   "style"
     t.string   "sqft"
     t.date     "date_available"
-    t.string   "dinning"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.string   "mls_link"
-    t.decimal  "price",               precision: 7, scale: 2
+    t.decimal  "price",              precision: 7, scale: 2
     t.index ["building_id"], name: "index_listings_on_building_id", using: :btree
   end
 

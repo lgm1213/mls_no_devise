@@ -45,27 +45,21 @@
           <fieldset>
             <h2>Rental Listing Description</h2>
             <div class="form-group">
-            <%= f.label :type_of_property, "Type of Property", class: 'control-label col-sm-4' %>
-            <div class="col-sm-2">
-              <%= f.select :type_of_property, options_for_select(type_of_property), {}, class: 'form-control' %>
-            </div>
-            </div>
-            <div class="form-group">
               <%= f.label :unit_no, "Unit Number", class: 'control-label col-sm-4' %>
               <div class="col-sm-2">
                 <%= f.text_field :unit_no, class: 'form-control' %>
               </div>
             </div>
             <div class="form-group">
-              <%= f.label :unit_floor_location, "Unit's Floor Location", class: 'control-label col-sm-4' %>
+              <%= f.label :unit_model, "Unit's Floorplan/Model", class: 'control-label col-sm-4' %>
               <div class="col-sm-2">
-                <%= f.text_field :unit_floor_location, class: 'form-control' %>
+                <%= f.text_field :unit_model, class: 'form-control' %>
               </div>
             </div>
             <div class="form-group">
-              <%= f.label :floor_plan, "Floor Plan Id", class: 'control-label col-sm-4'%>
+              <%= f.label :beds, "Number of Bedrooms", class: 'control-label col-sm-4' %>
               <div class="col-sm-2">
-                <%= f.text_field :floor_plan, class: 'form-control' %>
+                <%= f.text_field :beds, class: 'form-control' %>
               </div>
             </div>
             <div class="form-group">
@@ -78,12 +72,6 @@
               <%= f.label :num_hbaths, "Number of Half Baths", class: 'control-label col-sm-4' %>
               <div class="col-sm-2">
                 <%= f.text_field :num_hbaths, class: 'form-control' %>
-              </div>
-            </div>
-            <div class="form-group">
-              <%= f.label :beds, "Number of Bedrooms", class: 'control-label col-sm-4' %>
-              <div class="col-sm-2">
-                <%= f.text_field :beds, class: 'form-control' %>
               </div>
             </div>
           </fieldset>
