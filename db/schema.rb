@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170926204708) do
+ActiveRecord::Schema.define(version: 20171002232936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -474,17 +474,11 @@ ActiveRecord::Schema.define(version: 20170926204708) do
   create_table "listings", force: :cascade do |t|
     t.integer  "building_id"
     t.string   "unit_no"
-    t.string   "floor_plan"
+    t.string   "unit_model"
     t.string   "num_fbaths"
     t.string   "num_hbaths"
-    t.text     "advertising"
-    t.text     "move_in_special"
-    t.string   "commission"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "rent_price"
-    t.string   "rent_per_period"
-    t.boolean  "for_sale"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.string   "beds"
     t.string   "fbaths"
     t.string   "hbaths"
@@ -492,24 +486,14 @@ ActiveRecord::Schema.define(version: 20170926204708) do
     t.string   "type_of_property"
     t.string   "style"
     t.string   "sqft"
-    t.boolean  "balcony"
-    t.string   "liv_area"
-    t.boolean  "efficiency"
-    t.string   "faces"
-    t.string   "additional_parking_info"
-    t.string   "furnished_information"
-    t.date     "available_date"
-    t.string   "view"
-    t.string   "floor"
+    t.date     "date_available"
     t.string   "dinning"
-    t.string   "listing_type"
-    t.date     "list_date"
-    t.date     "expiration_date"
-    t.boolean  "convert_bed"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "mls_link"
+    t.decimal  "price",               precision: 7, scale: 2
     t.index ["building_id"], name: "index_listings_on_building_id", using: :btree
   end
 
