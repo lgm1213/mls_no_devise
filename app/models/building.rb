@@ -80,8 +80,8 @@ class Building < ApplicationRecord
   has_many :building_water_accesses
   has_many :water_accesses, :through => :building_water_accesses
 
-  has_many :building_waterfront_descriptions
-  has_many :waterfront_descriptions, :through => :building_waterfront_descriptions
+  has_many :building_waterfront_desc
+  has_many :waterfront_desc, :through => :building_waterfront_desc
 
   #listing relationship
   has_many :listings, dependent: :destroy
