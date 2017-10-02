@@ -88,6 +88,4 @@ gem 'aws-sdk'
 
 gem 'rails_12factor', group: :production
 
-gem 'devise'
 
-gem 'activeadmin', github: 'activeadmin'
