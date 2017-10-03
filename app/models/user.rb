@@ -1,10 +1,7 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-
+ 
 	attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
-  # before_create :create_activation_digest
   validates :username, presence: true, length: { maximum: 30 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
@@ -45,16 +42,6 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
-  #activates an account
-  # def activate
-  #   update_columns(activated: true, activated_at: Time.zone.now)
-  # end
-
-  # #send the user an activation email
-  # def send_activation_email
-  #   UserMailer.account_activation(self).deliver_now  
-  # end
-
   #sets the password reset attributes
   # def create_reset_digest
   #   self.reset_token = User.new_token
@@ -72,12 +59,6 @@ class User < ApplicationRecord
   # end
 
 private
-
- #creates an activation token
-  # def create_activation_digest
-  #   self.activation_token = User.new_token
-  #   self.activation_digest = User.digest(activation_token)
-  # end
 
   def downcase_email
     self.email = email.downcase

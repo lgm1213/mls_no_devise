@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params.merge(activated: true,activated_at: Time.now))
+    @user = User.new(user_params)
     respond_to do |format|
       if @user.save
         log_in @user
@@ -78,7 +78,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation, :activation_digest, :remember_digest, :activated, :activated_at, :reset_digest, :reset_sent_at, :admin)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :admin)
     end
 
     #confirm user is logged in
